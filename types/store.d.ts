@@ -1,4 +1,4 @@
-import {AssemblySize} from "@/constants";
+import {AssemblySize, Language} from "@/constants";
 
 /**
  * 全局状态
@@ -6,4 +6,5 @@ import {AssemblySize} from "@/constants";
 export interface GlobalStore {
     isCollapse: boolean
     assemblySize: AssemblySize
+    language: Language | null
 }
