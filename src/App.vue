@@ -1,10 +1,17 @@
 <template>
-  <RouterView />
+  <el-config-provider :size="assemblySize">
+    <RouterView />
+  </el-config-provider>
 </template>
 
 <script lang="ts" setup>
 import { onMounted } from 'vue'
 import { RouterView } from 'vue-router'
+import {storeToRefs} from "pinia";
+import { useGlobalStore } from "@/store/modules";
+
+const globalStore = useGlobalStore()
+const {assemblySize} = storeToRefs(globalStore)
 
 onMounted(() => {
   const leftStyle =
@@ -16,5 +23,3 @@ onMounted(() => {
   console.log(`%c BUILD_TIME %c ${__APP_BUILD_TIME__}`, leftStyle, rightStyle)
 })
 </script>
-
-<style scoped></style>
