@@ -1,12 +1,20 @@
 <template>
-  <el-icon class="header-toolbar_collapse">
-    <component :is="Fold"/>
+  <el-icon class="header-toolbar_collapse" @click="handleCollapse">
+    <component :is="isCollapse ? Expand: Fold"/>
   </el-icon>
 </template>
 
 <script setup lang="ts">
+import { Fold, Expand} from "@element-plus/icons-vue";
+import { useGlobalStore } from "@/store/modules";
+import {computed} from "vue";
 
-import { Fold} from "@element-plus/icons-vue";
+const globalStore = useGlobalStore()
+const isCollapse = computed(() => globalStore.isCollapse)
+
+function handleCollapse() {
+  globalStore.toggleCollapse()
+}
 </script>
 
 <style scoped lang="less">

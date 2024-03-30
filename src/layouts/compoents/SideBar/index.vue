@@ -1,12 +1,16 @@
 <template>
-  <div data-__COMP__="SideBar" class="sideBar h-full">
+  <div :style="{width: collapse ? '65px': '210px'}" class="sideBar h-full">
     <div class="logo">
       <img src="~@/assets/logo.svg"/>
-      <h1>Geeker Admin</h1>
+      <h1 v-show="!collapse">Geeker Admin</h1>
     </div>
 
     <el-scrollbar>
-      <el-menu unique-opened>
+      <el-menu
+          :collapse="collapse"
+          :collapse-transition="false"
+          unique-opened
+      >
         <SubMenu :menu-list="menuList"/>
       </el-menu>
     </el-scrollbar>
@@ -15,6 +19,8 @@
 
 <script setup lang="ts">
 import SubMenu from './components/Menu/SubMenu.vue'
+
+defineProps<{ collapse: boolean}>()
 
 const menuList = [
   {
@@ -1000,8 +1006,7 @@ const menuList = [
 
 <style scoped lang="less">
 .sideBar {
-  border-right: 1px solid var(--el-aside-border-color);
-  background-color: var(--el-menu-bg-color);
+  transition: width 0.3s ease;
   display: flex;
   flex-direction: column;
   .logo {

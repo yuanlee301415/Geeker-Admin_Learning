@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-import { store } from '@/store'
+import { pinia } from '@/store'
 import UserInfoModel from '@/models/UserInfoModel'
 import { getUserInfo } from '@/api/sys/user'
 
@@ -43,5 +43,5 @@ export const useUserStore = defineStore({
 })
 
 export function useUserStoreWithOut() {
-  return useUserStore(store)
+  return useUserStore(pinia)
 }

@@ -1,21 +1,23 @@
 <template>
   <template v-for="item of menuList" :key="item.path">
     <el-sub-menu v-if="item.children?.length" :index="item.path">
+
       <template #title>
         <el-icon v-if="item.meta.icon">
           <component :is="item.meta.icon"/>
         </el-icon>
-        {{ item.meta.title }}
+        <span>{{ item.meta.title }}</span>
       </template>
+
       <SubMenu :menu-list="item.children"/>
+
     </el-sub-menu>
+
     <el-menu-item v-else :index="item.path">
-      <template #title>
-        <el-icon v-if="item.meta.icon">
-          <component :is="item.meta.icon"/>
-        </el-icon>
-        {{ item.meta.title }}
-      </template>
+      <el-icon v-if="item.meta.icon">
+        <component :is="item.meta.icon"/>
+      </el-icon>
+      <span>{{ item.meta.title }}</span>
     </el-menu-item>
   </template>
 </template>
