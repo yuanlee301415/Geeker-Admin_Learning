@@ -1,11 +1,13 @@
 <template>
-  <div>
-    <i class="iconfont icon-zhuti"></i>
-  </div>
+  <i class="iconfont icon-zhuti" @click="handleOpenThemeDrawer"/>
 </template>
 
 <script setup lang="ts">
+import mittBus from "@/utils/mittBus";
 
+function handleOpenThemeDrawer() {
+  mittBus.emit('openThemeDrawer')
+}
 </script>
 
 <style scoped lang="less">

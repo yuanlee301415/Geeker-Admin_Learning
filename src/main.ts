@@ -12,6 +12,7 @@ import I18n from './language/index'
 import './assets/main.css'
 import './assets/iconfont/iconfont.css'
 import './styles/common.less'
+import './styles/element.less'
 
 function bootstrap() {
   const app = createApp(App)
