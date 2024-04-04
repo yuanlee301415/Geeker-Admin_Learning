@@ -7,20 +7,21 @@
     <template #dropdown>
       <el-dropdown-menu>
         <el-dropdown-item
-            v-for="item of languages"
-            :key="item.value"
-            :command="item.value"
-            :disabled="item.value === globalStore.language"
-        >{{ item.label }}</el-dropdown-item>
+          v-for="item of languages"
+          :key="item.value"
+          :command="item.value"
+          :disabled="item.value === globalStore.language"
+          >{{ item.label }}</el-dropdown-item
+        >
       </el-dropdown-menu>
     </template>
   </el-dropdown>
 </template>
 
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-import {useGlobalStore} from "@/store/modules";
-import {Language} from "@/constants";
+import { useI18n } from 'vue-i18n'
+import { useGlobalStore } from '@/store/modules'
+import { Language } from '@/constants'
 
 const languages = [
   { label: '简体中文', value: Language.Zh },
@@ -35,4 +36,3 @@ function handleChooseLanguage(language: Language) {
   i18n.locale.value = language
 }
 </script>
-

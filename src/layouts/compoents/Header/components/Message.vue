@@ -11,9 +11,9 @@
           <el-scrollbar max-height="320">
             <ul class="message-list">
               <li v-for="item of messages" :key="item.id">
-                <el-avatar :src="item.type" :size="40"/>
+                <el-avatar :src="item.type" :size="40" />
                 <div class="message-box">
-                  <div class="message">{{item.title}}</div>
+                  <div class="message">{{ item.title }}</div>
                   <time>{{ item.time }}</time>
                 </div>
               </li>
@@ -22,25 +22,24 @@
         </el-tab-pane>
 
         <el-tab-pane label="消息(0)" name="message">
-          <el-empty description="暂无消息"/>
+          <el-empty description="暂无消息" />
         </el-tab-pane>
 
         <el-tab-pane label="待办(0)" name="todo">
-          <el-empty description="暂无代办"/>
+          <el-empty description="暂无代办" />
         </el-tab-pane>
-
       </el-tabs>
     </el-popover>
   </div>
 </template>
 
 <script setup lang="ts">
-import {ref} from "vue";
+import { ref } from 'vue'
 
 const activeName = ref('notice')
 const messages = Array.from({ length: 6 }, (_, idx) => ({
   id: idx,
-  type: `/msg-types/msg0${idx % 5 + 1}.png`,
+  type: `/msg-types/msg0${(idx % 5) + 1}.png`,
   title: '一键三连 Geeker-Admin 🧡',
   time: `${idx * 10 + 1}分钟前`
 }))

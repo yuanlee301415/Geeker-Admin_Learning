@@ -5,16 +5,16 @@
 </template>
 
 <script lang="ts" setup>
-import {computed, onMounted} from 'vue'
-import {RouterView} from 'vue-router'
+import { computed, onMounted } from 'vue'
+import { RouterView } from 'vue-router'
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import en from 'element-plus/es/locale/lang/en'
-import { useI18n } from "vue-i18n";
+import { useI18n } from 'vue-i18n'
 
-import {useGlobalStore} from "@/store/modules";
-import {Language} from "@/constants";
-import { getBrowserLanguage } from "@/utils";
-import { useTheme } from "@/hooks/useTheme";
+import { useGlobalStore } from '@/store/modules'
+import { Language } from '@/constants'
+import { getBrowserLanguage } from '@/utils'
+import { useTheme } from '@/hooks/useTheme'
 
 const globalStore = useGlobalStore()
 const { initTheme } = useTheme()

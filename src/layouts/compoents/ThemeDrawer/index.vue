@@ -4,11 +4,10 @@
 <template>
   <el-drawer v-model="visible" size="300" title="主题设置">
     <div class="theme-drawer">
-
       <!--布局方式-->
       <el-divider class="divider">
         <el-icon>
-          <Notification/>
+          <Notification />
         </el-icon>
         布局方式
       </el-divider>
@@ -22,7 +21,7 @@
               <div class="theme-layout__content"></div>
             </div>
             <el-icon v-if="globalStore.layout === Layout.Vertical">
-              <CircleCheckFilled/>
+              <CircleCheckFilled />
             </el-icon>
           </li>
         </el-tooltip>
@@ -35,7 +34,7 @@
               <div class="theme-layout__content"></div>
             </div>
             <el-icon v-if="globalStore.layout === Layout.Classic">
-              <CircleCheckFilled/>
+              <CircleCheckFilled />
             </el-icon>
           </li>
         </el-tooltip>
@@ -45,7 +44,7 @@
             <div class="theme-layout__dark"></div>
             <div class="theme-layout__content"></div>
             <el-icon v-if="globalStore.layout === Layout.Transverse">
-              <CircleCheckFilled/>
+              <CircleCheckFilled />
             </el-icon>
           </li>
         </el-tooltip>
@@ -56,7 +55,7 @@
             <div class="theme-layout__light"></div>
             <div class="theme-layout__content"></div>
             <el-icon v-if="globalStore.layout === Layout.Columns">
-              <CircleCheckFilled/>
+              <CircleCheckFilled />
             </el-icon>
           </li>
         </el-tooltip>
@@ -67,7 +66,7 @@
           侧边栏反转色
           <el-tooltip content="侧边栏颜色变为深色模式" placement="top">
             <el-icon>
-              <QuestionFilled/>
+              <QuestionFilled />
             </el-icon>
           </el-tooltip>
         </dt>
@@ -81,7 +80,7 @@
           头部反转色
           <el-tooltip content="头部反转色" placement="top">
             <el-icon>
-              <QuestionFilled/>
+              <QuestionFilled />
             </el-icon>
           </el-tooltip>
         </dt>
@@ -94,44 +93,46 @@
       <!--全局主题-->
       <el-divider class="divider">
         <el-icon>
-          <ColdDrink/>
+          <ColdDrink />
         </el-icon>
         全局主题
       </el-divider>
 
       <dl class="theme-item">
-        <dt>
-          主题颜色
-        </dt>
+        <dt>主题颜色</dt>
         <dd>
-          <el-color-picker v-model="globalStore.primary" :predefine="colorList" @change="changePrimary"/>
+          <el-color-picker
+            v-model="globalStore.primary"
+            :predefine="colorList"
+            @change="changePrimary"
+          />
         </dd>
       </dl>
 
       <dl class="theme-item">
-        <dt>
-          暗黑模式
-        </dt>
+        <dt>暗黑模式</dt>
         <dd>
-          <SwitchDark/>
+          <SwitchDark />
         </dd>
       </dl>
 
       <dl class="theme-item">
-        <dt>
-          灰色模式
-        </dt>
+        <dt>灰色模式</dt>
         <dd>
-          <el-switch v-model="globalStore.isGrey" @change="changeGreyOrWeak(GreyOrWeakEnum.Grey, $event)"/>
+          <el-switch
+            v-model="globalStore.isGrey"
+            @change="changeGreyOrWeak(GreyOrWeakEnum.Grey, $event)"
+          />
         </dd>
       </dl>
 
       <dl class="theme-item">
-        <dt>
-          色弱模式
-        </dt>
+        <dt>色弱模式</dt>
         <dd>
-          <el-switch v-model="globalStore.isWeak" @change="changeGreyOrWeak(GreyOrWeakEnum.Weak, $event)"/>
+          <el-switch
+            v-model="globalStore.isWeak"
+            @change="changeGreyOrWeak(GreyOrWeakEnum.Weak, $event)"
+          />
         </dd>
       </dl>
       <!--全局主题 End-->
@@ -139,106 +140,97 @@
       <!--界面设置-->
       <el-divider class="divider">
         <el-icon>
-          <Setting/>
+          <Setting />
         </el-icon>
         界面设置
       </el-divider>
       <dl class="theme-item">
-        <dt>
-          菜单折叠
-        </dt>
+        <dt>菜单折叠</dt>
         <dd>
-          <el-switch v-model="globalStore.isCollapse"/>
+          <el-switch v-model="globalStore.isCollapse" />
         </dd>
       </dl>
 
       <dl class="theme-item">
-        <dt>
-          菜单手风琴
-        </dt>
+        <dt>菜单手风琴</dt>
         <dd>
-          <el-switch v-model="globalStore.accordion"/>
+          <el-switch v-model="globalStore.accordion" />
         </dd>
       </dl>
 
       <dl class="theme-item">
-        <dt>
-          面包屑
-        </dt>
+        <dt>面包屑</dt>
         <dd>
-          <el-switch v-model="globalStore.breadcrumb"/>
+          <el-switch v-model="globalStore.breadcrumb" />
         </dd>
       </dl>
 
       <dl class="theme-item">
-        <dt>
-          面包屑图标
-        </dt>
+        <dt>面包屑图标</dt>
         <dd>
-          <el-switch v-model="globalStore.breadcrumbIcon"/>
+          <el-switch v-model="globalStore.breadcrumbIcon" />
         </dd>
       </dl>
 
       <dl class="theme-item">
-        <dt>
-          标签栏
-        </dt>
+        <dt>标签栏</dt>
         <dd>
-          <el-switch v-model="globalStore.tabs"/>
+          <el-switch v-model="globalStore.tabs" />
         </dd>
       </dl>
 
       <dl class="theme-item">
-        <dt>
-          标签栏图标
-        </dt>
+        <dt>标签栏图标</dt>
         <dd>
-          <el-switch v-model="globalStore.tabsIcon"/>
+          <el-switch v-model="globalStore.tabsIcon" />
         </dd>
       </dl>
 
       <dl class="theme-item">
-        <dt>
-          页脚
-        </dt>
+        <dt>页脚</dt>
         <dd>
-          <el-switch v-model="globalStore.footer"/>
+          <el-switch v-model="globalStore.footer" />
         </dd>
       </dl>
       <!--界面设置 End-->
-
     </div>
   </el-drawer>
 </template>
 
 <script setup lang="ts">
-import {ref} from "vue";
-import {CircleCheckFilled, ColdDrink, Notification, QuestionFilled, Setting} from '@element-plus/icons-vue'
-import {useGlobalStore} from "@/store/modules";
-import {GreyOrWeakEnum, Layout} from "@/constants";
-import mittBus from "@/utils/mittBus";
-import {useTheme} from "@/hooks/useTheme";
-import {DEFAULT_PRIMARY} from "@/config";
+import { ref } from 'vue'
+import {
+  CircleCheckFilled,
+  ColdDrink,
+  Notification,
+  QuestionFilled,
+  Setting
+} from '@element-plus/icons-vue'
+import { useGlobalStore } from '@/store/modules'
+import { GreyOrWeakEnum, Layout } from '@/constants'
+import mittBus from '@/utils/mittBus'
+import { useTheme } from '@/hooks/useTheme'
+import { DEFAULT_PRIMARY } from '@/config'
 import SwitchDark from '@/components/SwitchDark/index.vue'
 
 const globalStore = useGlobalStore()
 const { setAsideTheme, setHeaderTheme, changePrimary, changeGreyOrWeak } = useTheme()
 const visible = ref(false)
 const colorList = [
-    DEFAULT_PRIMARY,
-  "#daa96e",
-  "#0c819f",
-  "#409eff",
-  "#27ae60",
-  "#ff5c93",
-  "#e74c3c",
-  "#fd726d",
-  "#f39c12",
-  "#9b59b6"
+  DEFAULT_PRIMARY,
+  '#daa96e',
+  '#0c819f',
+  '#409eff',
+  '#27ae60',
+  '#ff5c93',
+  '#e74c3c',
+  '#fd726d',
+  '#f39c12',
+  '#9b59b6'
 ]
 
 // 打开主题设置弹窗
-mittBus.on('openThemeDrawer', () => visible.value = true)
+mittBus.on('openThemeDrawer', () => (visible.value = true))
 
 // 选择布局方式
 function handleChooseLayout(layout: Layout) {
@@ -248,5 +240,5 @@ function handleChooseLayout(layout: Layout) {
 </script>
 
 <style scoped lang="less">
-@import "style";
+@import 'style';
 </style>

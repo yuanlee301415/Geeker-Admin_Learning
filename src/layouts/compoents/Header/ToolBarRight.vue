@@ -1,28 +1,28 @@
 <template>
   <div class="header-toolbar_right">
     <div class="header-icon">
-      <AssemblySize/>
-      <Language/>
-      <SearchMenu/>
-      <ThemeSetting/>
-      <Message/>
-      <FullScreen/>
+      <AssemblySize />
+      <Language />
+      <SearchMenu />
+      <ThemeSetting />
+      <Message />
+      <FullScreen />
     </div>
 
     <span class="username">Geeker</span>
 
-    <Avatar/>
+    <Avatar />
   </div>
 </template>
 
 <script setup lang="ts">
-import AssemblySize from "./components/AssemblySize.vue";
+import AssemblySize from './components/AssemblySize.vue'
 import Language from './components/Language.vue'
-import SearchMenu from "./components/SearchMenu.vue";
-import ThemeSetting from "./components/ThemeSetting.vue";
-import Message from "./components/Message.vue";
-import FullScreen from "./components/FullScreen.vue";
-import Avatar from "./components/Avatar.vue"
+import SearchMenu from './components/SearchMenu.vue'
+import ThemeSetting from './components/ThemeSetting.vue'
+import Message from './components/Message.vue'
+import FullScreen from './components/FullScreen.vue'
+import Avatar from './components/Avatar.vue'
 </script>
 
 <style scoped lang="less">

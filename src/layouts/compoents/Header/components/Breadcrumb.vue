@@ -2,16 +2,13 @@
 面包屑
 -->
 <template>
-  <div :class="{'no-icon': !globalStore.breadcrumbIcon}" class="breadcrumb-box">
+  <div :class="{ 'no-icon': !globalStore.breadcrumbIcon }" class="breadcrumb-box">
     <el-breadcrumb :separator-icon="ArrowRight">
       <transition-group name="breadcrumb">
-        <el-breadcrumb-item v-for="(item) of breadcrumbList" :key="item.path">
-          <div
-              :class="{'item-no-icon': !item.meta.icon}"
-              class="el-breadcrumb__inner is-link"
-          >
+        <el-breadcrumb-item v-for="item of breadcrumbList" :key="item.path">
+          <div :class="{ 'item-no-icon': !item.meta.icon }" class="el-breadcrumb__inner is-link">
             <el-icon v-if="globalStore.breadcrumbIcon && item.meta.icon" class="breadcrumb-icon">
-              <Component :is="item.meta.icon"/>
+              <Component :is="item.meta.icon" />
             </el-icon>
             <span class="breadcrumb-title">{{ item.meta.title }}</span>
           </div>
@@ -22,177 +19,177 @@
 </template>
 
 <script setup lang="ts">
-import { ArrowRight } from "@element-plus/icons-vue";
-import {useGlobalStore} from "@/store/modules";
+import { ArrowRight } from '@element-plus/icons-vue'
+import { useGlobalStore } from '@/store/modules'
 
 const globalStore = useGlobalStore()
 const breadcrumbList = [
   {
-    "path": "/home/index",
-    "meta": {
-      "icon": "HomeFilled",
-      "title": "首页"
+    path: '/home/index',
+    meta: {
+      icon: 'HomeFilled',
+      title: '首页'
     }
   },
   {
-    "path": "/proTable",
-    "name": "proTable",
-    "redirect": "/proTable/useProTable",
-    "meta": {
-      "icon": "MessageBox",
-      "title": "超级表格",
-      "isLink": "",
-      "isHide": false,
-      "isFull": false,
-      "isAffix": false,
-      "isKeepAlive": true
+    path: '/proTable',
+    name: 'proTable',
+    redirect: '/proTable/useProTable',
+    meta: {
+      icon: 'MessageBox',
+      title: '超级表格',
+      isLink: '',
+      isHide: false,
+      isFull: false,
+      isAffix: false,
+      isKeepAlive: true
     },
-    "children": [
+    children: [
       {
-        "path": "/proTable/useProTable",
-        "name": "useProTable",
-        "component": "/proTable/useProTable/index",
-        "meta": {
-          "icon": "Menu",
-          "title": "使用 ProTable",
-          "isLink": "",
-          "isHide": false,
-          "isFull": false,
-          "isAffix": false,
-          "isKeepAlive": true
+        path: '/proTable/useProTable',
+        name: 'useProTable',
+        component: '/proTable/useProTable/index',
+        meta: {
+          icon: 'Menu',
+          title: '使用 ProTable',
+          isLink: '',
+          isHide: false,
+          isFull: false,
+          isAffix: false,
+          isKeepAlive: true
         },
-        "children": [
+        children: [
           {
-            "path": "/proTable/useProTable/detail/:id",
-            "name": "useProTableDetail",
-            "component": "/proTable/useProTable/detail",
-            "meta": {
-              "icon": "Menu",
-              "title": "ProTable 详情",
-              "isLink": "",
-              "isHide": true,
-              "isFull": false,
-              "isAffix": false,
-              "isKeepAlive": true,
-              "activeMenu": "/proTable/useProTable"
+            path: '/proTable/useProTable/detail/:id',
+            name: 'useProTableDetail',
+            component: '/proTable/useProTable/detail',
+            meta: {
+              icon: 'Menu',
+              title: 'ProTable 详情',
+              isLink: '',
+              isHide: true,
+              isFull: false,
+              isAffix: false,
+              isKeepAlive: true,
+              activeMenu: '/proTable/useProTable'
             }
           }
         ]
       },
       {
-        "path": "/proTable/useTreeFilter",
-        "name": "useTreeFilter",
-        "component": "/proTable/useTreeFilter/index",
-        "meta": {
-          "icon": "Menu",
-          "title": "使用 TreeFilter",
-          "isLink": "",
-          "isHide": false,
-          "isFull": false,
-          "isAffix": false,
-          "isKeepAlive": true
+        path: '/proTable/useTreeFilter',
+        name: 'useTreeFilter',
+        component: '/proTable/useTreeFilter/index',
+        meta: {
+          icon: 'Menu',
+          title: '使用 TreeFilter',
+          isLink: '',
+          isHide: false,
+          isFull: false,
+          isAffix: false,
+          isKeepAlive: true
         }
       },
       {
-        "path": "/proTable/useTreeFilter/detail/:id",
-        "name": "useTreeFilterDetail",
-        "component": "/proTable/useTreeFilter/detail",
-        "meta": {
-          "icon": "Menu",
-          "title": "TreeFilter 详情",
-          "activeMenu": "/proTable/useTreeFilter",
-          "isLink": "",
-          "isHide": true,
-          "isFull": false,
-          "isAffix": false,
-          "isKeepAlive": true
+        path: '/proTable/useTreeFilter/detail/:id',
+        name: 'useTreeFilterDetail',
+        component: '/proTable/useTreeFilter/detail',
+        meta: {
+          icon: 'Menu',
+          title: 'TreeFilter 详情',
+          activeMenu: '/proTable/useTreeFilter',
+          isLink: '',
+          isHide: true,
+          isFull: false,
+          isAffix: false,
+          isKeepAlive: true
         }
       },
       {
-        "path": "/proTable/useSelectFilter",
-        "name": "useSelectFilter",
-        "component": "/proTable/useSelectFilter/index",
-        "meta": {
-          "icon": "Menu",
-          "title": "使用 SelectFilter",
-          "isLink": "",
-          "isHide": false,
-          "isFull": false,
-          "isAffix": false,
-          "isKeepAlive": true
+        path: '/proTable/useSelectFilter',
+        name: 'useSelectFilter',
+        component: '/proTable/useSelectFilter/index',
+        meta: {
+          icon: 'Menu',
+          title: '使用 SelectFilter',
+          isLink: '',
+          isHide: false,
+          isFull: false,
+          isAffix: false,
+          isKeepAlive: true
         }
       },
       {
-        "path": "/proTable/treeProTable",
-        "name": "treeProTable",
-        "component": "/proTable/treeProTable/index",
-        "meta": {
-          "icon": "Menu",
-          "title": "树形 ProTable",
-          "isLink": "",
-          "isHide": false,
-          "isFull": false,
-          "isAffix": false,
-          "isKeepAlive": true
+        path: '/proTable/treeProTable',
+        name: 'treeProTable',
+        component: '/proTable/treeProTable/index',
+        meta: {
+          icon: 'Menu',
+          title: '树形 ProTable',
+          isLink: '',
+          isHide: false,
+          isFull: false,
+          isAffix: false,
+          isKeepAlive: true
         }
       },
       {
-        "path": "/proTable/complexProTable",
-        "name": "complexProTable",
-        "component": "/proTable/complexProTable/index",
-        "meta": {
-          "icon": "Menu",
-          "title": "复杂 ProTable",
-          "isLink": "",
-          "isHide": false,
-          "isFull": false,
-          "isAffix": false,
-          "isKeepAlive": true
+        path: '/proTable/complexProTable',
+        name: 'complexProTable',
+        component: '/proTable/complexProTable/index',
+        meta: {
+          icon: 'Menu',
+          title: '复杂 ProTable',
+          isLink: '',
+          isHide: false,
+          isFull: false,
+          isAffix: false,
+          isKeepAlive: true
         }
       },
       {
-        "path": "/proTable/document",
-        "name": "proTableDocument",
-        "component": "/proTable/document/index",
-        "meta": {
-          "icon": "Menu",
-          "title": "ProTable 文档",
-          "isLink": "https://juejin.cn/post/7166068828202336263/#heading-14",
-          "isHide": false,
-          "isFull": false,
-          "isAffix": false,
-          "isKeepAlive": true
+        path: '/proTable/document',
+        name: 'proTableDocument',
+        component: '/proTable/document/index',
+        meta: {
+          icon: 'Menu',
+          title: 'ProTable 文档',
+          isLink: 'https://juejin.cn/post/7166068828202336263/#heading-14',
+          isHide: false,
+          isFull: false,
+          isAffix: false,
+          isKeepAlive: true
         }
       }
     ]
   },
   {
-    "path": "/proTable/useProTable",
-    "name": "useProTable",
-    "component": "/proTable/useProTable/index",
-    "meta": {
-      "icon": "Menu",
-      "title": "使用 ProTable",
-      "isLink": "",
-      "isHide": false,
-      "isFull": false,
-      "isAffix": false,
-      "isKeepAlive": true
+    path: '/proTable/useProTable',
+    name: 'useProTable',
+    component: '/proTable/useProTable/index',
+    meta: {
+      icon: 'Menu',
+      title: '使用 ProTable',
+      isLink: '',
+      isHide: false,
+      isFull: false,
+      isAffix: false,
+      isKeepAlive: true
     },
-    "children": [
+    children: [
       {
-        "path": "/proTable/useProTable/detail/:id",
-        "name": "useProTableDetail",
-        "component": "/proTable/useProTable/detail",
-        "meta": {
-          "icon": "Menu",
-          "title": "ProTable 详情",
-          "isLink": "",
-          "isHide": true,
-          "isFull": false,
-          "isAffix": false,
-          "isKeepAlive": true,
-          "activeMenu": "/proTable/useProTable"
+        path: '/proTable/useProTable/detail/:id',
+        name: 'useProTableDetail',
+        component: '/proTable/useProTable/detail',
+        meta: {
+          icon: 'Menu',
+          title: 'ProTable 详情',
+          isLink: '',
+          isHide: true,
+          isFull: false,
+          isAffix: false,
+          isKeepAlive: true,
+          activeMenu: '/proTable/useProTable'
         }
       }
     ]
@@ -251,7 +248,5 @@ const breadcrumbList = [
       }
     }
   }
-
 }
-
 </style>

@@ -2,13 +2,17 @@
 全屏
 -->
 <template>
-  <i :class="[isFullscreen ? 'icon-suoxiao' : 'icon-fangda']" class="iconfont" @click="handleFullscreen"></i>
+  <i
+    :class="[isFullscreen ? 'icon-suoxiao' : 'icon-fangda']"
+    class="iconfont"
+    @click="handleFullscreen"
+  ></i>
 </template>
 
 <script setup lang="ts">
 import screenfull from 'screenfull'
-import {onMounted, ref} from "vue";
-import {ElMessage} from "element-plus";
+import { onMounted, ref } from 'vue'
+import { ElMessage } from 'element-plus'
 
 const isFullscreen = ref(screenfull.isFullscreen)
 

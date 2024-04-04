@@ -15,7 +15,7 @@
   flex-direction: column;
   .home-bg {
     flex: 1;
-    background: url("@/assets/images/welcome.png") center center no-repeat;
+    background: url('@/assets/images/welcome.png') center center no-repeat;
     background-size: contain;
   }
   h6 {
@@ -27,4 +27,3 @@
   }
 }
 </style>
-

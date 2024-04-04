@@ -1,12 +1,12 @@
 <template>
-  <component :is="layouts[globalStore.layout]"/>
-  <ThemeDrawer/>
+  <component :is="layouts[globalStore.layout]" />
+  <ThemeDrawer />
 </template>
 
 <script setup lang="ts">
-import type { Component } from "vue";
-import { Layout } from "@/constants";
-import { useGlobalStore } from "@/store/modules";
+import type { Component } from 'vue'
+import { Layout } from '@/constants'
+import { useGlobalStore } from '@/store/modules'
 
 import LayoutVertical from './LayoutVertical/index.vue'
 import LayoutClassic from './LayoutClassic/index.vue'
@@ -21,7 +21,6 @@ const layouts: Record<Layout, Component> = {
   [Layout.Transverse]: LayoutTransverse,
   [Layout.Columns]: LayoutColumns
 }
-
 </script>
 
 <style lang="less">
