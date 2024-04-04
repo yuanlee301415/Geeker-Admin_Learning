@@ -1,3 +1,6 @@
+<!--
+标签栏更多功能
+-->
 <template>
   <el-dropdown :teleported="false" trigger="click">
     <div class="more-button flx-center">
@@ -49,7 +52,19 @@ import {Refresh, FullScreen, Remove, DArrowLeft, DArrowRight, CircleClose, Folde
   right: 0;
   bottom: 0;
   .more-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    cursor: pointer;
     border-left: 1px solid var(--el-border-color-light);
+    transition: all 0.3s;
+    &:hover {
+      background-color: var(--el-color-info-light-9);
+    }
+    .iconfont {
+      font-size: 12.5px;
+    }
   }
 }
 </style>

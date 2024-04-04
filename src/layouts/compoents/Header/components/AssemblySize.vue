@@ -1,21 +1,27 @@
+<!--
+组件大小
+-->
 <template>
   <el-dropdown trigger="click" @command="globalStore.setAssemblySize">
     <i class="iconfont icon-contentright"></i>
+
     <template #dropdown>
       <el-dropdown-menu>
+
         <el-dropdown-item
             v-for="item of assemblySizeList"
             :key="item.value"
             :command="item.value"
-            :disabled="item.value === assemblySize"
+            :disabled="item.value === globalStore.assemblySize"
         >{{ item.label }}</el-dropdown-item>
+
       </el-dropdown-menu>
     </template>
+
   </el-dropdown>
 </template>
 
 <script setup lang="ts">
-import {storeToRefs} from "pinia";
 import {AssemblySize} from "@/constants";
 import { useGlobalStore } from "@/store/modules";
 
@@ -25,9 +31,4 @@ const assemblySizeList = [
   { label: '小型', value: AssemblySize.Small },
 ]
 const globalStore = useGlobalStore()
-const { assemblySize } = storeToRefs(globalStore)
 </script>
-
-<style scoped lang="less">
-
-</style>

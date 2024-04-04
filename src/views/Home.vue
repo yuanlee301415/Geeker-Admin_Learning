@@ -1,23 +1,23 @@
+<!--
+首页
+-->
 <template>
   <div class="card home">
-    <div class="img">
-      <img src="@/assets/images/welcome.png" alt="Welcome">
-    </div>
+    <div class="home-bg"></div>
     <h6>{{ $t('home.welcome') }}</h6>
   </div>
 </template>
 
 <style scoped lang="less">
 .home {
-  .img {
-    height: calc(100% - 60px);
-    text-align: center;
-
-    img {
-      height: 100%;
-    }
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .home-bg {
+    flex: 1;
+    background: url("@/assets/images/welcome.png") center center no-repeat;
+    background-size: contain;
   }
-
   h6 {
     height: 60px;
     line-height: 60px;
@@ -27,3 +27,4 @@
   }
 }
 </style>
+

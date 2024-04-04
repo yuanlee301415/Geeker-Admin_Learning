@@ -1,24 +1,26 @@
+<!--
+折叠按钮
+-->
 <template>
-  <el-icon class="header-toolbar_collapse" @click="handleCollapse">
-    <component :is="isCollapse ? Expand: Fold"/>
+  <el-icon class="header-collapse-icon" @click="handleToggleCollapse">
+    <component :is="globalStore.isCollapse ? Expand: Fold"/>
   </el-icon>
 </template>
 
 <script setup lang="ts">
 import { Fold, Expand} from "@element-plus/icons-vue";
 import { useGlobalStore } from "@/store/modules";
-import {computed} from "vue";
 
 const globalStore = useGlobalStore()
-const isCollapse = computed(() => globalStore.isCollapse)
 
-function handleCollapse() {
+// 切换折叠状态
+function handleToggleCollapse() {
   globalStore.toggleCollapse()
 }
 </script>
 
 <style scoped lang="less">
-.header-toolbar_collapse {
+.header-collapse-icon {
   margin-right: 20px;
   font-size: 22px;
   color: var(--el-header-text-color);

@@ -1,6 +1,6 @@
 <template>
   <div class="message">
-    <el-popover width="310" trigger="click">
+    <el-popover :width="310" trigger="click">
       <template #reference>
         <el-badge value="5">
           <i class="iconfont icon-xiaoxi"></i>

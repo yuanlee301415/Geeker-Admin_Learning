@@ -1,6 +1,9 @@
+<!--
+用户头像
+-->
 <template>
-  <el-dropdown>
-    <el-avatar src="/avatar.gif" :szie="40"/>
+  <el-dropdown trigger="click">
+    <el-avatar src="/avatar.jpg" :szie="40"/>
 
     <template #dropdown>
       <el-dropdown-menu>
@@ -31,6 +34,5 @@
 </template>
 
 <script setup lang="ts">
-
 import {User, Edit, SwitchButton} from "@element-plus/icons-vue";
 </script>

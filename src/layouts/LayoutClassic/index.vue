@@ -1,37 +1,40 @@
 <!--
-纵向布局
+经典布局
 -->
 <template>
-  <el-container class="layout layoutVertical">
-    <el-aside>
-      <div :style="{width: isCollapse ? '65px': '210px'}" class="sideBar h-full">
-        <Logo :collapse="isCollapse"/>
-        <el-scrollbar>
-          <el-menu
-              :collapse="isCollapse"
-              :collapse-transition="false"
-              :unique-opened="accordion"
-          >
-            <SubMenu :menu-list="menuList"/>
-          </el-menu>
-        </el-scrollbar>
-      </div>
-    </el-aside>
+  <el-container class="layout layoutClassic">
+    <el-header height="55px">
+      <Logo :collapse="isCollapse"/>
+      <ToolBarLeft/>
+      <ToolBarRight/>
+    </el-header>
 
     <el-container>
-      <el-header height="55px">
-        <ToolBarLeft/>
-        <ToolBarRight/>
-      </el-header>
+      <el-aside>
+        <div :style="{width: isCollapse ? '65px': '210px'}" class="sideBar h-full">
+          <el-scrollbar>
+            <el-menu
+                :collapse="isCollapse"
+                :collapse-transition="false"
+                :unique-opened="accordion"
+            >
+              <SubMenu :menu-list="menuList"/>
+            </el-menu>
+          </el-scrollbar>
+        </div>
+      </el-aside>
 
-      <el-main>
-        <Tabs v-if="tabs"/>
-        <Main/>
-      </el-main>
+      <el-container direction="vertical">
+        <el-main>
+          <Tabs v-if="tabs"/>
+          <Main/>
+        </el-main>
 
-      <el-footer v-if="footer" height="30px">
-        <Footer />
-      </el-footer>
+        <el-footer v-if="footer" height="30px">
+          <Footer/>
+        </el-footer>
+
+      </el-container>
 
     </el-container>
   </el-container>
@@ -39,6 +42,7 @@
 
 <script setup lang="ts">
 import {storeToRefs} from "pinia";
+import {useGlobalStore} from "@/store/modules";
 import Logo from '../compoents/Logo/index.vue'
 import SubMenu from '../compoents/Menu/SubMenu.vue'
 import Main from '../compoents/Main/index.vue'
@@ -46,7 +50,6 @@ import Tabs from '../compoents/Tabs/index.vue'
 import Footer from '../compoents/Footer/index.vue'
 import ToolBarLeft from '../compoents/Header/ToolBarLeft.vue'
 import ToolBarRight from '../compoents/Header/ToolBarRight.vue'
-import {useGlobalStore} from "@/store/modules";
 
 const globalStore = useGlobalStore()
 const { isCollapse, accordion, tabs, footer } = storeToRefs(globalStore)

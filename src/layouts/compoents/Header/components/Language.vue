@@ -1,5 +1,8 @@
+<!--
+语言
+-->
 <template>
-  <el-dropdown trigger="click" @command="handleSetLanguage">
+  <el-dropdown trigger="click" @command="handleChooseLanguage">
     <i class="iconfont icon-zhongyingwen"></i>
     <template #dropdown>
       <el-dropdown-menu>
@@ -7,7 +10,7 @@
             v-for="item of languages"
             :key="item.value"
             :command="item.value"
-            :disabled="item.value === language"
+            :disabled="item.value === globalStore.language"
         >{{ item.label }}</el-dropdown-item>
       </el-dropdown-menu>
     </template>
@@ -15,9 +18,8 @@
 </template>
 
 <script setup lang="ts">
-import {useGlobalStore} from "@/store/modules";
-import {storeToRefs} from "pinia";
 import { useI18n } from "vue-i18n";
+import {useGlobalStore} from "@/store/modules";
 import {Language} from "@/constants";
 
 const languages = [
@@ -25,15 +27,12 @@ const languages = [
   { label: 'English', value: Language.En }
 ]
 const globalStore = useGlobalStore()
-const  { language } = storeToRefs(globalStore)
 const i18n = useI18n()
 
-function handleSetLanguage(language: Language) {
+// 选择语言
+function handleChooseLanguage(language: Language) {
   globalStore.setLanguage(language)
   i18n.locale.value = language
 }
 </script>
 
-<style scoped lang="less">
-
-</style>

@@ -1,3 +1,6 @@
+<!--
+菜单项（及递归子菜单）
+-->
 <template>
   <template v-for="item of menuList" :key="item.path">
     <el-sub-menu v-if="item.children?.length" :index="item.path">
@@ -6,7 +9,7 @@
         <el-icon v-if="item.meta.icon">
           <component :is="item.meta.icon"/>
         </el-icon>
-        <span>{{ item.meta.title }}</span>
+        <span class="sle">{{ item.meta.title }}</span>
       </template>
 
       <SubMenu :menu-list="item.children"/>
@@ -17,7 +20,9 @@
       <el-icon v-if="item.meta.icon">
         <component :is="item.meta.icon"/>
       </el-icon>
-      <span>{{ item.meta.title }}</span>
+      <template #title>
+        <span class="sle">{{ item.meta.title }}</span>
+      </template>
     </el-menu-item>
   </template>
 </template>
@@ -26,21 +31,6 @@
 defineProps<{ menuList: Menu.MenuOptions[]}>()
 </script>
 
-<style scoped lang="less">
-.el-menu-item {
-  &:hover {
-    color: var(--el-menu-hover-text-color);
-  }
-  &.is-active {
-    &::before {
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      content: "";
-      background-color: var(--el-color-primary);
-    }
-  }
-}
+<style lang="less">
+@import "style";
 </style>

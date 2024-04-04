@@ -37,7 +37,13 @@ import Avatar from "./components/Avatar.vue"
     align-items: center;
     > * {
       margin-right: 1rem;
+      color: var(--el-header-text-color);
     }
+  }
+  .username {
+    margin: 0 10px;
+    font-size: 15px;
+    color: var(--el-header-text-color);
   }
 }
 </style>

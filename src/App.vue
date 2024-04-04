@@ -1,5 +1,5 @@
 <template>
-  <el-config-provider :size="assemblySize" :locale="local">
+  <el-config-provider :size="globalStore.assemblySize" :locale="local">
     <RouterView />
   </el-config-provider>
 </template>
@@ -7,7 +7,6 @@
 <script lang="ts" setup>
 import {computed, onMounted} from 'vue'
 import {RouterView} from 'vue-router'
-import {storeToRefs} from "pinia";
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import en from 'element-plus/es/locale/lang/en'
 import { useI18n } from "vue-i18n";
@@ -15,15 +14,18 @@ import { useI18n } from "vue-i18n";
 import {useGlobalStore} from "@/store/modules";
 import {Language} from "@/constants";
 import { getBrowserLanguage } from "@/utils";
+import { useTheme } from "@/hooks/useTheme";
 
 const globalStore = useGlobalStore()
-const {assemblySize} = storeToRefs(globalStore)
+const { initTheme } = useTheme()
 const i18n = useI18n()
 const local = computed(() => {
   if (globalStore.language === Language.Zh) return zhCn
   else if (globalStore.language === Language.En) return en
   return getBrowserLanguage() === Language.Zh ? zhCn : en
 })
+
+initTheme()
 
 onMounted(() => {
   const language = globalStore.language ?? getBrowserLanguage()

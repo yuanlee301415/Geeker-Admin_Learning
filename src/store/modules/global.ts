@@ -1,5 +1,5 @@
+// 全局状态
 import type {GlobalStore} from "#/store";
-
 import {defineStore} from "pinia";
 import pinaPersistConfig from "@/store/helper/persist";
 import {AssemblySize, Language, Layout} from "@/constants";
@@ -10,7 +10,7 @@ export const useGlobalStore = defineStore({
     id: ID,
     state: (): GlobalStore => ({
         // 菜单折叠
-        isCollapse: true,
+        isCollapse: false,
 
         // ElementPlus 组件大小
         assemblySize: AssemblySize.Default,
@@ -37,24 +37,24 @@ export const useGlobalStore = defineStore({
         isWeak: false,
 
         // 菜单手风琴
-        accordion: false,
+        accordion: true,
 
         // 面包屑
-        breadcrumb: false,
+        breadcrumb: true,
 
         // 面包屑图标
-        breadcrumbIcon: false,
+        breadcrumbIcon: true,
 
         // 标签栏
-        tabs: false,
+        tabs: true,
 
         // 标签栏图标
-        tabsIcon: false,
+        tabsIcon: true,
 
         // 页脚
-        footer: false,
+        footer: true,
 
-        // 布局样式
+        // 布局方式
         layout: Layout.Vertical
     }),
     actions: {
@@ -69,6 +69,15 @@ export const useGlobalStore = defineStore({
         },
         setLayout(layout: Layout) {
             this.layout = layout
+        },
+        setPrimary(color: string) {
+            this.primary = color
+        },
+        setIsGrey(val: boolean) {
+            this.isGrey = val
+        },
+        setIsWeak(val: boolean) {
+            this.isWeak = val
         }
     },
     persist: pinaPersistConfig(ID)

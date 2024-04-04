@@ -1,0 +1,38 @@
+.layoutTransverse {
+
+  :deep(.el-header) {
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+      margin-right: 30px;
+    }
+
+    .el-menu {
+      flex: 1;
+      height: 100%;
+      overflow: hidden;
+      border-bottom: none;
+      .el-menu-item.is-active {
+        color: #ffffff !important;
+      }
+      .is-active {
+        background-color: var(--el-color-primary) !important;
+        border-bottom-color: var(--el-color-primary) !important;
+        &::before {
+          width: 0;
+        }
+        .el-sub-menu__title {
+          color: #ffffff !important;
+          background-color: var(--el-color-primary) !important;
+          border-bottom-color: var(--el-color-primary) !important;
+        }
+      }
+    }
+  }
+
+  :deep(.el-main) {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,18 @@
+.layoutClassic {
+  :deep(.el-header) {
+    display: flex;
+    padding: 0 15px;
+    .logo {
+      margin-right: 16px;
+    }
+    .header-toolbar_right {
+      margin-left: auto;
+    }
+  }
+  > :deep(.el-container) {
+    height: 0;
+  }
+  :deep(.el-main) {
+    flex-direction: column;
+  }
+}

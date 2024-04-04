@@ -1,3 +1,6 @@
+<!--
+标签栏
+-->
 <template>
   <div class="tabs-box">
     <div class="tabs-wrap">
@@ -10,7 +13,7 @@
           :closable="item.close"
         >
           <template #label>
-            <el-icon v-if="tabsIcon && item.icon" class="tabs-icon">
+            <el-icon v-if="globalStore.tabsIcon && item.icon" class="tabs-icon">
               <component :is="item.icon"/>
             </el-icon>
             {{ item.title }}
@@ -24,23 +27,105 @@
 </template>
 
 <script setup lang="ts">
-import MoreButton from './components/MoreButton/index.vue'
 import {ref} from "vue";
+import {useGlobalStore} from "@/store/modules";
+import MoreButton from './components/MoreButton/index.vue'
 
+const globalStore = useGlobalStore()
 const tabsMenuList = [
   {
     "icon": "HomeFilled",
     "title": "首页",
-    "path": "/",
+    "path": "/home",
     "name": "home",
     "close": false,
     "isKeepAlive": true
   },
   {
-    "icon": "InfoFilled",
-    "title": "关于项目",
-    "path": "/about/index",
-    "name": "about",
+    "icon": "Menu",
+    "title": "使用 ProTable",
+    "path": "/proTable/useProTable",
+    "name": "useProTable",
+    "close": true,
+    "isKeepAlive": true
+  },
+  {
+    "icon": "Menu",
+    "title": "使用 TreeFilter",
+    "path": "/proTable/useTreeFilter",
+    "name": "useTreeFilter",
+    "close": true,
+    "isKeepAlive": true
+  },
+  {
+    "icon": "Menu",
+    "title": "使用 SelectFilter",
+    "path": "/proTable/useSelectFilter",
+    "name": "useSelectFilter",
+    "close": true,
+    "isKeepAlive": true
+  },
+  {
+    "icon": "Menu",
+    "title": "树形 ProTable",
+    "path": "/proTable/treeProTable",
+    "name": "treeProTable",
+    "close": true,
+    "isKeepAlive": true
+  },
+  {
+    "icon": "Menu",
+    "title": "复杂 ProTable",
+    "path": "/proTable/complexProTable",
+    "name": "complexProTable",
+    "close": true,
+    "isKeepAlive": true
+  },
+  {
+    "icon": "Menu",
+    "title": "菜单权限",
+    "path": "/auth/menu",
+    "name": "authMenu",
+    "close": true,
+    "isKeepAlive": true
+  },
+  {
+    "icon": "Menu",
+    "title": "按钮权限",
+    "path": "/auth/button",
+    "name": "authButton",
+    "close": true,
+    "isKeepAlive": true
+  },
+  {
+    "icon": "Menu",
+    "title": "引导页",
+    "path": "/assembly/guide",
+    "name": "guide",
+    "close": true,
+    "isKeepAlive": true
+  },
+  {
+    "icon": "Menu",
+    "title": "标签页操作",
+    "path": "/assembly/tabs",
+    "name": "tabs",
+    "close": true,
+    "isKeepAlive": true
+  },
+  {
+    "icon": "Menu",
+    "title": "图标选择器",
+    "path": "/assembly/selectIcon",
+    "name": "selectIcon",
+    "close": true,
+    "isKeepAlive": true
+  },
+  {
+    "icon": "Menu",
+    "title": "分类筛选器",
+    "path": "/assembly/selectFilter",
+    "name": "selectFilter",
     "close": true,
     "isKeepAlive": true
   },
@@ -53,8 +138,7 @@ const tabsMenuList = [
     "isKeepAlive": true
   }
 ]
-const tabsIcon = ref(true)
-const activeName = ref('/')
+const activeName = ref('')
 
 function onTabClick() {
 

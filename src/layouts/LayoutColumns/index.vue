@@ -1,28 +1,76 @@
+<!--
+分栏布局
+-->
 <template>
-  <div :style="{width: collapse ? '65px': '210px'}" class="sideBar h-full">
-    <div class="logo">
-      <img src="~@/assets/logo.svg"/>
-      <h1 v-show="!collapse">Geeker Admin</h1>
+  <el-container class="layout layoutColumns">
+    <div class="aside-split">
+      <Logo hidden-txt/>
+      <el-scrollbar>
+        <ul class="split-list">
+          <li
+            v-for="item of menuList"
+            :key="item.path"
+            :class="{'split-active': splitActive === item.path}"
+            @click="handleClickMenu(item)"
+          >
+            <el-icon>
+              <component :is="item.meta.icon"/>
+            </el-icon>
+            <span class="title sle">{{ item.meta.title}}</span>
+          </li>
+        </ul>
+      </el-scrollbar>
     </div>
 
-    <el-scrollbar>
-      <el-menu
-          :collapse="collapse"
-          :collapse-transition="false"
-          unique-opened
-      >
-        <SubMenu :menu-list="menuList"/>
-      </el-menu>
-    </el-scrollbar>
-  </div>
+    <el-aside v-show="subMenuList?.length" :style="{width: isCollapse ? '65px': '210px'}">
+      <Logo hidden-img>
+        <template v-if="isCollapse" #default>G</template>
+      </Logo>
+      <el-scrollbar>
+        <el-menu
+            :collapse="isCollapse"
+            :collapse-transition="false"
+            :unique-opened="accordion"
+        >
+          <SubMenu :menu-list="subMenuList||[]"/>
+        </el-menu>
+      </el-scrollbar>
+    </el-aside>
+
+    <el-container>
+      <el-header height="55px">
+        <ToolBarLeft/>
+        <ToolBarRight/>
+      </el-header>
+
+      <el-main>
+        <Tabs v-if="tabs"/>
+        <Main/>
+      </el-main>
+
+      <el-footer v-if="footer" height="30px">
+        <Footer/>
+      </el-footer>
+    </el-container>
+  </el-container>
 </template>
 
 <script setup lang="ts">
-import SubMenu from './components/Menu/SubMenu.vue'
+import {storeToRefs} from "pinia";
+import {ref} from "vue";
+import Logo from '../compoents/Logo/index.vue'
+import SubMenu from '../compoents/Menu/SubMenu.vue'
+import Main from '../compoents/Main/index.vue'
+import ToolBarLeft from '../compoents/Header/ToolBarLeft.vue'
+import ToolBarRight from '../compoents/Header/ToolBarRight.vue'
+import {useGlobalStore} from "@/store/modules";
+import Footer from "@/layouts/compoents/Footer/index.vue";
+import Tabs from "@/layouts/compoents/Tabs/index.vue";
 
-defineProps<{ collapse: boolean}>()
-
-const menuList = [
+const globalStore = useGlobalStore()
+const { isCollapse, accordion, tabs, footer } = storeToRefs(globalStore)
+const splitActive = ref('')
+const menuList: Menu.MenuOptions[] = [
   {
     "path": "/home/index",
     "name": "home",
@@ -784,7 +832,50 @@ const menuList = [
           "isAffix": false,
           "isKeepAlive": true
         }
+      },
+      {
+        "path": "/menu/menu4",
+        "name": "menu4",
+        "component": "/menu/menu4/index",
+        "meta": {
+          "icon": "Menu",
+          "title": "菜单4",
+          "isLink": "",
+          "isHide": false,
+          "isFull": false,
+          "isAffix": false,
+          "isKeepAlive": true
+        }
+      },
+      {
+        "path": "/menu/menu5",
+        "name": "menu5",
+        "component": "/menu/menu5/index",
+        "meta": {
+          "icon": "Menu",
+          "title": "菜单 5",
+          "isLink": "",
+          "isHide": false,
+          "isFull": false,
+          "isAffix": false,
+          "isKeepAlive": true
+        }
+      },
+      {
+        "path": "/menu/menu6",
+        "name": "menu6",
+        "component": "/menu/menu6/index",
+        "meta": {
+          "icon": "Menu",
+          "title": "菜单6",
+          "isLink": "",
+          "isHide": false,
+          "isFull": false,
+          "isAffix": false,
+          "isKeepAlive": true
+        }
       }
+
     ]
   },
   {
@@ -1002,31 +1093,14 @@ const menuList = [
     }
   }
 ]
+const subMenuList = ref()
+
+function handleClickMenu(item: Menu.MenuOptions) {
+  splitActive.value = item.path
+  subMenuList.value = item?.children
+}
 </script>
 
 <style scoped lang="less">
-.sideBar {
-  transition: width 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  .logo {
-    height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-      width: 28px;
-    }
-    h1 {
-      margin-left: 6px;
-      font-size: 21.5px;
-      font-weight: bold;
-      color: var(--el-aside-logo-text-color);
-      white-space: nowrap;
-    }
-  }
-  :deep(.el-menu) {
-    border-right: none;
-  }
-}
+@import "./style";
 </style>

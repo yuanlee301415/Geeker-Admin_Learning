@@ -1,13 +1,16 @@
+<!--
+面包屑
+-->
 <template>
-  <div class="breadcrumb-box">
-    <el-breadcrumb >
+  <div :class="{'no-icon': !globalStore.breadcrumbIcon}" class="breadcrumb-box">
+    <el-breadcrumb :separator-icon="ArrowRight">
       <transition-group name="breadcrumb">
         <el-breadcrumb-item v-for="(item) of breadcrumbList" :key="item.path">
           <div
               :class="{'item-no-icon': !item.meta.icon}"
               class="el-breadcrumb__inner is-link"
           >
-            <el-icon v-if="item.meta.icon" class="breadcrumb-icon">
+            <el-icon v-if="globalStore.breadcrumbIcon && item.meta.icon" class="breadcrumb-icon">
               <Component :is="item.meta.icon"/>
             </el-icon>
             <span class="breadcrumb-title">{{ item.meta.title }}</span>
@@ -19,6 +22,10 @@
 </template>
 
 <script setup lang="ts">
+import { ArrowRight } from "@element-plus/icons-vue";
+import {useGlobalStore} from "@/store/modules";
+
+const globalStore = useGlobalStore()
 const breadcrumbList = [
   {
     "path": "/home/index",
@@ -195,9 +202,6 @@ const breadcrumbList = [
 
 <style scoped lang="less">
 .breadcrumb-box {
-  display: flex;
-  align-items: center;
-  overflow: hidden;
   .el-breadcrumb {
     white-space: nowrap;
     .el-breadcrumb__item {
@@ -233,18 +237,21 @@ const breadcrumbList = [
       }
     }
   }
-}
-.no-icon {
-  .el-breadcrumb {
-    .el-breadcrumb__item {
-      top: -2px;
-      :deep(.el-breadcrumb__separator) {
-        top: 4px;
-      }
-      .item-no-icon {
-        transform: translateY(0);
+
+  &.no-icon {
+    .el-breadcrumb {
+      .el-breadcrumb__item {
+        top: -2px;
+        :deep(.el-breadcrumb__separator) {
+          top: 3px;
+        }
+        .item-no-icon {
+          transform: translateY(0);
+        }
       }
     }
   }
+
 }
+
 </style>

@@ -1,3 +1,6 @@
+<!--
+搜索菜单
+-->
 <template>
   <div class="header-toolbar_search">
     <i class="iconfont icon-sousuo" @click="visible=true"/>
@@ -210,7 +213,6 @@ const menuList = [
     ]
   }
 ]
-
 </script>
 
 <style scoped lang="less">

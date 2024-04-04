@@ -1,7 +1,8 @@
+<!--
+页面主体容器
+-->
 <template>
-  <Tabs/>
-
-  <el-main>
+  <div class="layout-main">
     <router-view v-slot="{Component, route}">
       <transition appear name="fade-transform" mode="out-in">
         <keep-alive>
@@ -9,23 +10,18 @@
         </keep-alive>
       </transition>
     </router-view>
-  </el-main>
-
-  <Footer/>
-
+  </div>
 </template>
 
 <script setup lang="ts">
-import Tabs from '../Tabs/index.vue'
-import Footer from '../Footer/index.vue'
+import {watch} from "vue";
+import { useGlobalStore } from "@/store/modules";
 
+const globalStore = useGlobalStore()
+
+watch(() => globalStore.layout, () => {
+  document.body.setAttribute('class', globalStore.layout)
+},{
+  immediate: true
+})
 </script>
-
-<style scoped lang="less">
-.el-main {
-  background-color: var(--el-bg-color-page);
-  box-sizing: border-box;
-  padding: 12px;
-  overflow: hidden;
-}
-</style>

@@ -1,14 +1,16 @@
-.layout {
-  :deep(.el-aside) {
-    width: auto;
-    border-right: 1px solid var(--el-aside-border-color);
-    background-color: var(--el-menu-bg-color);
+.layoutVertical {
+  .sideBar {
+    display: flex;
+    flex-direction: column;
   }
   :deep(.el-header) {
-    background-color: var(--el-header-bg-color);
-    border-bottom: 1px solid var(--el-header-border-color);
     display: flex;
     justify-content: space-between;
     padding: 0 15px;
   }
+
+  :deep(.el-main) {
+    flex-direction: column;
+  }
+
 }

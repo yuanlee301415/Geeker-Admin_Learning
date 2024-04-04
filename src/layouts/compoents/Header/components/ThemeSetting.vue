@@ -1,3 +1,6 @@
+<!--
+主题设置
+-->
 <template>
   <i class="iconfont icon-zhuti" @click="handleOpenThemeDrawer"/>
 </template>
@@ -9,7 +12,3 @@ function handleOpenThemeDrawer() {
   mittBus.emit('openThemeDrawer')
 }
 </script>
-
-<style scoped lang="less">
-
-</style>

@@ -1,6 +1,6 @@
 {
   "name": "geeker-admin_learning",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Geeker-Admin@v1.2.0 Learning",
   "private": true,
   "repository": {
@@ -24,6 +24,7 @@
     "mitt": "^3.0.1",
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.1",
+    "screenfull": "^6.0.2",
     "vue": "^3.4.21",
     "vue-i18n": "^9.10.2",
     "vue-router": "^4.3.0"
