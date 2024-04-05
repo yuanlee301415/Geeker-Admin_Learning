@@ -1,8 +1,6 @@
 import {AssemblySize, Language, Layout} from "@/constants";
 
-/**
- * 全局状态
- */
+/*全局状态*/
 export interface GlobalStore {
     isCollapse: boolean
     assemblySize: AssemblySize
@@ -20,4 +18,11 @@ export interface GlobalStore {
     tabsIcon: boolean
     footer: boolean
     layout: Layout
+}
+
+
+/*权限状态*/
+export interface AuthStore {
+    routeName: string
+    authMenuList: Menu.MenuOptions[]
 }

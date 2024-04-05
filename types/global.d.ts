@@ -16,16 +16,16 @@ declare namespace Menu {
         isLink?: string
 
         // 是否在菜单中隐藏（通常列表详情页面需要隐藏）
-        isHide: boolean
+        isHide?: boolean
 
         // 此菜单对应的页面是否全屏（如：数据大屏页面）
-        isFull: boolean
+        isFull?: boolean
 
         // 菜单是否需要固定在标签页中（通常固定首页）
-        isAffix: boolean
+        isAffix?: boolean
 
         // 是否缓存
-        isKeepAlive: boolean
+        isKeepAlive?: boolean
     }
     interface MenuOptions {
         // 路由访问路径
