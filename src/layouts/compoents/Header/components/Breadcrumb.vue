@@ -5,7 +5,11 @@
   <div :class="{ 'no-icon': !globalStore.breadcrumbIcon }" class="breadcrumb-box">
     <el-breadcrumb :separator-icon="ArrowRight">
       <transition-group name="breadcrumb">
-        <el-breadcrumb-item v-for="item of breadcrumbList" :key="item.path">
+        <el-breadcrumb-item
+          v-for="(item, index) of breadcrumbList"
+          :key="item.path"
+          @click="handleClickBreadcrumbItem(item, index)"
+        >
           <div :class="{ 'item-no-icon': !item.meta.icon }" class="el-breadcrumb__inner is-link">
             <el-icon v-if="globalStore.breadcrumbIcon && item.meta.icon" class="breadcrumb-icon">
               <Component :is="item.meta.icon" />
@@ -19,182 +23,25 @@
 </template>
 
 <script setup lang="ts">
+import { useRoute, useRouter } from 'vue-router'
+import { computed } from 'vue'
 import { ArrowRight } from '@element-plus/icons-vue'
 import { useGlobalStore } from '@/store/modules'
+import { useAuthStore } from '@/store/modules/auth'
 
 const globalStore = useGlobalStore()
-const breadcrumbList = [
-  {
-    path: '/home/index',
-    meta: {
-      icon: 'HomeFilled',
-      title: '首页'
-    }
-  },
-  {
-    path: '/proTable',
-    name: 'proTable',
-    redirect: '/proTable/useProTable',
-    meta: {
-      icon: 'MessageBox',
-      title: '超级表格',
-      isLink: '',
-      isHide: false,
-      isFull: false,
-      isAffix: false,
-      isKeepAlive: true
-    },
-    children: [
-      {
-        path: '/proTable/useProTable',
-        name: 'useProTable',
-        component: '/proTable/useProTable/index',
-        meta: {
-          icon: 'Menu',
-          title: '使用 ProTable',
-          isLink: '',
-          isHide: false,
-          isFull: false,
-          isAffix: false,
-          isKeepAlive: true
-        },
-        children: [
-          {
-            path: '/proTable/useProTable/detail/:id',
-            name: 'useProTableDetail',
-            component: '/proTable/useProTable/detail',
-            meta: {
-              icon: 'Menu',
-              title: 'ProTable 详情',
-              isLink: '',
-              isHide: true,
-              isFull: false,
-              isAffix: false,
-              isKeepAlive: true,
-              activeMenu: '/proTable/useProTable'
-            }
-          }
-        ]
-      },
-      {
-        path: '/proTable/useTreeFilter',
-        name: 'useTreeFilter',
-        component: '/proTable/useTreeFilter/index',
-        meta: {
-          icon: 'Menu',
-          title: '使用 TreeFilter',
-          isLink: '',
-          isHide: false,
-          isFull: false,
-          isAffix: false,
-          isKeepAlive: true
-        }
-      },
-      {
-        path: '/proTable/useTreeFilter/detail/:id',
-        name: 'useTreeFilterDetail',
-        component: '/proTable/useTreeFilter/detail',
-        meta: {
-          icon: 'Menu',
-          title: 'TreeFilter 详情',
-          activeMenu: '/proTable/useTreeFilter',
-          isLink: '',
-          isHide: true,
-          isFull: false,
-          isAffix: false,
-          isKeepAlive: true
-        }
-      },
-      {
-        path: '/proTable/useSelectFilter',
-        name: 'useSelectFilter',
-        component: '/proTable/useSelectFilter/index',
-        meta: {
-          icon: 'Menu',
-          title: '使用 SelectFilter',
-          isLink: '',
-          isHide: false,
-          isFull: false,
-          isAffix: false,
-          isKeepAlive: true
-        }
-      },
-      {
-        path: '/proTable/treeProTable',
-        name: 'treeProTable',
-        component: '/proTable/treeProTable/index',
-        meta: {
-          icon: 'Menu',
-          title: '树形 ProTable',
-          isLink: '',
-          isHide: false,
-          isFull: false,
-          isAffix: false,
-          isKeepAlive: true
-        }
-      },
-      {
-        path: '/proTable/complexProTable',
-        name: 'complexProTable',
-        component: '/proTable/complexProTable/index',
-        meta: {
-          icon: 'Menu',
-          title: '复杂 ProTable',
-          isLink: '',
-          isHide: false,
-          isFull: false,
-          isAffix: false,
-          isKeepAlive: true
-        }
-      },
-      {
-        path: '/proTable/document',
-        name: 'proTableDocument',
-        component: '/proTable/document/index',
-        meta: {
-          icon: 'Menu',
-          title: 'ProTable 文档',
-          isLink: 'https://juejin.cn/post/7166068828202336263/#heading-14',
-          isHide: false,
-          isFull: false,
-          isAffix: false,
-          isKeepAlive: true
-        }
-      }
-    ]
-  },
-  {
-    path: '/proTable/useProTable',
-    name: 'useProTable',
-    component: '/proTable/useProTable/index',
-    meta: {
-      icon: 'Menu',
-      title: '使用 ProTable',
-      isLink: '',
-      isHide: false,
-      isFull: false,
-      isAffix: false,
-      isKeepAlive: true
-    },
-    children: [
-      {
-        path: '/proTable/useProTable/detail/:id',
-        name: 'useProTableDetail',
-        component: '/proTable/useProTable/detail',
-        meta: {
-          icon: 'Menu',
-          title: 'ProTable 详情',
-          isLink: '',
-          isHide: true,
-          isFull: false,
-          isAffix: false,
-          isKeepAlive: true,
-          activeMenu: '/proTable/useProTable'
-        }
-      }
-    ]
-  }
-]
+const authStore = useAuthStore()
+const route = useRoute()
+const router = useRouter()
+const breadcrumbList = computed(
+  () => authStore.breadcrumbListGet[route.matched[route.matched.length - 1].path] ?? []
+)
+
+// 单击面包屑项目
+function handleClickBreadcrumbItem(item: Menu.MenuOptions, index: number) {
+  if (index === breadcrumbList.value.length - 1) return
+  router.push(item.path)
+}
 </script>
 
 <style scoped lang="less">

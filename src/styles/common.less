@@ -65,3 +65,13 @@
   border-radius: 6px;
   box-shadow: 0 0 12px rgb(0 0 0 / 5%);
 }
+
+/* breadcrumb-transform */
+.breadcrumb-enter-active {
+  transition: all 0.2s;
+}
+.breadcrumb-enter-from,
+.breadcrumb-leave-active {
+  opacity: 0;
+  transform: translateX(10px);
+}

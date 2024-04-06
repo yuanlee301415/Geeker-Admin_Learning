@@ -1,7 +1,7 @@
 import type { AuthStore } from '#/store'
 import { defineStore } from 'pinia'
 import { getAuthMenuListApi } from '@/api/rights'
-import { getFlatMenuList, getShowMenuList } from '@/utils'
+import { getAllBreadcrumbList, getFlatMenuList, getShowMenuList } from '@/utils'
 
 export const useAuthStore = defineStore({
   id: 'auth',
@@ -18,7 +18,10 @@ export const useAuthStore = defineStore({
     showMenuListGet: (state) => getShowMenuList(state.authMenuList),
 
     // 将所有菜单展开为一维数组后的数据
-    flatMenuListGet: (state) => getFlatMenuList(state.authMenuList)
+    flatMenuListGet: (state) => getFlatMenuList(state.authMenuList),
+
+    // 递归遍历菜单， 以每一个菜单项的 path 为键，菜单项为值的面包屑对象数据
+    breadcrumbListGet: (state) => getAllBreadcrumbList(state.authMenuList)
   },
 
   actions: {

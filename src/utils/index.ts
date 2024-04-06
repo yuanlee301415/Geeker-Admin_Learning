@@ -33,3 +33,23 @@ export function getFlatMenuList(menuList: Menu.MenuOptions[]): Menu.MenuOptions[
     ...(item.children ? getFlatMenuList(item.children) : [])
   ])
 }
+
+/**
+ * 递归遍历菜单， 以每一个菜单项的 path 为键，菜单项为值的面包屑对象数据
+ * @param menuList 菜单列表
+ * @param parent 父级菜单
+ * @param result 生成的结果
+ */
+export function getAllBreadcrumbList(
+  menuList: Menu.MenuOptions[],
+  parent: Menu.MenuOptions[] = [],
+  result: Record<string, Menu.MenuOptions[]> = {}
+) {
+  for (const item of menuList) {
+    result[item.path] = [...parent, item]
+    if (item.children) {
+      getAllBreadcrumbList(item.children, result[item.path], result)
+    }
+  }
+  return result
+}
