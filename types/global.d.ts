@@ -9,7 +9,7 @@ declare namespace Menu {
         /// 菜单标题
         title: string
 
-        // 是否在菜单中隐藏，需要高亮的路由 path（通常用作详情页高亮父级菜单）
+        // 当前路由为详情页时，需要高亮的菜单
         activeMenu?: string
 
         // 是否是外部链接
@@ -27,6 +27,7 @@ declare namespace Menu {
         // 是否缓存
         isKeepAlive?: boolean
     }
+
     interface MenuOptions {
         // 路由访问路径
         path: string

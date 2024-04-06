@@ -14,7 +14,7 @@
       <SubMenu :menu-list="item.children" />
     </el-sub-menu>
 
-    <el-menu-item v-else :index="item.path">
+    <el-menu-item v-else :index="item.path" @click="handleClickMenu(item)">
       <el-icon v-if="item.meta.icon">
         <component :is="item.meta.icon" />
       </el-icon>
@@ -26,7 +26,19 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{ menuList: Menu.MenuOptions[] }>()
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+defineProps<{ menuList: Menu.MenuOptions[] | void }>()
+
+// 单击菜单项，跳转跳转
+function handleClickMenu(item: Menu.MenuOptions) {
+  if (item.meta.isLink) {
+    window.open(item.meta.isLink, '_blank')
+    return
+  }
+  router.push(item.path)
+}
 </script>
 
 <style lang="less">

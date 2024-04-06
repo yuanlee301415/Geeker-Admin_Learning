@@ -15,9 +15,14 @@
 }
 
 html,
-body,
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
 #app,
-.layout {
+.layout,
+.content-box {
   width: 100%;
   height: 100%;
 }
