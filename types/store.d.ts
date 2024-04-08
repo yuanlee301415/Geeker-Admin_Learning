@@ -18,6 +18,7 @@ export interface GlobalStore {
     tabsIcon: boolean
     footer: boolean
     layout: Layout
+    maximize: boolean
 }
 
 

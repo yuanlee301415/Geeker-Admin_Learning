@@ -8,6 +8,7 @@ import { DEFAULT_PRIMARY } from '@/config'
 const ID = 'global'
 export const useGlobalStore = defineStore({
   id: ID,
+
   state: (): GlobalStore => ({
     // 菜单折叠
     isCollapse: false,
@@ -55,8 +56,12 @@ export const useGlobalStore = defineStore({
     footer: true,
 
     // 布局方式
-    layout: Layout.Vertical
+    layout: Layout.Vertical,
+
+    // 当前页面是否全屏
+    maximize: false
   }),
+
   actions: {
     toggleCollapse() {
       this.isCollapse = !this.isCollapse
@@ -78,6 +83,9 @@ export const useGlobalStore = defineStore({
     },
     setIsWeak(val: boolean) {
       this.isWeak = val
+    },
+    toggleMaximize() {
+      this.maximize = !this.maximize
     }
   },
   persist: pinaPersistConfig(ID)

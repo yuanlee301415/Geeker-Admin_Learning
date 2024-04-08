@@ -27,10 +27,6 @@
       </el-header>
 
       <Main />
-
-      <el-footer v-if="footer" height="30px">
-        <Footer />
-      </el-footer>
     </el-container>
   </el-container>
 </template>
@@ -42,7 +38,6 @@ import { computed } from 'vue'
 import Logo from '../compoents/Logo/index.vue'
 import SubMenu from '../compoents/Menu/SubMenu.vue'
 import Main from '../compoents/Main/index.vue'
-import Footer from '../compoents/Footer/index.vue'
 import ToolBarLeft from '../compoents/Header/ToolBarLeft.vue'
 import ToolBarRight from '../compoents/Header/ToolBarRight.vue'
 import { useGlobalStore } from '@/store/modules'
@@ -51,7 +46,7 @@ import { useAuthStore } from '@/store/modules/auth'
 const globalStore = useGlobalStore()
 const authStore = useAuthStore()
 const route = useRoute()
-const { isCollapse, accordion, footer } = storeToRefs(globalStore)
+const { isCollapse, accordion } = storeToRefs(globalStore)
 const activeMenu = computed(() => route.meta.activeMenu ?? route.path)
 </script>
 

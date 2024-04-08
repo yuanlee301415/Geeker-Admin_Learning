@@ -12,7 +12,7 @@
           <el-icon><Refresh /></el-icon>刷新
         </el-dropdown-item>
 
-        <el-dropdown-item>
+        <el-dropdown-item @click="handleToggleMaximize">
           <el-icon><FullScreen /></el-icon>全屏
         </el-dropdown-item>
 
@@ -54,10 +54,14 @@ import { inject, nextTick } from 'vue'
 import { useRoute } from 'vue-router'
 import { useKeepAliveStore } from '@/store/modules/keepAlive'
 import { refreshCurrentPageKey } from '@/tokens'
+import { useGlobalStore } from '@/store/modules'
 
 const refreshCurrentPage = inject(refreshCurrentPageKey)!
 const route = useRoute()
 const keepAliveStore = useKeepAliveStore()
+const globalStore = useGlobalStore()
+
+// 刷新当前页面
 function handleRefresh() {
   setTimeout(() => {
     route.meta.isKeepAlive && keepAliveStore.removeName(route.fullPath)
@@ -67,6 +71,11 @@ function handleRefresh() {
       refreshCurrentPage(true)
     })
   })
+}
+
+// 全屏
+function handleToggleMaximize() {
+  globalStore.toggleMaximize()
 }
 </script>
 

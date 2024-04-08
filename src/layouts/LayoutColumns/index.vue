@@ -49,10 +49,6 @@
       </el-header>
 
       <Main />
-
-      <el-footer v-if="footer" height="30px">
-        <Footer />
-      </el-footer>
     </el-container>
   </el-container>
 </template>
@@ -67,12 +63,11 @@ import Main from '../compoents/Main/index.vue'
 import ToolBarLeft from '../compoents/Header/ToolBarLeft.vue'
 import ToolBarRight from '../compoents/Header/ToolBarRight.vue'
 import { useGlobalStore } from '@/store/modules'
-import Footer from '@/layouts/compoents/Footer/index.vue'
 import { useAuthStore } from '@/store/modules/auth'
 
 const globalStore = useGlobalStore()
 const authStore = useAuthStore()
-const { isCollapse, accordion, footer } = storeToRefs(globalStore)
+const { isCollapse, accordion } = storeToRefs(globalStore)
 const splitActive = ref('')
 const subMenuList = ref()
 const route = useRoute()

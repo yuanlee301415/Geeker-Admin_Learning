@@ -14,14 +14,22 @@
         </transition>
       </router-view>
     </div>
+
+    <el-footer v-if="globalStore.footer" height="30px">
+      <Footer />
+    </el-footer>
+
+    <Maximize />
   </el-main>
 </template>
 
 <script setup lang="ts">
 import { provide, ref, watch } from 'vue'
 import Tabs from '../Tabs/index.vue'
+import Maximize from './components/Maximize.vue'
 import { useGlobalStore } from '@/store/modules'
 import { refreshCurrentPageKey } from '@/tokens'
+import Footer from '@/layouts/compoents/Footer/index.vue'
 
 const globalStore = useGlobalStore()
 
@@ -36,6 +44,22 @@ watch(
   () => globalStore.layout,
   () => {
     document.body.setAttribute('class', globalStore.layout)
+  },
+  {
+    immediate: true
+  }
+)
+
+// 监听窗口最大化
+const $app = document.getElementById('app')!
+watch(
+  () => globalStore.maximize,
+  () => {
+    if (globalStore.maximize) {
+      $app.classList.add('main-maximize')
+    } else {
+      $app.classList.remove('main-maximize')
+    }
   },
   {
     immediate: true
