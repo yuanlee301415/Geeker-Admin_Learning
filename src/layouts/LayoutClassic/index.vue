@@ -27,10 +27,7 @@
       </el-aside>
 
       <el-container direction="vertical">
-        <el-main>
-          <Tabs v-if="tabs" />
-          <Main />
-        </el-main>
+        <Main />
 
         <el-footer v-if="footer" height="30px">
           <Footer />
@@ -48,7 +45,6 @@ import { useGlobalStore } from '@/store/modules'
 import Logo from '../compoents/Logo/index.vue'
 import SubMenu from '../compoents/Menu/SubMenu.vue'
 import Main from '../compoents/Main/index.vue'
-import Tabs from '../compoents/Tabs/index.vue'
 import Footer from '../compoents/Footer/index.vue'
 import ToolBarLeft from '../compoents/Header/ToolBarLeft.vue'
 import ToolBarRight from '../compoents/Header/ToolBarRight.vue'
@@ -57,7 +53,7 @@ import { useAuthStore } from '@/store/modules/auth'
 const globalStore = useGlobalStore()
 const authStore = useAuthStore()
 const route = useRoute()
-const { isCollapse, accordion, tabs, footer } = storeToRefs(globalStore)
+const { isCollapse, accordion, footer } = storeToRefs(globalStore)
 const activeMenu = computed(() => route.meta.activeMenu ?? route.path)
 </script>
 

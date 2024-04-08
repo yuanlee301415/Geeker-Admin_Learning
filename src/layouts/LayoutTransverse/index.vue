@@ -29,10 +29,7 @@
       <ToolBarRight />
     </el-header>
 
-    <el-main>
-      <Tabs v-if="globalStore.tabs" />
-      <Main />
-    </el-main>
+    <Main />
 
     <el-footer v-if="globalStore.footer" height="30px">
       <Footer />
@@ -46,7 +43,6 @@ import { useRoute, useRouter } from 'vue-router'
 import Logo from '../compoents/Logo/index.vue'
 import SubMenu from '../compoents/Menu/SubMenu.vue'
 import Main from '../compoents/Main/index.vue'
-import Tabs from '../compoents/Tabs/index.vue'
 import Footer from '../compoents/Footer/index.vue'
 import ToolBarRight from '../compoents/Header/ToolBarRight.vue'
 import { useGlobalStore } from '@/store/modules'

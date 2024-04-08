@@ -1,7 +1,7 @@
 // 全局状态
 import type { GlobalStore } from '#/store'
 import { defineStore } from 'pinia'
-import pinaPersistConfig from '@/store/helper/persist'
+import { pinaPersistConfig } from '@/store/helper/persist'
 import { AssemblySize, Language, Layout } from '@/constants'
 import { DEFAULT_PRIMARY } from '@/config'
 

@@ -5,7 +5,7 @@ import type { PersistedStateOptions } from 'pinia-plugin-persistedstate'
  * @param key 持久化的 key
  * @param paths 持久化的 state name
  */
-export default function pinaPersistConfig(key: string, paths?: string[]): PersistedStateOptions {
+export function pinaPersistConfig(key: string, paths?: string[]): PersistedStateOptions {
   return {
     key,
     storage: window.localStorage,

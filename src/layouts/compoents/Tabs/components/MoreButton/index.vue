@@ -8,7 +8,7 @@
     </div>
     <template #dropdown>
       <el-dropdown-menu>
-        <el-dropdown-item>
+        <el-dropdown-item @click="handleRefresh">
           <el-icon><Refresh /></el-icon>刷新
         </el-dropdown-item>
 
@@ -50,14 +50,32 @@ import {
   CircleClose,
   FolderDelete
 } from '@element-plus/icons-vue'
+import { inject, nextTick } from 'vue'
+import { useRoute } from 'vue-router'
+import { useKeepAliveStore } from '@/store/modules/keepAlive'
+import { refreshCurrentPageKey } from '@/tokens'
+
+const refreshCurrentPage = inject(refreshCurrentPageKey)!
+const route = useRoute()
+const keepAliveStore = useKeepAliveStore()
+function handleRefresh() {
+  setTimeout(() => {
+    route.meta.isKeepAlive && keepAliveStore.removeName(route.fullPath)
+    refreshCurrentPage(false)
+    nextTick(() => {
+      route.meta.isKeepAlive && keepAliveStore.addName(route.fullPath)
+      refreshCurrentPage(true)
+    })
+  })
+}
 </script>
 
 <style scoped lang="less">
 .el-dropdown {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
   .more-button {
     display: flex;
     align-items: center;

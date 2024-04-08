@@ -4,13 +4,18 @@
 <template>
   <div class="tabs-box">
     <div class="tabs-wrap">
-      <el-tabs v-model="activeName" type="card" @tab-click="onTabClick" @tab-remove="onTabRemove">
+      <el-tabs
+        v-model="activeName"
+        type="card"
+        @tab-click="handleTabClick"
+        @tab-remove="handleTabRemove"
+      >
         <el-tab-pane
-          v-for="item of tabsMenuList"
+          v-for="item of tabsStore.tabs"
           :key="item.path"
           :name="item.path"
           :label="item.title"
-          :closable="item.close"
+          :closable="item.closeable"
         >
           <template #label>
             <el-icon v-if="globalStore.tabsIcon && item.icon" class="tabs-icon">
@@ -27,122 +32,89 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import type { TabPaneName, TabsPaneContext } from 'element-plus'
+import { onMounted, ref, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import Sortable from 'sortablejs'
 import { useGlobalStore } from '@/store/modules'
+import { useTabsStore } from '@/store/modules/tabs'
+import { useAuthStore } from '@/store/modules/auth'
 import MoreButton from './components/MoreButton/index.vue'
 
 const globalStore = useGlobalStore()
-const tabsMenuList = [
-  {
-    icon: 'HomeFilled',
-    title: '首页',
-    path: '/home',
-    name: 'home',
-    close: false,
-    isKeepAlive: true
+const tabsStore = useTabsStore()
+const authStore = useAuthStore()
+const route = useRoute()
+const router = useRouter()
+const activeName = ref(route.fullPath)
+
+// 监听路由变化，添加标签
+watch(
+  () => route.fullPath,
+  () => {
+    if (route.meta.isFull) return
+
+    const { icon, title, isAffix, isKeepAlive } = route.meta
+    tabsStore.addTab({
+      path: route.fullPath as string,
+      name: route.name as string,
+      icon: icon as string,
+      title: title as string,
+      closeable: !isAffix as boolean,
+      isKeepAlive: isKeepAlive as boolean
+    })
+    activeName.value = route.fullPath
   },
   {
-    icon: 'Menu',
-    title: '使用 ProTable',
-    path: '/proTable/useProTable',
-    name: 'useProTable',
-    close: true,
-    isKeepAlive: true
-  },
-  {
-    icon: 'Menu',
-    title: '使用 TreeFilter',
-    path: '/proTable/useTreeFilter',
-    name: 'useTreeFilter',
-    close: true,
-    isKeepAlive: true
-  },
-  {
-    icon: 'Menu',
-    title: '使用 SelectFilter',
-    path: '/proTable/useSelectFilter',
-    name: 'useSelectFilter',
-    close: true,
-    isKeepAlive: true
-  },
-  {
-    icon: 'Menu',
-    title: '树形 ProTable',
-    path: '/proTable/treeProTable',
-    name: 'treeProTable',
-    close: true,
-    isKeepAlive: true
-  },
-  {
-    icon: 'Menu',
-    title: '复杂 ProTable',
-    path: '/proTable/complexProTable',
-    name: 'complexProTable',
-    close: true,
-    isKeepAlive: true
-  },
-  {
-    icon: 'Menu',
-    title: '菜单权限',
-    path: '/auth/menu',
-    name: 'authMenu',
-    close: true,
-    isKeepAlive: true
-  },
-  {
-    icon: 'Menu',
-    title: '按钮权限',
-    path: '/auth/button',
-    name: 'authButton',
-    close: true,
-    isKeepAlive: true
-  },
-  {
-    icon: 'Menu',
-    title: '引导页',
-    path: '/assembly/guide',
-    name: 'guide',
-    close: true,
-    isKeepAlive: true
-  },
-  {
-    icon: 'Menu',
-    title: '标签页操作',
-    path: '/assembly/tabs',
-    name: 'tabs',
-    close: true,
-    isKeepAlive: true
-  },
-  {
-    icon: 'Menu',
-    title: '图标选择器',
-    path: '/assembly/selectIcon',
-    name: 'selectIcon',
-    close: true,
-    isKeepAlive: true
-  },
-  {
-    icon: 'Menu',
-    title: '分类筛选器',
-    path: '/assembly/selectFilter',
-    name: 'selectFilter',
-    close: true,
-    isKeepAlive: true
-  },
-  {
-    icon: 'Menu',
-    title: '数据可视化',
-    path: '/dashboard/dataVisualize',
-    name: 'dataVisualize',
-    close: true,
-    isKeepAlive: true
+    immediate: true
   }
-]
-const activeName = ref('')
+)
 
-function onTabClick() {}
+onMounted(() => {
+  initFixedTabs()
+  tabsDrop()
+})
 
-function onTabRemove() {}
+// 初始化默认固定的标签
+function initFixedTabs() {
+  authStore.flatMenuListGet.forEach((item) => {
+    const { isAffix, isHide, isFull, isLink, icon, title, isKeepAlive } = item.meta
+    if (isHide || isFull || isLink || !isAffix) return
+
+    tabsStore.addTab({
+      path: item.path,
+      name: item.name as string,
+      icon: icon as string,
+      title: title as string,
+      closeable: !isAffix as boolean,
+      isKeepAlive: isKeepAlive as boolean
+    })
+  })
+}
+
+// 标签栏拖拽排序
+function tabsDrop() {
+  Sortable.create(document.querySelector('.el-tabs__nav') as HTMLElement, {
+    draggable: '.el-tabs__item',
+    animation: 300,
+    onEnd({ newIndex, oldIndex }) {
+      const tabs = [...tabsStore.tabs]
+      const curr = tabs.splice(oldIndex as number, 1)[0]
+      tabs.splice(newIndex as number, 0, curr)
+      tabsStore.setTabs(tabs)
+    }
+  })
+}
+
+// 单击标签
+function handleTabClick(tabItem: TabsPaneContext) {
+  router.push(tabItem.props.name as string)
+}
+
+// 关闭标签
+function handleTabRemove(path: TabPaneName) {
+  tabsStore.removeTab(path as string, path === route.fullPath)
+}
 </script>
 
 <style scoped lang="less">
