@@ -63,30 +63,71 @@ export const useGlobalStore = defineStore({
   }),
 
   actions: {
+    /**
+     * @description 切换菜单折叠
+     */
     toggleCollapse() {
       this.isCollapse = !this.isCollapse
     },
+
+    /**
+     * @description 设置组件大小
+     * @param {AssemblySize} size
+     */
     setAssemblySize(size: AssemblySize) {
       this.assemblySize = size
     },
+
+    /**
+     * @description 设置语言
+     * @param {Language} language
+     */
     setLanguage(language: Language) {
       this.language = language
     },
+
+    /**
+     * @description 设置布局方式
+     * @param {Layout} layout
+     */
     setLayout(layout: Layout) {
       this.layout = layout
     },
+
+    /**
+     * @description 设置主题颜色
+     * @param {string} color
+     */
     setPrimary(color: string) {
       this.primary = color
     },
+
+    /**
+     * @description 设置灰色模式
+     * @param {boolean} val
+     */
     setIsGrey(val: boolean) {
       this.isGrey = val
     },
+
+    /**
+     * @description 设置色弱模式
+     * @param {boolean} val
+     */
     setIsWeak(val: boolean) {
       this.isWeak = val
     },
+
+    /**
+     * @description 切换全屏
+     */
     toggleMaximize() {
       this.maximize = !this.maximize
     }
   },
+
+  /**
+   * @description 持久化配置
+   */
   persist: pinaPersistConfig(ID)
 })

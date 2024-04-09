@@ -1,3 +1,4 @@
+import type {RouteRecordName} from "vue-router";
 import {AssemblySize, Language, Layout} from "@/constants";
 
 /*全局 Store*/
@@ -38,7 +39,7 @@ export interface TabItem {
     icon: string
     title: string
     path: string
-    name: string
+    name: RouteRecordName
     closeable: boolean
     isKeepAlive: boolean
 }

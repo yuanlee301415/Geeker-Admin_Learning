@@ -25,6 +25,9 @@ export const useAuthStore = defineStore({
   },
 
   actions: {
+    /**
+     * @description 获取后端返回的菜单数据
+     */
     async getAuthMenuList() {
       this.authMenuList = await getAuthMenuListApi()
       console.log('this.authMenuList:', this.authMenuList)
