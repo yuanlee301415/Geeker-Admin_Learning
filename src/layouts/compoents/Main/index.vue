@@ -8,8 +8,12 @@
     <div class="layout-main">
       <router-view v-slot="{ Component, route }">
         <transition appear name="fade-transform" mode="out-in">
-          <keep-alive>
-            <component v-if="viewVisible" :is="Component" :key="route.fullPath" />
+          <keep-alive :include="keepAliveNames">
+            <component
+              v-if="viewVisible"
+              :is="createComponentWrapper(Component, route)"
+              :key="route.fullPath"
+            />
           </keep-alive>
         </transition>
       </router-view>
@@ -24,17 +28,23 @@
 </template>
 
 <script setup lang="ts">
-import { provide, ref, watch } from 'vue'
+import type { VNode } from 'vue'
+import type { RouteLocationNormalizedLoaded } from 'vue-router'
+import { h, provide, ref, watch } from 'vue'
+import { storeToRefs } from 'pinia'
 import Tabs from '../Tabs/index.vue'
 import Maximize from './components/Maximize.vue'
+import Footer from '@/layouts/compoents/Footer/index.vue'
 import { useGlobalStore } from '@/store/modules'
 import { refreshCurrentPageKey } from '@/tokens'
-import Footer from '@/layouts/compoents/Footer/index.vue'
+import { useKeepAliveStore } from '@/store/modules/keepAlive'
 
 const globalStore = useGlobalStore()
+const keepAliveStore = useKeepAliveStore()
+const { keepAliveNames } = storeToRefs(keepAliveStore)
+const viewVisible = ref(true)
 
 // 提供刷新页面的方法
-const viewVisible = ref(true)
 provide(refreshCurrentPageKey, function (visible: boolean) {
   viewVisible.value = visible
 })
@@ -50,7 +60,7 @@ watch(
   }
 )
 
-// 监听窗口最大化
+// 监听页面最大化
 const $app = document.getElementById('app')!
 watch(
   () => globalStore.maximize,
@@ -65,4 +75,17 @@ watch(
     immediate: true
   }
 )
+
+// 缓存页面
+const wrapperMap = new Map()
+function createComponentWrapper(component: VNode, route: RouteLocationNormalizedLoaded) {
+  if (!component) return
+  const name = route.fullPath
+  let wrapper = wrapperMap.get(name)
+  if (!wrapper) {
+    wrapper = { name, render: () => h(component) }
+    wrapperMap.set(name, wrapper)
+  }
+  return h(wrapper)
+}
 </script>
