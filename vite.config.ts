@@ -5,6 +5,7 @@ import { defineConfig, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import { createHtmlPlugin } from "vite-plugin-html";
+import dayjs from "dayjs";
 
 // @ts-ignore
 import pkg from "./package.json";
@@ -25,10 +26,11 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   const __APP_VERSION__ = [pkg.version, VITE_INTERNAL_VERSION].join(".");
   const __APP_BUILD_TIME__ = new Date().toISOString();
   const __APP_INFO__ = {
-    dependencies: pkg.dependencies,
-    devDependencies: pkg.devDependencies,
     name: pkg.name,
-    version: pkg.version,
+    version: __APP_VERSION__,
+    buildTime: dayjs(__APP_BUILD_TIME__).format('YYYY-MM-DD HH:mm:ss'),
+    dependencies: pkg.dependencies,
+    devDependencies: pkg.devDependencies
   };
   console.log("env:\n", env);
 

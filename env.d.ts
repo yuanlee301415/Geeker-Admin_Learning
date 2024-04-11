@@ -18,3 +18,12 @@ interface ImportMetaEnv {
 // 由 Vite define 注入的全局常量
 declare const __APP_VERSION__: string
 declare const __APP_BUILD_TIME__: string
+
+// APP Info
+declare const __APP_INFO__: {
+  name: string
+  version: typeof __APP_VERSION__
+  buildTime: typeof __APP_BUILD_TIME__
+  dependencies: Recordable<string>
+  devDependencies: Recordable<string>
+}
