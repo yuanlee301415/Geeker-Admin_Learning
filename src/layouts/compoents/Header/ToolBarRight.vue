@@ -29,6 +29,7 @@ import Avatar from './components/Avatar.vue'
 .header-toolbar_right {
   display: flex;
   align-items: center;
+  padding-right: 25px;
   .username {
     padding-right: 1rem;
   }
