@@ -12,7 +12,7 @@
         布局方式
       </el-divider>
 
-      <ul class="theme-layout theme-layout">
+      <ul class="theme-layout">
         <el-tooltip :show-after="200" content="纵向" placement="top">
           <li class="theme-layout__vertical" @click="handleChooseLayout(Layout.Vertical)">
             <div class="theme-layout__dark"></div>

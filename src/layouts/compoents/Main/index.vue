@@ -19,9 +19,7 @@
       </router-view>
     </div>
 
-    <el-footer v-if="globalStore.footer" height="30px">
-      <Footer />
-    </el-footer>
+    <Footer />
 
     <Maximize />
   </el-main>
