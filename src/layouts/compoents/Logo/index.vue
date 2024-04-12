@@ -5,12 +5,14 @@ Logo
   <div class="logo flx-center">
     <img v-if="!hiddenImg" src="~@/assets/logo.svg" alt="Geeker Admin Logo" />
     <h1 v-if="!hiddenTxt" v-show="!collapse">
-      <slot>Geeker Admin</slot>
+      <slot>{{ title }}</slot>
     </h1>
   </div>
 </template>
 
 <script setup lang="ts">
+const title = import.meta.env.VITE_APP_TITLE
+
 defineProps<{
   // 是否是折叠状态
   collapse?: boolean
