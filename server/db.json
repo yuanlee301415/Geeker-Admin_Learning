@@ -157,6 +157,20 @@
             "isAffix": false,
             "isKeepAlive": true
           }
+        },
+        {
+          "path": "/echarts/radar",
+          "name": "radarChart",
+          "component": "/echarts/radar/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "雷达图",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
         }
       ]
     },
