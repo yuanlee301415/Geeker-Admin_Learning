@@ -66,7 +66,6 @@ import { useKeepAliveStore } from '@/store/modules/keepAlive'
 import { refreshCurrentPageKey } from '@/tokens'
 import { useGlobalStore } from '@/store/modules'
 import { useTabsStore } from '@/store/modules/tabs'
-import { HOME_URL } from '@/config'
 
 const refreshCurrentPage = inject(refreshCurrentPageKey)!
 const route = useRoute()
@@ -101,7 +100,7 @@ function handleCloseCurrentTab() {
 // 关闭所有标签
 function handleCloseAll() {
   tabsStore.closeTabs()
-  router.push(HOME_URL)
+  router.push('/')
 }
 </script>
 
