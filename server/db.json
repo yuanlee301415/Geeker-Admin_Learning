@@ -143,6 +143,20 @@
             "isAffix": false,
             "isKeepAlive": true
           }
+        },
+        {
+          "path": "/echarts/line",
+          "name": "lineChart",
+          "component": "/echarts/line/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "折线图",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
         }
       ]
     },
