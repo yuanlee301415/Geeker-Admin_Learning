@@ -14,7 +14,6 @@ dist-ssr
 coverage
 *.local
 /Todo
-/server/db.json
 
 /cypress/videos/
 /cypress/screenshots/
