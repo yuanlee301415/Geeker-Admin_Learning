@@ -42,6 +42,20 @@
             "isAffix": false,
             "isKeepAlive": true
           }
+        },
+        {
+          "path": "/form/validate",
+          "name": "validateForm",
+          "component": "/form/validate/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "校验 Form",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
         }
       ]
     },
