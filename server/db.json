@@ -87,6 +87,37 @@
         }
       ]
     },
+
+    {
+      "path": "/echarts",
+      "name": "echarts",
+      "redirect": "/echarts/pie",
+      "meta": {
+        "icon": "TrendCharts",
+        "title": "ECharts",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      },
+      "children": [
+        {
+          "path": "/echarts/pie",
+          "name": "pieChart",
+          "component": "/echarts/pie/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "饼图",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        }
+      ]
+    },
     {
       "path": "/menu",
       "name": "menu",
