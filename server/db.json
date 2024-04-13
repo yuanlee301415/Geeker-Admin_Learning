@@ -56,6 +56,20 @@
             "isAffix": false,
             "isKeepAlive": true
           }
+        },
+        {
+          "path": "/form/pro",
+          "name": "proForm",
+          "component": "/form/pro/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "超级 Form",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
         }
       ]
     },
