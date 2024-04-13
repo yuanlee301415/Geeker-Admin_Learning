@@ -14,6 +14,37 @@
         "isKeepAlive": true
       }
     },
+
+    {
+      "path": "/form",
+      "name": "form",
+      "redirect": "/form/basic",
+      "meta": {
+        "icon": "Tickets",
+        "title": "表单 Form",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      },
+      "children": [
+        {
+          "path": "/form/basic",
+          "name": "basicForm",
+          "component": "/form/basic/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "基础 Form",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        }
+      ]
+    },
     {
       "path": "/menu",
       "name": "menu",
