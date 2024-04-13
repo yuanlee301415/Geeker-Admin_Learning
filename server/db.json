@@ -171,6 +171,20 @@
             "isAffix": false,
             "isKeepAlive": true
           }
+        },
+        {
+          "path": "/echarts/nested",
+          "name": "nestedChart",
+          "component": "/echarts/nested/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "嵌套环形图",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
         }
       ]
     },
