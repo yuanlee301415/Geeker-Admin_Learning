@@ -129,6 +129,20 @@
             "isAffix": false,
             "isKeepAlive": true
           }
+        },
+        {
+          "path": "/echarts/bar",
+          "name": "barChart",
+          "component": "/echarts/bar/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "柱状图",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
         }
       ]
     },
