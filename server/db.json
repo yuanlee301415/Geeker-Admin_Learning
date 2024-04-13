@@ -70,6 +70,20 @@
             "isAffix": false,
             "isKeepAlive": true
           }
+        },
+        {
+          "path": "/form/dynamic",
+          "name": "dynamicForm",
+          "component": "/form/dynamic/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "动态 Form",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
         }
       ]
     },
