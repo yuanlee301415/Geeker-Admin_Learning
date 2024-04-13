@@ -115,6 +115,20 @@
             "isAffix": false,
             "isKeepAlive": true
           }
+        },
+        {
+          "path": "/echarts/water",
+          "name": "waterChart",
+          "component": "/echarts/water/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "水球图",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
         }
       ]
     },
