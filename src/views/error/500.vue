@@ -8,6 +8,7 @@
       <h2>500</h2>
       <p>抱歉，您的网络不见了~🤦‍♂️🤦‍♀️</p>
       <el-button type="primary" @click="router.back()">返回上一页</el-button>
+      <el-button type="primary" @click="router.push('/')">返回首页</el-button>
     </div>
   </div>
 </template>
