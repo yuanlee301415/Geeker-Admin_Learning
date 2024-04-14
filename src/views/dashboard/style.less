@@ -1,0 +1,119 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  h2 {
+    font-size: 18px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  h4 {
+    font-size: 28px;
+  }
+  .dashboard-top {
+    padding: 20px 40px 0;
+    h2 {
+      margin-bottom: 10px;
+    }
+    :deep(.el-tabs) {
+      margin-bottom: 10px;
+    }
+    .dashboard-top_box {
+      height: 400px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      &.dashboard-total {
+        padding: 40px 0 0 30px;
+        color: #fff;
+        border-radius: 20px;
+        background: url('./images/book-bg.png') 50% 50% no-repeat;
+        background-size: cover;
+        div {
+          border-radius: 20px;
+          width: 90px;
+          height: 90px;
+          margin: 40px 0 20px;
+          background-color: #fff;
+        }
+        h6 {
+          font-size: 62px;
+          font-weight: normal;
+        }
+      }
+
+      &.dashboard-traffic {
+        display: flex;
+        flex-wrap: wrap;
+        place-content: space-between;
+        li {
+          list-style: none;
+          width: 47%;
+          height: 48%;
+          padding: 25px;
+          border-radius: 20px;
+          color: #1a1a37;
+          &:nth-child(1) {
+            background: #e8faea url('./images/1-bg.png') no-repeat;
+          }
+          &:nth-child(2) {
+            background: #e7e1fb url('./images/2-bg.png') no-repeat;
+          }
+          &:nth-child(3) {
+            background: #fdf3e9 url('./images/3-bg.png') no-repeat;
+          }
+          &:nth-child(4) {
+            background: #f0f5fb url('./images/3-bg.png') no-repeat;
+          }
+          div {
+            width: 70px;
+            height: 70px;
+            background-color: #fff;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            img {
+              width: 33px;
+            }
+          }
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+
+      &.dashboard-top_pie {
+        border-radius: 20px;
+        border: 1px solid var(--el-border-color);
+        display: flex;
+        flex-direction: column;
+        dt {
+          padding: 15px 20px;
+          font-size: 18px;
+          border-bottom: 1px solid var(--el-border-color);
+        }
+        dd {
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  .dashboard-bottom {
+    padding: 20px 0 0;
+    .dashboard-bottom_tabs {
+      padding: 0 50px;
+    }
+    .dashboard-bottom_chart {
+      padding: 0 50px;
+      position: relative;
+      dt {
+        font-size: 18px;
+        font-weight: bold;
+        position: absolute;
+      }
+      dd {
+        height: 410px;
+      }
+    }
+  }
+}

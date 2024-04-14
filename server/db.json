@@ -14,6 +14,20 @@
         "isKeepAlive": true
       }
     },
+    {
+      "path": "/dashboard",
+      "name": "dashboard",
+      "component": "/dashboard/index",
+      "meta": {
+        "icon": "Odometer",
+        "title": "数据可视化",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": true,
+        "isKeepAlive": true
+      }
+    },
 
     {
       "path": "/form",
