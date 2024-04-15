@@ -1,0 +1,170 @@
+.data-screen {
+  background: url('./images/bg.png') no-repeat fixed;
+  background-size: cover;
+  user-select: none;
+  .data-screen-box {
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    transition: all 0.3s;
+    transform-origin: left top;
+
+    h2,
+    h3,
+    h4 {
+      font-family:
+        YouSheBiaoTiHei,
+        Microsoft YaHei,
+        sans-serif;
+      font-weight: 400;
+    }
+
+    /*header*/
+    .ds-header {
+      height: 38px;
+      .ds-header_left,
+      .ds-header_right {
+        width: 560px;
+        position: relative;
+        background: url('./images/dataScreen-header-side-bg.png') no-repeat;
+        background-size: 100%;
+      }
+
+      .ds-header_left {
+        a {
+          position: absolute;
+          right: 4px;
+          width: 136px;
+          text-align: center;
+          height: 42px;
+          line-height: 40px;
+          font-size: 18px;
+          color: #29fcff;
+          background: url('./images/dataScreen-header-btn-bg-l.png') no-repeat;
+        }
+      }
+
+      .ds-header_center {
+        position: relative;
+        .ds-header_center__title {
+          position: absolute;
+          width: 100%;
+          height: 82px;
+          text-align: center;
+          h2 {
+            font-size: 32px;
+            line-height: 70px;
+            color: #05e8fe;
+            letter-spacing: 4px;
+            background: url('./images/dataScreen-header-center-bg.png') no-repeat;
+          }
+          h3 {
+            height: 44px;
+            font-size: 14px;
+            line-height: 44px;
+            color: #fff;
+            letter-spacing: 1px;
+            background: url('./images/dataScreen-header-warn-bg.png') center top no-repeat;
+          }
+        }
+      }
+
+      .ds-header_right {
+        color: #05e8fe;
+        position: relative;
+
+        h3 {
+          font-size: 18px;
+          background: url('./images/dataScreen-header-btn-bg-r.png') no-repeat;
+          position: absolute;
+          width: 136px;
+          height: 42px;
+          line-height: 40px;
+          text-align: center;
+        }
+
+        h4 {
+          position: absolute;
+          right: 15px;
+          font-size: 17px;
+          line-height: 38px;
+        }
+      }
+    }
+
+    /*main*/
+    .ds-main {
+      padding: 12px 40px 28px;
+      .ds-side-item {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        dt {
+          background: url('./images/dataScreen-lt-bg.png') no-repeat;
+          background-size: 100%;
+          height: 48px;
+          h3 {
+            height: 35px;
+            background: url('./images/dataScreen-title.png') left bottom no-repeat;
+            line-height: 100%;
+            font-size: 18px;
+            color: #fff;
+            letter-spacing: 1px;
+          }
+        }
+        dd {
+          flex: 1;
+          background-color: #11144e;
+        }
+      }
+      .ds-main_left,
+      .ds-main_right {
+        width: 398px;
+      }
+      .ds-main_left__top,
+      .ds-main_right__top {
+        height: 37%;
+      }
+      .ds-main_left__mid,
+      .ds-main_right__mid {
+        height: 30%;
+      }
+      .ds-main_left__bottom,
+      .ds-main_right__bottom {
+        height: 27%;
+      }
+
+      /*Main Center*/
+      .ds-main_center {
+        margin: 0 40px;
+        .ds-main_center__top {
+          margin-top: 78px;
+          position: relative;
+          h3 {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            z-index: 99;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            width: 270px;
+            height: 25px;
+            padding-left: 30px;
+            font-size: 14px;
+            color: #ffffff;
+            letter-spacing: 5px;
+            background: url('./images/map-title-bg.png') no-repeat;
+            background-size: 100% 100%;
+          }
+        }
+        .ds-main_center__bottom {
+          dt {
+            background: url('./images/dataScreen-main-cb.png') no-repeat;
+          }
+          height: 251px;
+        }
+      }
+    }
+  }
+}
