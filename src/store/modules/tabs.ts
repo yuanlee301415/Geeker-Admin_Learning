@@ -139,6 +139,16 @@ export const useTabsStore = defineStore({
       removeTabs.forEach((_) => {
         this.removeTab(_.path)
       })
+    },
+
+    /**
+     * 设置标签标题
+     * @param title
+     */
+    setTabTitle(title: string) {
+      const tab = this.tabs.find((_) => _.path === location.hash.slice(1))
+      if (!tab) return
+      tab.title = title
     }
   },
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="card content-box guide">
+  <div class="card content-box assembly-box">
     <h2>引导页 🍓🍇🍈🍉</h2>
     <el-alert :closable="false" type="warning">
       引导页对于一些第一次进入项目的人很有用，你可以简单介绍下项目的功能。本 Demo 是基于 driver.js.
@@ -87,15 +87,8 @@ const guide = driver({
 </script>
 
 <style scoped lang="less">
-.guide {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  h2 {
-    margin: 20px 0 30px;
-    font-size: 23px;
-    color: var(--el-text-color-regular);
-  }
+@import '../style';
+.assembly-box {
   .el-button {
     margin-top: 20px;
   }
