@@ -1,7 +1,7 @@
 <template>
   <div class="header-toolbar_left">
-    <Collapse />
-    <Breadcrumb v-if="globalStore.breadcrumb" />
+    <Collapse id="collapse" />
+    <Breadcrumb v-if="globalStore.breadcrumb" id="breadcrumb" />
   </div>
 </template>
 

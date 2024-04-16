@@ -1,12 +1,12 @@
 <template>
   <div class="header-toolbar_right">
     <div class="header-icon">
-      <AssemblySize />
-      <Language />
-      <SearchMenu />
-      <ThemeSetting />
-      <Message />
-      <FullScreen />
+      <AssemblySize id="assemblySize" />
+      <Language id="language" />
+      <SearchMenu id="searchMenu" />
+      <ThemeSetting id="themeSetting" />
+      <Message id="message" />
+      <FullScreen id="fullScreen" />
     </div>
 
     <span class="username">Geeker</span>

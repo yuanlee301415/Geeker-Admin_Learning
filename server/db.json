@@ -42,7 +42,36 @@
         "isKeepAlive": true
       }
     },
-
+    {
+      "path": "/assembly",
+      "name": "assembly",
+      "redirect": "/assembly/guide",
+      "meta": {
+        "icon": "Briefcase",
+        "title": "常用组件",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      },
+      "children": [
+        {
+          "path": "/assembly/guide",
+          "name": "guide",
+          "component": "/assembly/guide/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "引导页",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        }
+      ]
+    },
     {
       "path": "/form",
       "name": "form",
