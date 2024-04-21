@@ -114,6 +114,20 @@
             "isAffix": false,
             "isKeepAlive": true
           }
+        },
+        {
+          "path": "/assembly/selectFilter",
+          "name": "selectFilter",
+          "component": "/assembly/selectFilter/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "分类筛选器",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
         }
       ]
     },
