@@ -142,6 +142,20 @@
             "isAffix": false,
             "isKeepAlive": true
           }
+        },
+        {
+          "path": "/assembly/svgIcon",
+          "name": "svgIcon",
+          "component": "/assembly/svgIcon/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "SVG 图标",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
         }
       ]
     },

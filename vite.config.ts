@@ -2,10 +2,8 @@ import type { UserConfig, ConfigEnv } from "vite";
 
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig, loadEnv } from "vite";
-import vue from "@vitejs/plugin-vue";
-import vueJsx from "@vitejs/plugin-vue-jsx";
-import { createHtmlPlugin } from "vite-plugin-html";
 import dayjs from "dayjs";
+import { createVitePlugins } from "./build/plugins";
 
 // @ts-ignore
 import pkg from "./package.json";
@@ -16,8 +14,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   const env = loadEnv(mode, root);
   const {
     VITE_PORT,
-    VITE_INTERNAL_VERSION,
     VITE_APP_TITLE,
+    VITE_INTERNAL_VERSION,
     VITE_BASE_API,
     VITE_PROXY,
     VITE_PREVIEW_PROXY
@@ -35,22 +33,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   console.log("env:\n", env);
 
   return {
-    plugins: [
-      vue(),
-      vueJsx(),
-      createHtmlPlugin({
-        entry: "src/main.ts",
-        minify: true,
-        inject: {
-          data: {
-            title: VITE_APP_TITLE,
-            version: __APP_VERSION__,
-            time: __APP_BUILD_TIME__,
-            mode,
-          },
-        },
-      }),
-    ],
     resolve: {
       alias: {
         "@": fileURLToPath(new URL("./src", import.meta.url)),
@@ -61,6 +43,11 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       __APP_BUILD_TIME__: JSON.stringify(__APP_BUILD_TIME__),
       __APP_INFO__: JSON.stringify(__APP_INFO__),
     },
+    plugins: createVitePlugins(mode, {
+      VITE_APP_TITLE,
+      __APP_VERSION__,
+      __APP_BUILD_TIME__
+    }),
     server: {
       port: Number(VITE_PORT),
       proxy:
