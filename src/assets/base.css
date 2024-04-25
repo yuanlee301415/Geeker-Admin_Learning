@@ -6,6 +6,7 @@
   --el-header-text-color: #303133;
   --el-header-text-color-regular: #606266;
   --el-header-border-color: #e4e7ed;
+  font-size: 14px;
 }
 
 * {
@@ -29,7 +30,6 @@ body {
 
 body {
   margin: 0;
-  font-size: 14px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
     'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
     'Noto Color Emoji';

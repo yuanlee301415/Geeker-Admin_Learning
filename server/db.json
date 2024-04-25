@@ -128,6 +128,20 @@
             "isAffix": false,
             "isKeepAlive": true
           }
+        },
+        {
+          "path": "/assembly/selectTree",
+          "name": "selectTree",
+          "component": "/assembly/selectTree/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "树形筛选器",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
         }
       ]
     },
@@ -203,7 +217,6 @@
         }
       ]
     },
-
     {
       "path": "/echarts",
       "name": "echarts",
@@ -535,6 +548,107 @@
         "isAffix": false,
         "isKeepAlive": true
       }
+    }
+  ],
+  "department": [
+    {
+      "id": "1",
+      "name": "总裁办",
+      "children": [
+        {
+          "id": "11",
+          "name": "财务部",
+          "children": [
+            {
+              "id": "111",
+              "name": "财务一部"
+            },
+            {
+              "id": "112",
+              "name": "财务二部"
+            }
+          ]
+        },
+        {
+          "id": "12",
+          "name": "商务部",
+          "children": [
+            {
+              "id": "121",
+              "name": "商务一部"
+            },
+            {
+              "id": "122",
+              "name": "商务二部"
+            },
+            {
+              "id": "123",
+              "name": "商务三部"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "研发部",
+      "parentId": 0,
+      "children": [
+        {
+          "id": "21",
+          "name": "配置研发部",
+          "children": [
+            {
+              "id": "211",
+              "name": "研发（一部）1组"
+            },
+            {
+              "id": "212",
+              "name": "研发（一部）2组"
+            },
+            {
+              "id": "213",
+              "name": "研发（一部）3组"
+            }
+          ]
+        },
+        {
+          "id": "22",
+          "name": "平台研发部",
+          "children": [
+            {
+              "id": "221",
+              "name": "研发（二部）1组"
+            },
+            {
+              "id": "222",
+              "name": "研发（二部）2组"
+            },
+            {
+              "id": "223",
+              "name": "研发（二部）3组"
+            }
+          ]
+        },
+        {
+          "id": "23",
+          "name": "其它研发部",
+          "children": [
+            {
+              "id": "231",
+              "name": "研发（三部）1组"
+            },
+            {
+              "id": "232",
+              "name": "研发（三部）2组"
+            },
+            {
+              "id": "233",
+              "name": "研发（三部）3组"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
