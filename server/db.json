@@ -360,6 +360,36 @@
       ]
     },
     {
+      "path": "/directives",
+      "name": "directives",
+      "redirect": "/directives/copy",
+      "meta": {
+        "icon": "Stamp",
+        "title": "自定义指令",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      },
+      "children": [
+        {
+          "path": "/directives/copy",
+          "name": "copy",
+          "component": "/directives/copy/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "复制指令",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        }
+      ]
+    },
+    {
       "path": "/menu",
       "name": "menu",
       "redirect": "/menu/menu1",
