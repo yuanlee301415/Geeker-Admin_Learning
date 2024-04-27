@@ -14,6 +14,7 @@ import './assets/fonts/font.css'
 import './assets/iconfont/iconfont.css'
 import './styles/common.less'
 import './styles/element.less'
+import './styles/element-dark.less'
 
 function bootstrap() {
   const app = createApp(App)

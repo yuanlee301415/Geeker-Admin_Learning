@@ -27,3 +27,9 @@ declare const __APP_INFO__: {
   dependencies: Recordable<string>
   devDependencies: Recordable<string>
 }
+
+// Could not find a declaration file for module '@wangeditor/editor-for-vue'
+declare module '@wangeditor/editor-for-vue' {
+  const Editor: any;
+  const Toolbar: any;
+}
