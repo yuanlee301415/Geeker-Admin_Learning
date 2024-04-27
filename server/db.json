@@ -156,6 +156,20 @@
             "isAffix": false,
             "isKeepAlive": true
           }
+        },
+        {
+          "path": "/assembly/draggable",
+          "name": "draggable",
+          "component": "/assembly/draggable/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "拖拽组件",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
         }
       ]
     },
