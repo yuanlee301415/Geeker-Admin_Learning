@@ -375,7 +375,7 @@
       "children": [
         {
           "path": "/directives/copy",
-          "name": "copy",
+          "name": "copyDirective",
           "component": "/directives/copy/index",
           "meta": {
             "icon": "Menu",
@@ -389,11 +389,25 @@
         },
         {
           "path": "/directives/waterMark",
-          "name": "waterMark",
+          "name": "waterMarkDirective",
           "component": "/directives/waterMark/index",
           "meta": {
             "icon": "Menu",
             "title": "水印指令",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/directives/draggable",
+          "name": "draggableDirective",
+          "component": "/directives/draggable/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "拖拽指令",
             "isLink": "",
             "isHide": false,
             "isFull": false,
