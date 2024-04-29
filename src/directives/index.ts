@@ -1,11 +1,13 @@
 import type { App, Directive } from 'vue'
 
 import copy from './modules/copy'
+import waterMark from './modules/waterMark'
 
 const directiveList: {
   [key: string]: Directive
 } = {
-  copy
+  copy,
+  waterMark
 }
 
 const directives = {

@@ -386,6 +386,20 @@
             "isAffix": false,
             "isKeepAlive": true
           }
+        },
+        {
+          "path": "/directives/waterMark",
+          "name": "waterMark",
+          "component": "/directives/waterMark/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "水印指令",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
         }
       ]
     },
