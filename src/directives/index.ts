@@ -5,6 +5,7 @@ import waterMark from './modules/waterMark'
 import draggable from './modules/draggable'
 import debounce from './modules/debounce'
 import throttle from './modules/throttle'
+import longpress from './modules/longpress'
 
 const directiveList: {
   [key: string]: Directive
@@ -13,7 +14,8 @@ const directiveList: {
   waterMark,
   draggable,
   debounce,
-  throttle
+  throttle,
+  longpress
 }
 
 const directives = {

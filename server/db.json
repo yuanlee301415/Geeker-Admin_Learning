@@ -442,6 +442,20 @@
             "isAffix": false,
             "isKeepAlive": true
           }
+        },
+        {
+          "path": "/directives/longpress",
+          "name": "longpressDirective",
+          "component": "/directives/longpress/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "长按指令",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
         }
       ]
     },
