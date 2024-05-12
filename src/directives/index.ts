@@ -3,13 +3,15 @@ import type { App, Directive } from 'vue'
 import copy from './modules/copy'
 import waterMark from './modules/waterMark'
 import draggable from './modules/draggable'
+import debounce from './modules/debounce'
 
 const directiveList: {
   [key: string]: Directive
 } = {
   copy,
   waterMark,
-  draggable
+  draggable,
+  debounce
 }
 
 const directives = {

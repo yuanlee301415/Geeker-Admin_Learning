@@ -1,9 +1,7 @@
 <template>
   <div class="card content-box directives-box">
     <h2>拖拽 🍇🍓</h2>
-    <div v-draggable class="drag-box flx-center">
-      我可以拖拽哦~
-    </div>
+    <div v-draggable class="drag-box flx-center">我可以拖拽哦~</div>
   </div>
 </template>
 
@@ -27,5 +25,4 @@
     border-radius: 50%;
   }
 }
-
 </style>

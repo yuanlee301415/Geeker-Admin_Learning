@@ -1,43 +1,42 @@
 /* 自定义 背景水印 指令 */
 
-import type {Directive} from "vue";
+import type { Directive } from 'vue'
 
 interface ElType extends HTMLElement {
-    parentNode: any
+  parentNode: any
 }
 
 const draggable: Directive = {
-    mounted(el: ElType) {
-        el.style.cursor = 'move'
-        el.style.position = 'absolute'
-        el.onmousedown = function (e) {
-            const disX = e.pageX - el.offsetLeft
-            const disY = e.pageY - el.offsetTop
-            document.onmousemove = function (e) {
-                const maxX = el.parentNode.offsetWidth - el.offsetWidth
-                const maxY = el.parentNode.offsetHeight - el.offsetHeight
-                let x = e.pageX - disX
-                let y = e.pageY - disY
-                if (x < 0) {
-                    x = 0
-                } else if (x > maxX) {
-                    x = maxX
-                }
+  mounted(el: ElType) {
+    el.style.cursor = 'move'
+    el.style.position = 'absolute'
+    el.onmousedown = function (e) {
+      const disX = e.pageX - el.offsetLeft
+      const disY = e.pageY - el.offsetTop
+      document.onmousemove = function (e) {
+        const maxX = el.parentNode.offsetWidth - el.offsetWidth
+        const maxY = el.parentNode.offsetHeight - el.offsetHeight
+        let x = e.pageX - disX
+        let y = e.pageY - disY
+        if (x < 0) {
+          x = 0
+        } else if (x > maxX) {
+          x = maxX
+        }
 
-                if (y < 0) {
-                    y = 0
-                } else if (y > maxY) {
-                    y = maxY
-                }
-                el.style.left = x + 'px'
-                el.style.top = y + 'px'
-            }
+        if (y < 0) {
+          y = 0
+        } else if (y > maxY) {
+          y = maxY
         }
-        document.onmouseup = function () {
-            document.onmousemove = document.onmouseup = null
-        }
+        el.style.left = x + 'px'
+        el.style.top = y + 'px'
+      }
     }
+    document.onmouseup = function () {
+      document.onmousemove = document.onmouseup = null
+    }
+  }
 }
-
 
 export default draggable

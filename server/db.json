@@ -414,6 +414,20 @@
             "isAffix": false,
             "isKeepAlive": true
           }
+        },
+        {
+          "path": "/directives/debounce",
+          "name": "debounceDirective",
+          "component": "/directives/debounce/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "防抖指令",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
         }
       ]
     },
