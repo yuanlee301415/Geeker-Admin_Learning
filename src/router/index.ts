@@ -15,8 +15,8 @@ router.beforeEach(async (to, from, next) => {
   const title = import.meta.env.VITE_APP_TITLE
   const authStore = useAuthStore()
 
-  document.title = (to.meta.title ?? '') + title
   NProgress.start()
+  document.title = (to.meta.title ? to.meta.title + ' - ' : '') + title
 
   if (!authStore.authMenuListGet.length) {
     await initDynamicRouter()
