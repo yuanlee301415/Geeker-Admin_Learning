@@ -14,7 +14,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   const env = loadEnv(mode, root);
   const {
     VITE_PORT,
-    VITE_APP_TITLE,
     VITE_INTERNAL_VERSION,
     VITE_BASE_API,
     VITE_PROXY,
@@ -44,7 +43,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       __APP_INFO__: JSON.stringify(__APP_INFO__),
     },
     plugins: createVitePlugins(mode, {
-      VITE_APP_TITLE,
       __APP_VERSION__,
       __APP_BUILD_TIME__
     }),

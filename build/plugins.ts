@@ -6,8 +6,7 @@ import { createHtmlPlugin } from "vite-plugin-html";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 
 // 创建 Vite 插件
-export function createVitePlugins(mode: string, {VITE_APP_TITLE, __APP_VERSION__, __APP_BUILD_TIME__}: {
-    VITE_APP_TITLE: string,
+export function createVitePlugins(mode: string, {__APP_VERSION__, __APP_BUILD_TIME__}: {
     __APP_VERSION__: string,
     __APP_BUILD_TIME__: string
 }): (PluginOption[]) {
@@ -19,7 +18,6 @@ export function createVitePlugins(mode: string, {VITE_APP_TITLE, __APP_VERSION__
             minify: true,
             inject: {
                 data: {
-                    title: VITE_APP_TITLE,
                     version: __APP_VERSION__,
                     time: __APP_BUILD_TIME__,
                     mode,
