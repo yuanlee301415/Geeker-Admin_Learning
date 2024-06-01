@@ -9,6 +9,16 @@
   font-size: 14px;
 }
 
+/* scroll bar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--el-border-color-darker);
+  border-radius: 20px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -35,6 +45,7 @@ body {
     'Noto Color Emoji';
   font-variant: tabular-nums;
   line-height: 1.5715;
+  color: #4c4d4f;
   background-color: #fff;
 }
 

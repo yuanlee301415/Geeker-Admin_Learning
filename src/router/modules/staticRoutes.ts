@@ -1,11 +1,20 @@
 import type { RouteRecordRaw } from 'vue-router'
 
-import { HOME_URL } from '@/config'
+import { HOME_URL, ERROR_403_URL, ERROR_404_URL, ERROR_500_URL } from '@/constants'
 
 export const staticRoutes: RouteRecordRaw[] = [
   {
     path: '/',
     redirect: HOME_URL
+  },
+
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('@/views/login/index.vue'),
+    meta: {
+      title: '登录'
+    }
   },
 
   {
@@ -19,7 +28,7 @@ export const staticRoutes: RouteRecordRaw[] = [
 
 export const errorRoutes: RouteRecordRaw[] = [
   {
-    path: '/403',
+    path: ERROR_403_URL,
     name: '403',
     component: () => import('@/views/error/403.vue'),
     meta: {
@@ -27,7 +36,7 @@ export const errorRoutes: RouteRecordRaw[] = [
     }
   },
   {
-    path: '/404',
+    path: ERROR_404_URL,
     name: '404',
     component: () => import('@/views/error/404.vue'),
     meta: {
@@ -35,7 +44,7 @@ export const errorRoutes: RouteRecordRaw[] = [
     }
   },
   {
-    path: '/500',
+    path: ERROR_500_URL,
     name: '500',
     component: () => import('@/views/error/500.vue'),
     meta: {

@@ -9,7 +9,7 @@
       <FullScreen id="fullScreen" />
     </div>
 
-    <span class="username">Geeker</span>
+    <span class="username">{{ userStore.info.username }}</span>
 
     <Avatar />
   </div>
@@ -23,6 +23,9 @@ import ThemeSetting from './components/ThemeSetting.vue'
 import Message from './components/Message.vue'
 import FullScreen from './components/FullScreen.vue'
 import Avatar from './components/Avatar.vue'
+import { useUserStore } from '@/store/modules/user'
+
+const userStore = useUserStore()
 </script>
 
 <style scoped lang="less">
@@ -42,6 +45,7 @@ import Avatar from './components/Avatar.vue'
     }
   }
   .username {
+    text-transform: capitalize;
     margin: 0 10px;
     font-size: 15px;
     color: var(--el-header-text-color);

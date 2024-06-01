@@ -6,6 +6,7 @@ import { AssemblySize, Language, Layout } from '@/constants'
 import { DEFAULT_PRIMARY } from '@/config'
 
 const ID = 'global'
+
 export const useGlobalStore = defineStore({
   id: ID,
 

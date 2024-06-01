@@ -48,3 +48,9 @@ export interface TabItem {
 export interface TabsStore {
     tabs: TabItem[]
 }
+
+/*用户 Store*/
+export interface UserStore {
+    info: User.Info
+    token: string
+}
