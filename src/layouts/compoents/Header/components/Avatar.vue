@@ -38,7 +38,7 @@ import AvatarImg from '@/assets/images/avatar.jpg'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { useRouter } from 'vue-router'
 import { LOGIN_URL } from '@/constants'
-import { logoutApi } from '@/api/rights'
+import { logoutApi } from '@/api/modules/rights'
 import { useUserStore } from '@/store/modules/user'
 
 const router = useRouter()

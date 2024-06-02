@@ -38,7 +38,7 @@
 import { ref, watchEffect } from 'vue'
 import { ElMessage } from 'element-plus'
 import SelectTree from '@/components/SelectTree/index.vue'
-import { getDepartmentApi } from '@/api/rights'
+import { getDepartmentApi } from '@/api/modules/rights'
 
 const treeValue1 = ref<string>('112')
 const treeValue2 = ref<string[]>(['112'])

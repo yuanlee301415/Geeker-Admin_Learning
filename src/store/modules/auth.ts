@@ -1,6 +1,6 @@
 import type { AuthStore } from '#/store'
 import { defineStore } from 'pinia'
-import { getAuthMenuListApi } from '@/api/rights'
+import { getAuthMenuListApi } from '@/api/modules/rights'
 import { getAllBreadcrumbList, getFlatMenuList, getShowMenuList } from '@/utils'
 import { useUserStore } from '@/store/modules/user'
 
