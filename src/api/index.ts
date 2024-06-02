@@ -1,6 +1,18 @@
-import type { AxiosInstance, AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
+import type {
+  AxiosInstance,
+  AxiosError,
+  AxiosRequestConfig,
+  AxiosResponse,
+  InternalAxiosRequestConfig
+} from 'axios'
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
+import { openFullScreenLoading, closeFullScreenLoading } from '@/utils/fullScreenLoading'
+
+export interface RequestConfig extends InternalAxiosRequestConfig {
+  // 是否开启：全屏 Loading 效果
+  loading?: boolean
+}
 
 const config = {
   baseURL: import.meta.env.VITE_BASE_API,
@@ -12,9 +24,20 @@ class RequestHttp {
   service: AxiosInstance
   constructor(config: AxiosRequestConfig) {
     this.service = axios.create(config)
+
+    // 请求拦截器
+    this.service.interceptors.request.use((config: RequestConfig) => {
+      config.loading ??= true
+      config.loading && openFullScreenLoading()
+      return config
+    })
+
+    // 响应拦截器
     this.service.interceptors.response.use(
-      (res: AxiosResponse) => {
-        return res.data
+      (res: AxiosResponse & { config: RequestConfig }) => {
+        const { config, data } = res
+        config.loading && closeFullScreenLoading()
+        return data
       },
       (error: AxiosError) => {
         if (error.message.includes('timeout')) ElMessage.error('请求超时！请您稍后重试')
@@ -24,27 +47,28 @@ class RequestHttp {
     )
   }
 
-  get<T>(url: string, params: object, config: object = {}): Promise<T> {
+  get<T>(url: string, params?: object, config?: object): Promise<T> {
+    // `...config` 解构出来的额外配置，会原样传递给 Axios 请求实例的 `config`(如：自定义的 `loading` 配置，后续可以在拦截器的 `config` 中直接获取到)
     return this.service.get(url, { params, ...config })
   }
 
-  post<T>(url: string, data: object, config: object = {}): Promise<T> {
+  post<T>(url: string, data?: object, config?: object): Promise<T> {
     return this.service.post(url, data, config)
   }
 
-  put<T>(url: string, data: object, config: object = {}): Promise<T> {
+  put<T>(url: string, data?: object, config?: object): Promise<T> {
     return this.service.put(url, data, config)
   }
 
-  patch<T>(url: string, data: object, config: object = {}): Promise<T> {
+  patch<T>(url: string, data?: object, config?: object): Promise<T> {
     return this.service.patch(url, data, config)
   }
 
-  delete<T>(url: string, params: object, config: object = {}): Promise<T> {
+  delete<T>(url: string, params?: object, config?: object): Promise<T> {
     return this.service.delete(url, { params, ...config })
   }
 
-  download<T>(url: string, params: object, config: object = {}): Promise<T> {
+  download<T>(url: string, params?: object, config?: object): Promise<T> {
     return this.service.get(url, { params, ...config, responseType: 'blob' })
   }
 }
