@@ -27,5 +27,5 @@ export function getAuthMenuListApi(username: string) {
 
 // 部门
 export function getDepartmentApi() {
-  return http.get<User.DepartmentRes[]>('department', {})
+  return http.get<User.DepartmentRes[]>('department', void 0, { cancel: false })
 }

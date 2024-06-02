@@ -8,10 +8,17 @@ import type {
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
 import { openFullScreenLoading, closeFullScreenLoading } from '@/utils/fullScreenLoading'
+import { AxiosCanceler } from './helper/axiosCancel'
 
 export interface RequestConfig extends InternalAxiosRequestConfig {
   // 是否开启：全屏 Loading 效果
   loading?: boolean
+
+  // 是否取消重复请求
+  cancel?: boolean
+
+  // 生成的本次请求的 Key
+  pendingKey?: string
 }
 
 const config = {
@@ -19,6 +26,8 @@ const config = {
   timeout: 30000,
   withDefaults: true
 }
+
+const axiosCanceler = new AxiosCanceler()
 
 class RequestHttp {
   service: AxiosInstance
@@ -29,6 +38,9 @@ class RequestHttp {
     this.service.interceptors.request.use((config: RequestConfig) => {
       config.loading ??= true
       config.loading && openFullScreenLoading()
+
+      config.cancel ??= true
+      config.cancel && axiosCanceler.addPending(config)
       return config
     })
 
@@ -37,6 +49,7 @@ class RequestHttp {
       (res: AxiosResponse & { config: RequestConfig }) => {
         const { config, data } = res
         config.loading && closeFullScreenLoading()
+        axiosCanceler.removePending(config)
         return data
       },
       (error: AxiosError) => {
