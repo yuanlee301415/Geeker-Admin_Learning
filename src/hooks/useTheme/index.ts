@@ -2,12 +2,13 @@ import type { Theme } from '@/hooks/typing'
 import { GreyOrWeakEnum, Layout, ThemeTypeEnum } from '@/constants'
 import { useGlobalStore } from '@/store/modules'
 import { storeToRefs } from 'pinia'
-import { asideTheme } from '@/styles/theme/aside'
-import { menuTheme } from '@/styles/theme/menu'
-import { DEFAULT_PRIMARY } from '@/config'
 import { ElMessage } from 'element-plus'
+
+import { DEFAULT_PRIMARY } from '@/config'
 import { getDarkColor, getLightColor } from '@/utils/color'
-import { headerTheme } from '@/styles/theme/header'
+import { asideTheme } from './theme/aside'
+import { menuTheme } from './theme/menu'
+import { headerTheme } from './theme/header'
 
 // 全局主题 Hook
 export function useTheme() {

@@ -11,12 +11,12 @@ import { setupStore } from './store'
 import I18n from './language/index'
 import directives from './directives'
 
-import './assets/main.css'
+import './assets/styles/main.css'
+import './assets/styles/common.less'
+import './assets/styles/element.less'
+import './assets/styles/element-dark.less'
 import './assets/fonts/font.css'
 import './assets/iconfont/iconfont.css'
-import './styles/common.less'
-import './styles/element.less'
-import './styles/element-dark.less'
 
 function bootstrap() {
   const app = createApp(App)
