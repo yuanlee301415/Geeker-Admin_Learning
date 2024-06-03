@@ -1,6 +1,6 @@
 <template>
   <div class="message">
-    <el-popover :width="310" trigger="click">
+    <el-popover :width="310" trigger="click" :teleported="false">
       <template #reference>
         <el-badge value="5">
           <i class="iconfont icon-xiaoxi"></i>
@@ -12,8 +12,8 @@
             <ul class="message-list">
               <li v-for="item of messages" :key="item.id">
                 <el-avatar :src="item.type" :size="40" />
-                <div class="message-box">
-                  <div class="message">{{ item.title }}</div>
+                <div>
+                  <h6>{{ item.title }}</h6>
                   <time>{{ item.time }}</time>
                 </div>
               </li>
@@ -36,10 +36,15 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
+const typeImgs = import.meta.glob('@/assets/images/msg-types/*.png', {
+  eager: true,
+  import: 'default'
+})
+const typeImgKeys = Object.keys(typeImgs)
 const activeName = ref('notice')
 const messages = Array.from({ length: 6 }, (_, idx) => ({
   id: idx,
-  type: `/msg-types/msg0${(idx % 5) + 1}.png`,
+  type: typeImgs[typeImgKeys[idx % typeImgKeys.length]],
   title: '一键三连 Geeker-Admin 🧡',
   time: `${idx * 10 + 1}分钟前`
 }))
@@ -50,7 +55,7 @@ const messages = Array.from({ length: 6 }, (_, idx) => ({
   .message-list {
     li {
       display: flex;
-      padding: 10px 0;
+      padding: 15px 0;
       border-bottom: 1px solid var(--el-border-color-light);
       &:last-child {
         border-bottom: none;
@@ -58,9 +63,10 @@ const messages = Array.from({ length: 6 }, (_, idx) => ({
       time {
         color: var(--el-text-color-secondary);
       }
-      .message-box {
+      div {
         padding-left: 20px;
-        .message {
+        h6 {
+          font-size: 1rem;
           padding-bottom: 5px;
         }
       }
