@@ -107,10 +107,7 @@ const option: ECOption = {
         formatter: (value: string) => {
           let str = value.length > 6 ? value.slice(0, 6) + '...' : value
           let index = data.map((item: ChartProp) => item.name).indexOf(value) + 1
-          return [
-            '{' + (index > 3 ? 'lg' : 'lg' + index) + '|NO.' + index + '}',
-            '{title|' + str + '}'
-          ].join(' ')
+          return ['{' + (index > 3 ? 'lg' : 'lg' + index) + '|NO.' + index + '}', '{title|' + str + '}'].join(' ')
         },
         rich: {
           lg1: {

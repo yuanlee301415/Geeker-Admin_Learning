@@ -10,15 +10,7 @@
           v-for="opt of item.options"
           :key="opt.value"
           :icon="opt.icon"
-          :type="
-            (
-              item.multiple
-                ? selected?.[item.key]?.includes(opt.value)
-                : selected?.[item.key] === opt.value
-            )
-              ? 'primary'
-              : ''
-          "
+          :type="(item.multiple ? selected?.[item.key]?.includes(opt.value) : selected?.[item.key] === opt.value) ? 'primary' : ''"
           round
           @click="handleToggle(item, opt)"
           >{{ opt.label }}</el-button

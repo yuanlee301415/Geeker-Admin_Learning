@@ -8,12 +8,7 @@ import type {
   GaugeSeriesOption
 } from 'echarts/charts'
 
-import type {
-  TitleComponentOption,
-  TooltipComponentOption,
-  GridComponentOption,
-  DatasetComponentOption
-} from 'echarts/components'
+import type { TitleComponentOption, TooltipComponentOption, GridComponentOption, DatasetComponentOption } from 'echarts/components'
 
 import type { ComposeOption } from 'echarts/core'
 
@@ -33,15 +28,7 @@ export type ECOption = ComposeOption<
 >
 
 import * as echarts from 'echarts/core'
-import {
-  BarChart,
-  LineChart,
-  LinesChart,
-  PieChart,
-  ScatterChart,
-  RadarChart,
-  GaugeChart
-} from 'echarts/charts'
+import { BarChart, LineChart, LinesChart, PieChart, ScatterChart, RadarChart, GaugeChart } from 'echarts/charts'
 import 'echarts-liquidfill'
 
 import {

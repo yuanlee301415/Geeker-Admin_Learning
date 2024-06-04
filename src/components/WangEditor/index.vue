@@ -3,13 +3,7 @@
 -->
 <template>
   <div class="editor-box" :class="{ 'editor-disabled': isDisabled }">
-    <Toolbar
-      v-if="!hideToolbar"
-      class="editor-toolbar"
-      :editor="editorRef"
-      :default-config="toolbarConfig"
-      :mode="mode"
-    />
+    <Toolbar v-if="!hideToolbar" class="editor-toolbar" :editor="editorRef" :default-config="toolbarConfig" :mode="mode" />
     <Editor
       v-model="valueHtml"
       class="editor-content"

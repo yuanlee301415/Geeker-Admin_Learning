@@ -2,9 +2,7 @@ import { Language } from '@/constants'
 
 /*获取浏览器语言*/
 export function getBrowserLanguage(): Language {
-  const browserLanguage = window.navigator.language
-    ? window.navigator.language
-    : window.navigator.browserLanguage
+  const browserLanguage = window.navigator.language ? window.navigator.language : window.navigator.browserLanguage
   return ['cn', 'zh', 'zh-cn'].includes(browserLanguage.toLowerCase()) ? Language.Zh : Language.En
 }
 
@@ -28,10 +26,7 @@ export function getShowMenuList(menuList: Menu.MenuOptions[]) {
  */
 export function getFlatMenuList(menuList: Menu.MenuOptions[]): Menu.MenuOptions[] {
   const _menuList: Menu.MenuOptions[] = JSON.parse(JSON.stringify(menuList))
-  return _menuList.flatMap((item) => [
-    item,
-    ...(item.children ? getFlatMenuList(item.children) : [])
-  ])
+  return _menuList.flatMap((item) => [item, ...(item.children ? getFlatMenuList(item.children) : [])])
 }
 
 /**
@@ -40,11 +35,7 @@ export function getFlatMenuList(menuList: Menu.MenuOptions[]): Menu.MenuOptions[
  * @param parent 父级菜单
  * @param result 生成的结果
  */
-export function getAllBreadcrumbList(
-  menuList: Menu.MenuOptions[],
-  parent: Menu.MenuOptions[] = [],
-  result: Record<string, Menu.MenuOptions[]> = {}
-) {
+export function getAllBreadcrumbList(menuList: Menu.MenuOptions[], parent: Menu.MenuOptions[] = [], result: Record<string, Menu.MenuOptions[]> = {}) {
   for (const item of menuList) {
     result[item.path] = [...parent, item]
     if (item.children) {

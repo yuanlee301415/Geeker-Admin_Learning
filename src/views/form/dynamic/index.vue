@@ -33,12 +33,8 @@
         class="domain-item"
       >
         <el-input v-model="domain.value" />
-        <el-button :disabled="dynamicFormData.domains.length > 10" @click="handleAdd(idx)"
-          >+</el-button
-        >
-        <el-button :disabled="dynamicFormData.domains.length <= 1" @click="handleRemove(idx)"
-          >-</el-button
-        >
+        <el-button :disabled="dynamicFormData.domains.length > 10" @click="handleAdd(idx)">+</el-button>
+        <el-button :disabled="dynamicFormData.domains.length <= 1" @click="handleRemove(idx)">-</el-button>
       </el-form-item>
 
       <el-form-item>

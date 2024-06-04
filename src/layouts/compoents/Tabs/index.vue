@@ -4,19 +4,8 @@
 <template>
   <div class="tabs-box">
     <div class="tabs-wrap">
-      <el-tabs
-        v-model="activeName"
-        type="card"
-        @tab-click="handleTabClick"
-        @tab-remove="handleTabRemove"
-      >
-        <el-tab-pane
-          v-for="item of tabsStore.tabs"
-          :key="item.path"
-          :name="item.path"
-          :label="item.title"
-          :closable="item.closeable"
-        >
+      <el-tabs v-model="activeName" type="card" @tab-click="handleTabClick" @tab-remove="handleTabRemove">
+        <el-tab-pane v-for="item of tabsStore.tabs" :key="item.path" :name="item.path" :label="item.title" :closable="item.closeable">
           <template #label>
             <el-icon v-if="globalStore.tabsIcon && item.icon" class="tabs-icon">
               <component :is="item.icon" />

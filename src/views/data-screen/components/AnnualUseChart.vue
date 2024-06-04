@@ -16,11 +16,7 @@ interface ChartProp {
   value: string[]
 }
 
-const gradientColors = [
-  'rgba(254, 219, 101,0.1)',
-  'rgba(0, 122, 254,0.1)',
-  'rgba(255, 75, 122, 0.1)'
-]
+const gradientColors = ['rgba(254, 219, 101,0.1)', 'rgba(0, 122, 254,0.1)', 'rgba(255, 75, 122, 0.1)']
 const annualData = [
   {
     label: new Date().getFullYear() - 2 + '年',
@@ -59,9 +55,7 @@ const option: ECOption = {
           <div class="year-item">
             <span class="year-dot" style="background-color: ${val.color};"></span>
             <span class="year-name">${val.seriesName}</span>
-            <span class="year-value">${
-              val.data >= 10000 ? (val.data / 10000).toFixed(2) + 'w' : val.data
-            }</span>
+            <span class="year-value">${val.data >= 10000 ? (val.data / 10000).toFixed(2) + 'w' : val.data}</span>
           </div>
           `
       })

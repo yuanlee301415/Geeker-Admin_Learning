@@ -6,13 +6,9 @@
     <i class="iconfont icon-zhongyingwen"></i>
     <template #dropdown>
       <el-dropdown-menu>
-        <el-dropdown-item
-          v-for="item of languages"
-          :key="item.value"
-          :command="item.value"
-          :disabled="item.value === globalStore.language"
-          >{{ item.label }}</el-dropdown-item
-        >
+        <el-dropdown-item v-for="item of languages" :key="item.value" :command="item.value" :disabled="item.value === globalStore.language">{{
+          item.label
+        }}</el-dropdown-item>
       </el-dropdown-menu>
     </template>
   </el-dropdown>

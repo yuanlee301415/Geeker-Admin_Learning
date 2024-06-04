@@ -14,12 +14,7 @@
 
       <el-form-item label="Zone" prop="zone">
         <el-select v-model="validateFormData.zone" placeholder="Please select zone">
-          <el-option
-            v-for="zone of zones"
-            :key="zone.value"
-            :label="zone.label"
-            :value="zone.value"
-          />
+          <el-option v-for="zone of zones" :key="zone.value" :label="zone.label" :value="zone.value" />
         </el-select>
       </el-form-item>
 
@@ -39,12 +34,7 @@
 
       <el-form-item label="Resource" prop="resource">
         <el-select v-model="validateFormData.resource" placeholder="Please select resource">
-          <el-option
-            v-for="resource of resources"
-            :key="resource.value"
-            :label="resource.label"
-            :value="resource.value"
-          />
+          <el-option v-for="resource of resources" :key="resource.value" :label="resource.label" :value="resource.value" />
         </el-select>
       </el-form-item>
 

@@ -5,11 +5,7 @@
   <div :class="{ 'no-icon': !globalStore.breadcrumbIcon }" class="breadcrumb-box">
     <el-breadcrumb :separator-icon="ArrowRight">
       <transition-group name="breadcrumb">
-        <el-breadcrumb-item
-          v-for="(item, index) of breadcrumbList"
-          :key="item.path"
-          @click="handleClickBreadcrumbItem(item, index)"
-        >
+        <el-breadcrumb-item v-for="(item, index) of breadcrumbList" :key="item.path" @click="handleClickBreadcrumbItem(item, index)">
           <div :class="{ 'item-no-icon': !item.meta.icon }" class="el-breadcrumb__inner is-link">
             <el-icon v-if="globalStore.breadcrumbIcon && item.meta.icon" class="breadcrumb-icon">
               <Component :is="item.meta.icon" />
@@ -33,9 +29,7 @@ const globalStore = useGlobalStore()
 const authStore = useAuthStore()
 const route = useRoute()
 const router = useRouter()
-const breadcrumbList = computed(
-  () => authStore.breadcrumbListGet[route.matched[route.matched.length - 1].path] ?? []
-)
+const breadcrumbList = computed(() => authStore.breadcrumbListGet[route.matched[route.matched.length - 1].path] ?? [])
 
 // 单击面包屑项目
 function handleClickBreadcrumbItem(item: Menu.MenuOptions, index: number) {

@@ -3,13 +3,7 @@
 -->
 <template>
   <div class="select-icon w-full">
-    <el-input
-      v-model="icon"
-      clearable
-      placeholder="请选择图标"
-      @click="handleOpen"
-      @clear="handleClear"
-    >
+    <el-input v-model="icon" clearable placeholder="请选择图标" @click="handleOpen" @clear="handleClear">
       <template #append>
         <el-button :icon="icon" />
       </template>

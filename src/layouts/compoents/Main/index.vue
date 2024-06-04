@@ -9,11 +9,7 @@
       <router-view v-slot="{ Component, route }">
         <transition appear name="fade-transform" mode="out-in">
           <keep-alive :include="keepAliveNames">
-            <component
-              v-if="viewVisible"
-              :is="createComponentWrapper(Component, route)"
-              :key="route.fullPath"
-            />
+            <component v-if="viewVisible" :is="createComponentWrapper(Component, route)" :key="route.fullPath" />
           </keep-alive>
         </transition>
       </router-view>

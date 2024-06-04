@@ -4,13 +4,7 @@
 <template>
   <div class="card select-tree">
     <h3>{{ title }}</h3>
-    <el-input
-      v-model="filterText"
-      placeholder="输入关键字进行过滤"
-      clearable
-      style="margin-bottom: 1rem"
-      @clear="handleClear"
-    />
+    <el-input v-model="filterText" placeholder="输入关键字进行过滤" clearable style="margin-bottom: 1rem" @clear="handleClear" />
     <el-scrollbar>
       <el-tree
         :show-checkbox="multiple"

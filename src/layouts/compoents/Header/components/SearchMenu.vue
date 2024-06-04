@@ -4,14 +4,7 @@
 <template>
   <div class="header-toolbar_search">
     <i class="iconfont icon-sousuo" @click="handleOpen" />
-    <el-dialog
-      v-model="visible"
-      :modal="false"
-      :show-close="false"
-      fullscreen
-      destroy-on-close
-      @click="handleClose"
-    >
+    <el-dialog v-model="visible" :modal="false" :show-close="false" fullscreen destroy-on-close @click="handleClose">
       <el-autocomplete
         ref="autocompleteRef"
         v-model="searchMenu"
@@ -67,8 +60,7 @@ function handleClose() {
 // 搜索菜单
 function filterMethod(queryString: string) {
   const qs = queryString.slice().trim().toLowerCase()
-  return (item: Menu.MenuOptions) =>
-    item.path.toLowerCase().includes(qs) || item.meta.title.toLowerCase().includes(qs)
+  return (item: Menu.MenuOptions) => item.path.toLowerCase().includes(qs) || item.meta.title.toLowerCase().includes(qs)
 }
 
 // 搜索菜单列表

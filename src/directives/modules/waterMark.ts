@@ -8,10 +8,7 @@ const waterMark: Directive = {
   }
 }
 
-function addWaterMark(
-  el: HTMLElement,
-  { text, textColor, font }: { text: string; textColor: string; font: string }
-) {
+function addWaterMark(el: HTMLElement, { text, textColor, font }: { text: string; textColor: string; font: string }) {
   const canvas = document.createElement('canvas')
   el.appendChild(canvas)
   canvas.width = 205

@@ -7,13 +7,7 @@
       <div :style="{ width: isCollapse ? '65px' : '210px' }" class="sideBar h-full">
         <Logo :collapse="isCollapse" />
         <el-scrollbar>
-          <el-menu
-            :router="false"
-            :collapse="isCollapse"
-            :collapse-transition="false"
-            :unique-opened="accordion"
-            :default-active="activeMenu"
-          >
+          <el-menu :router="false" :collapse="isCollapse" :collapse-transition="false" :unique-opened="accordion" :default-active="activeMenu">
             <SubMenu :menu-list="authStore.showMenuListGet" />
           </el-menu>
         </el-scrollbar>

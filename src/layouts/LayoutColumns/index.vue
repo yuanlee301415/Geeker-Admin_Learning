@@ -11,8 +11,7 @@
             v-for="item of menuList"
             :key="item.path"
             :class="{
-              'split-active':
-                splitActive === item.path || `/${route.path.split('/')[1]}` === item.path
+              'split-active': splitActive === item.path || `/${route.path.split('/')[1]}` === item.path
             }"
             @click="handleClickMenu(item)"
           >
@@ -30,13 +29,7 @@
         <template v-if="isCollapse" #default>G</template>
       </Logo>
       <el-scrollbar>
-        <el-menu
-          :collapse="isCollapse"
-          :collapse-transition="false"
-          :unique-opened="accordion"
-          :router="false"
-          :default-active="activeMenu"
-        >
+        <el-menu :collapse="isCollapse" :collapse-transition="false" :unique-opened="accordion" :router="false" :default-active="activeMenu">
           <SubMenu :menu-list="subMenuList" />
         </el-menu>
       </el-scrollbar>
@@ -80,9 +73,7 @@ watch(
   () => {
     if (!menuList.value.length) return
 
-    const menuItem = menuList.value.filter(
-      (item) => route.path === item.path || `/${route.path.split('/')[1]}` === item.path
-    )
+    const menuItem = menuList.value.filter((item) => route.path === item.path || `/${route.path.split('/')[1]}` === item.path)
     subMenuList.value = menuItem[0]?.children
     splitActive.value = route.path
   },

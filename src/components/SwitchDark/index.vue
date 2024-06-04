@@ -1,11 +1,5 @@
 <template>
-  <el-switch
-    v-model="globalStore.isDark"
-    :active-icon="Sunny"
-    :inactive-icon="Moon"
-    inline-prompt
-    @change="switchDark"
-  />
+  <el-switch v-model="globalStore.isDark" :active-icon="Sunny" :inactive-icon="Moon" inline-prompt @change="switchDark" />
 </template>
 
 <script setup lang="ts">

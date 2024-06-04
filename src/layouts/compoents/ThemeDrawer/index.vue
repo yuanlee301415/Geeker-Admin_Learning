@@ -101,11 +101,7 @@
       <dl class="theme-item">
         <dt>主题颜色</dt>
         <dd>
-          <el-color-picker
-            v-model="globalStore.primary"
-            :predefine="colorList"
-            @change="changePrimary"
-          />
+          <el-color-picker v-model="globalStore.primary" :predefine="colorList" @change="changePrimary" />
         </dd>
       </dl>
 
@@ -119,20 +115,14 @@
       <dl class="theme-item">
         <dt>灰色模式</dt>
         <dd>
-          <el-switch
-            v-model="globalStore.isGrey"
-            @change="changeGreyOrWeak(GreyOrWeakEnum.Grey, $event)"
-          />
+          <el-switch v-model="globalStore.isGrey" @change="changeGreyOrWeak(GreyOrWeakEnum.Grey, $event)" />
         </dd>
       </dl>
 
       <dl class="theme-item">
         <dt>色弱模式</dt>
         <dd>
-          <el-switch
-            v-model="globalStore.isWeak"
-            @change="changeGreyOrWeak(GreyOrWeakEnum.Weak, $event)"
-          />
+          <el-switch v-model="globalStore.isWeak" @change="changeGreyOrWeak(GreyOrWeakEnum.Weak, $event)" />
         </dd>
       </dl>
       <!--全局主题 End-->
@@ -199,13 +189,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import {
-  CircleCheckFilled,
-  ColdDrink,
-  Notification,
-  QuestionFilled,
-  Setting
-} from '@element-plus/icons-vue'
+import { CircleCheckFilled, ColdDrink, Notification, QuestionFilled, Setting } from '@element-plus/icons-vue'
 import { useGlobalStore } from '@/store/modules'
 import { GreyOrWeakEnum, Layout } from '@/constants'
 import mittBus from '@/utils/mittBus'
@@ -216,18 +200,7 @@ import SwitchDark from '@/components/SwitchDark/index.vue'
 const globalStore = useGlobalStore()
 const { setAsideTheme, setHeaderTheme, changePrimary, changeGreyOrWeak } = useTheme()
 const visible = ref(false)
-const colorList = [
-  DEFAULT_PRIMARY,
-  '#daa96e',
-  '#0c819f',
-  '#409eff',
-  '#27ae60',
-  '#ff5c93',
-  '#e74c3c',
-  '#fd726d',
-  '#f39c12',
-  '#9b59b6'
-]
+const colorList = [DEFAULT_PRIMARY, '#daa96e', '#0c819f', '#409eff', '#27ae60', '#ff5c93', '#e74c3c', '#fd726d', '#f39c12', '#9b59b6']
 
 // 打开主题设置弹窗
 mittBus.on('openThemeDrawer', () => (visible.value = true))

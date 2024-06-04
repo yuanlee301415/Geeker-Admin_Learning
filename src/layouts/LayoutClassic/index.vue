@@ -13,13 +13,7 @@
       <el-aside>
         <div :style="{ width: isCollapse ? '65px' : '210px' }" class="sideBar h-full">
           <el-scrollbar>
-            <el-menu
-              :collapse="isCollapse"
-              :collapse-transition="false"
-              :unique-opened="accordion"
-              :router="false"
-              :default-active="activeMenu"
-            >
+            <el-menu :collapse="isCollapse" :collapse-transition="false" :unique-opened="accordion" :router="false" :default-active="activeMenu">
               <SubMenu :menu-list="authStore.showMenuListGet" />
             </el-menu>
           </el-scrollbar>

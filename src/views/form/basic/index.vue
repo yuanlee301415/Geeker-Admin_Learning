@@ -10,12 +10,7 @@
 
       <el-form-item label="Zone" prop="zone">
         <el-select v-model="basicFormData.zone" placeholder="Please input">
-          <el-option
-            v-for="item in zones"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-          />
+          <el-option v-for="item in zones" :key="item.value" :label="item.label" :value="item.value" />
         </el-select>
       </el-form-item>
 
@@ -31,23 +26,13 @@
 
       <el-form-item label="Type" prop="type">
         <el-checkbox-group v-model="basicFormData.type">
-          <el-checkbox
-            v-for="item in types"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-          />
+          <el-checkbox v-for="item in types" :key="item.value" :label="item.label" :value="item.value" />
         </el-checkbox-group>
       </el-form-item>
 
       <el-form-item label="Resource" prop="resource">
         <el-radio-group v-model="basicFormData.resource" placeholder="Please input">
-          <el-radio
-            v-for="item in resources"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-          />
+          <el-radio v-for="item in resources" :key="item.value" :label="item.label" :value="item.value" />
         </el-radio-group>
       </el-form-item>
 

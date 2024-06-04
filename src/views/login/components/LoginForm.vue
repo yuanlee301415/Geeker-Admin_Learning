@@ -4,28 +4,14 @@
 <template>
   <el-form :model="loginForm" :rules="loginRules" ref="loginFormRef" size="large">
     <el-form-item prop="username">
-      <el-input
-        v-model="loginForm.username"
-        maxlength="10"
-        placeholder="请输入用户名"
-        prefix-icon="User"
-      />
+      <el-input v-model="loginForm.username" maxlength="10" placeholder="请输入用户名" prefix-icon="User" />
     </el-form-item>
     <el-form-item prop="password">
-      <el-input
-        v-model="loginForm.password"
-        type="password"
-        maxlength="16"
-        show-password
-        placeholder="请输入密码"
-        prefix-icon="Lock"
-      />
+      <el-input v-model="loginForm.password" type="password" maxlength="16" show-password placeholder="请输入密码" prefix-icon="Lock" />
     </el-form-item>
     <div class="login-btn">
       <el-button round :icon="CircleClose" @click="resetForm">重置</el-button>
-      <el-button type="primary" round :icon="UserFilled" :loading="loading" @click="login"
-        >登录</el-button
-      >
+      <el-button type="primary" round :icon="UserFilled" :loading="loading" @click="login">登录</el-button>
     </div>
   </el-form>
 </template>

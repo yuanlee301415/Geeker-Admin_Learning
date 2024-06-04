@@ -3,18 +3,12 @@
 -->
 <template>
   <div class="card content-box">
-    <el-alert :closable="false" type="warning" class="mb-5">
-      通过 `component :is` 属性动态渲染组件；通过 `v-bind` 传入组件属性；
-    </el-alert>
+    <el-alert :closable="false" type="warning" class="mb-5"> 通过 `component :is` 属性动态渲染组件；通过 `v-bind` 传入组件属性； </el-alert>
 
     <component :is="'el-form'" :model="model" v-bind="options.formConfig">
       <template v-for="item of options.items" :key="item.formItem.prop">
         <component :is="'el-form-item'" v-bind="item.formItem">
-          <component
-            v-bind="item.component.props"
-            v-model="model[item.formItem.prop]"
-            :is="item.component.name"
-          />
+          <component v-bind="item.component.props" v-model="model[item.formItem.prop]" :is="item.component.name" />
         </component>
       </template>
     </component>

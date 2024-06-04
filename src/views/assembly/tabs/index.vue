@@ -19,27 +19,15 @@
         <el-icon><Remove /></el-icon>关闭当前
       </el-button>
 
-      <el-button
-        :disabled="!tabsStore.canCloseLeftSide(route.fullPath)"
-        type="primary"
-        @click="tabsStore.closeLeftSide(route.fullPath)"
-      >
+      <el-button :disabled="!tabsStore.canCloseLeftSide(route.fullPath)" type="primary" @click="tabsStore.closeLeftSide(route.fullPath)">
         <el-icon><DArrowLeft /></el-icon>关闭左侧
       </el-button>
 
-      <el-button
-        :disabled="!tabsStore.canCloseRightSide(route.fullPath)"
-        type="primary"
-        @click="tabsStore.closeRightSide(route.fullPath)"
-      >
+      <el-button :disabled="!tabsStore.canCloseRightSide(route.fullPath)" type="primary" @click="tabsStore.closeRightSide(route.fullPath)">
         <el-icon><DArrowRight /></el-icon>关闭右侧
       </el-button>
 
-      <el-button
-        :disabled="!tabsStore.canCloseOthers(route.fullPath)"
-        type="primary"
-        @click="tabsStore.closeTabs(route.fullPath)"
-      >
+      <el-button :disabled="!tabsStore.canCloseOthers(route.fullPath)" type="primary" @click="tabsStore.closeTabs(route.fullPath)">
         <el-icon><CircleClose /></el-icon>关闭其它
       </el-button>
 
@@ -68,16 +56,7 @@ import { useTabsStore } from '@/store/modules/tabs'
 import { useKeepAliveStore } from '@/store/modules/keepAlive'
 import { useGlobalStore } from '@/store/modules'
 import { refreshCurrentPageKey } from '@/tokens'
-import {
-  CircleClose,
-  DArrowLeft,
-  DArrowRight,
-  FolderDelete,
-  FullScreen,
-  Refresh,
-  Remove,
-  Position
-} from '@element-plus/icons-vue'
+import { CircleClose, DArrowLeft, DArrowRight, FolderDelete, FullScreen, Refresh, Remove, Position } from '@element-plus/icons-vue'
 
 const route = useRoute()
 const router = useRouter()

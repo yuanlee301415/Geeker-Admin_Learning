@@ -13,8 +13,7 @@ import { headerTheme } from './theme/header'
 // 全局主题 Hook
 export function useTheme() {
   const globalStore = useGlobalStore()
-  const { asideInverted, isDark, isGrey, isWeak, layout, headerInverted, primary } =
-    storeToRefs(globalStore)
+  const { asideInverted, isDark, isGrey, isWeak, layout, headerInverted, primary } = storeToRefs(globalStore)
 
   // 初始化主题
   function initTheme() {
@@ -46,14 +45,10 @@ export function useTheme() {
       '--el-color-primary': val
     })
     setThemeProperty({
-      '--el-color-primary-dark-2': isDark.value
-        ? `${getLightColor(val, 0.2)}`
-        : `${getDarkColor(val, 0.3)}`
+      '--el-color-primary-dark-2': isDark.value ? `${getLightColor(val, 0.2)}` : `${getDarkColor(val, 0.3)}`
     })
     for (let i = 1; i <= 9; i++) {
-      const primaryColor = isDark.value
-        ? `${getDarkColor(val, i / 10)}`
-        : `${getLightColor(val, i / 10)}`
+      const primaryColor = isDark.value ? `${getDarkColor(val, i / 10)}` : `${getLightColor(val, i / 10)}`
       setThemeProperty({
         [`--el-color-primary-light-${i}`]: primaryColor
       })

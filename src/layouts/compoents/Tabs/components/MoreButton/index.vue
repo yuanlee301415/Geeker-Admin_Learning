@@ -20,25 +20,15 @@
           <el-icon><Remove /></el-icon>关闭当前
         </el-dropdown-item>
 
-        <el-dropdown-item
-          :disabled="!tabsStore.canCloseLeftSide(route.fullPath)"
-          @click="tabsStore.closeLeftSide(route.fullPath)"
-        >
+        <el-dropdown-item :disabled="!tabsStore.canCloseLeftSide(route.fullPath)" @click="tabsStore.closeLeftSide(route.fullPath)">
           <el-icon><DArrowLeft /></el-icon>关闭左侧
         </el-dropdown-item>
 
-        <el-dropdown-item
-          :disabled="!tabsStore.canCloseRightSide(route.fullPath)"
-          @click="tabsStore.closeRightSide(route.fullPath)"
-        >
+        <el-dropdown-item :disabled="!tabsStore.canCloseRightSide(route.fullPath)" @click="tabsStore.closeRightSide(route.fullPath)">
           <el-icon><DArrowRight /></el-icon>关闭右侧
         </el-dropdown-item>
 
-        <el-dropdown-item
-          :disabled="!tabsStore.canCloseOthers(route.fullPath)"
-          divided
-          @click="tabsStore.closeTabs(route.fullPath)"
-        >
+        <el-dropdown-item :disabled="!tabsStore.canCloseOthers(route.fullPath)" divided @click="tabsStore.closeTabs(route.fullPath)">
           <el-icon><CircleClose /></el-icon>关闭其它
         </el-dropdown-item>
 
@@ -51,15 +41,7 @@
 </template>
 
 <script setup lang="ts">
-import {
-  Refresh,
-  FullScreen,
-  Remove,
-  DArrowLeft,
-  DArrowRight,
-  CircleClose,
-  FolderDelete
-} from '@element-plus/icons-vue'
+import { Refresh, FullScreen, Remove, DArrowLeft, DArrowRight, CircleClose, FolderDelete } from '@element-plus/icons-vue'
 import { inject, nextTick } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useKeepAliveStore } from '@/store/modules/keepAlive'

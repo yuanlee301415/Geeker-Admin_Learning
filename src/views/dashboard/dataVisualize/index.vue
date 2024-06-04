@@ -6,12 +6,7 @@
     <div class="card dashboard-top">
       <h2>数据可视化</h2>
       <el-tabs v-model="activeName">
-        <el-tab-pane
-          v-for="tab of tabs"
-          :key="tab.name"
-          :label="tab.label"
-          :name="tab.name"
-        ></el-tab-pane>
+        <el-tab-pane v-for="tab of tabs" :key="tab.name" :label="tab.label" :name="tab.name"></el-tab-pane>
       </el-tabs>
       <el-row :gutter="40">
         <el-col class="mb40" :xs="24" :sm="12" :md="12" :lg="6" :xl="6">
@@ -71,12 +66,7 @@
     <div class="card dashboard-bottom">
       <div class="dashboard-bottom_tabs">
         <el-tabs v-model="activeName">
-          <el-tab-pane
-            v-for="tab of tabs"
-            :key="tab.name"
-            :label="tab.label"
-            :name="tab.name"
-          ></el-tab-pane>
+          <el-tab-pane v-for="tab of tabs" :key="tab.name" :label="tab.label" :name="tab.name"></el-tab-pane>
         </el-tabs>
       </div>
       <dl class="dashboard-bottom_chart">
