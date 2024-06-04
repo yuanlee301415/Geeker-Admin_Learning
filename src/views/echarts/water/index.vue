@@ -1,3 +1,7 @@
+<!--
+ECharts 水球
+-->
+
 <template>
   <div class="card content-box">
     <ECharts :option="option" />
@@ -6,6 +10,7 @@
 
 <script setup lang="ts">
 import type { ECOption } from '@/components/ECharts/config'
+
 import echarts from '@/components/ECharts/config'
 import ECharts from '@/components/ECharts/index.vue'
 

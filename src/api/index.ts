@@ -1,3 +1,7 @@
+/*
+ * 接口请求 & 配置
+ * */
+
 import type { AxiosInstance, AxiosError, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 import axios from 'axios'
 import { ElMessage } from 'element-plus'

@@ -1,5 +1,8 @@
+<!--
+地图
+-->
+
 <template>
-  <!-- 中国地图 -->
   <div class="map-ball"></div>
   <div id="mapChart" class="w-full h-full">
     <ECharts :option="option" :resize="false" />

@@ -1,6 +1,7 @@
 <!--
 年龄比例
 -->
+
 <template>
   <div class="w-full h-full">
     <ECharts :option="option" :resize="false" />

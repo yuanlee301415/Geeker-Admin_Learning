@@ -1,6 +1,7 @@
 <!--
 热门板块
 -->
+
 <template>
   <div class="echarts-header">
     <span>排名</span>

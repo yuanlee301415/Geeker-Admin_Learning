@@ -1,3 +1,7 @@
+<!--
+富文本编辑器
+-->
+
 <template>
   <div class="card content-box assembly-box">
     <h2>富文本编辑器 🍓🍇🍈🍉</h2>

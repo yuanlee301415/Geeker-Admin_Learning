@@ -1,6 +1,7 @@
 <!--
-Echarts 组件
+Echarts-组件
 -->
+
 <template>
   <div :style="chartStyle" ref="chartRef" />
 </template>
@@ -10,10 +11,10 @@ import type { EChartsType, ECElementEvent } from 'echarts/core'
 import type { ECOption } from './config'
 
 import { ref, computed, markRaw, onMounted, watch, onBeforeMount } from 'vue'
+import { storeToRefs } from 'pinia'
 import { useDebounceFn } from '@vueuse/core'
 import echarts from './config'
 import { useGlobalStore } from '@/store/modules'
-import { storeToRefs } from 'pinia'
 
 interface Props {
   option: ECOption

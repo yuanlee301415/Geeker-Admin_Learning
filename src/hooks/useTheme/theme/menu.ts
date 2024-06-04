@@ -1,4 +1,7 @@
-/*菜单栏主题配置*/
+/*
+ * 菜单栏主题配置
+ * */
+
 import type { Theme } from '@/hooks/typing'
 import { ThemeTypeEnum } from '@/constants'
 

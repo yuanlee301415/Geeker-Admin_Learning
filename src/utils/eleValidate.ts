@@ -1,4 +1,6 @@
-/*ElForm 表单校验*/
+/*
+ * ElForm 表单校验
+ * */
 
 // 手机号校验
 export function validatePhoneNumber(rule: any, value: any, callback: any) {

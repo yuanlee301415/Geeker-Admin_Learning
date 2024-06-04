@@ -1,3 +1,7 @@
+/*
+ * 路由
+ * */
+
 import { createRouter, createWebHashHistory } from 'vue-router'
 import NProgress from '@/config/nprogress'
 import { useAuthStore } from '@/store/modules/auth'

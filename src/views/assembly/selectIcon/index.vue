@@ -1,6 +1,7 @@
 <!--
 图标选择器
 -->
+
 <template>
   <div class="card content-box assembly-box">
     <h2>图标选择器 🍓🍇🍈🍉</h2>
@@ -14,8 +15,8 @@
 </template>
 
 <script setup lang="ts">
-import SelectIcon from '@/components/SelectIcon/index.vue'
 import { ref } from 'vue'
+import SelectIcon from '@/components/SelectIcon/index.vue'
 
 const iconValue = ref('')
 </script>

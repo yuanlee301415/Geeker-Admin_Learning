@@ -1,6 +1,7 @@
 <!--
 实时访问
 -->
+
 <template>
   <div class="actual-total">
     <div class="expect-total">可预约总量<i>999999</i>人</div>

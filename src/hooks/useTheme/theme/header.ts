@@ -1,4 +1,7 @@
-/*头部主题配置*/
+/*
+ * 头部主题配置
+ * */
+
 import type { Theme } from '@/hooks/typing'
 
 export const headerTheme: Record<Theme.ThemeType, { [key: string]: string }> = {

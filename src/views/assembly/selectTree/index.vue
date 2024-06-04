@@ -1,3 +1,7 @@
+<!--
+树形筛选器
+-->
+
 <template>
   <div class="content-box assembly-box">
     <SelectTree v-model="treeValue1" :data="data" title="部门列表（单选）" label="name" @change="handleChange" />

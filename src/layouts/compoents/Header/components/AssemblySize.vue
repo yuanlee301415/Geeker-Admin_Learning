@@ -1,6 +1,7 @@
 <!--
 组件大小
 -->
+
 <template>
   <el-dropdown trigger="click" @command="globalStore.setAssemblySize">
     <i class="iconfont icon-contentright"></i>

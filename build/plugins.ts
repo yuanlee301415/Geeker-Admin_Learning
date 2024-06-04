@@ -1,3 +1,7 @@
+/*
+* Vite 插件
+* */
+
 import type {PluginOption} from "vite";
 import { resolve } from "path";
 import vue from "@vitejs/plugin-vue";

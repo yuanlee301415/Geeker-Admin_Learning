@@ -1,3 +1,7 @@
+/*
+ * 主题切换
+ * */
+
 import type { Theme } from '@/hooks/typing'
 import { GreyOrWeakEnum, Layout, ThemeTypeEnum } from '@/constants'
 import { useGlobalStore } from '@/store/modules'

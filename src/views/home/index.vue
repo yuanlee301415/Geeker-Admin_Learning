@@ -1,6 +1,7 @@
 <!--
 首页
 -->
+
 <template>
   <div class="card home">
     <div class="home-bg"></div>

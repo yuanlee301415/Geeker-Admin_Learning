@@ -1,3 +1,7 @@
+<!--
+节流指令
+-->
+
 <template>
   <div class="card content-box directives-box">
     <h2>节流指令 🍇🍇🍇🍓🍓🍓</h2>

@@ -1,6 +1,7 @@
 <!--
 未来30天访问量趋势预测图
 -->
+
 <template>
   <div class="echarts">
     <ECharts :option="option" :resize="false" />

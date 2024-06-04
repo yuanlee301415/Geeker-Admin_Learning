@@ -1,3 +1,7 @@
+/*
+ * 动态路由
+ * */
+
 import type { RouteRecordRaw } from 'vue-router'
 
 import { ElNotification } from 'element-plus'
@@ -9,9 +13,7 @@ import { LOGIN_URL } from '@/constants'
 // 导入 views 文件夹下所有 vue 文件
 const modules = import.meta.glob('@/views/**/*.vue')
 
-/**
- * 初始化动态路由
- */
+// 初始化动态路由
 export async function initDynamicRouter() {
   const authStore = useAuthStore()
   const userStore = useUserStore()

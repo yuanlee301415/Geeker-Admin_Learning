@@ -1,3 +1,6 @@
+/*
+ * ECharts 配置
+ * */
 import type {
   BarSeriesOption,
   LineSeriesOption,

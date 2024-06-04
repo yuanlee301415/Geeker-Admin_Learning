@@ -1,6 +1,7 @@
 <!--
-图标选择器
+图标选择器-组件
 -->
+
 <template>
   <div class="select-icon w-full">
     <el-input v-model="icon" clearable placeholder="请选择图标" @click="handleOpen" @clear="handleClear">

@@ -1,4 +1,7 @@
-/* 自定义 复制 指令 */
+/*
+ * 复制 指令
+ * */
+
 import type { Directive, DirectiveBinding } from 'vue'
 
 import { ElMessage } from 'element-plus'

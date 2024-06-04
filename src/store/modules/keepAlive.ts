@@ -1,4 +1,9 @@
+/*
+ * 页面缓存状态
+ * */
+
 import type { KeepAliveStore } from '#/store'
+
 import { defineStore } from 'pinia'
 
 export const useKeepAliveStore = defineStore({

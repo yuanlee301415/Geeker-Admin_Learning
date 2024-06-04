@@ -1,4 +1,9 @@
+/*
+* 状态
+* */
+
 import type {RouteRecordName} from "vue-router";
+
 import {AssemblySize, Language, Layout} from "@/constants";
 
 /*全局 Store*/
@@ -34,7 +39,7 @@ export interface KeepAliveStore {
     keepAliveNames: string[]
 }
 
-/*标签*/
+/*标签页 Store*/
 export interface TabItem {
     icon: string
     title: string

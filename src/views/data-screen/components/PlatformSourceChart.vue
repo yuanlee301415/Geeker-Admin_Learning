@@ -1,6 +1,7 @@
 <!--
 预约渠道数据统计
 -->
+
 <template>
   <div class="w-full h-full">
     <ECharts :option="option" :resize="false" />

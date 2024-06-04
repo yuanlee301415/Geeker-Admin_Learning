@@ -1,6 +1,7 @@
 <!--
-SVG 图标
+SVG 图标-组件
 -->
+
 <template>
   <svg :style="iconStyle" aria-hidden="true">
     <use :xlink:href="symbolId" />
@@ -9,6 +10,7 @@ SVG 图标
 
 <script setup lang="ts">
 import type { CSSProperties } from 'vue'
+
 import { computed } from 'vue'
 
 type Props = {

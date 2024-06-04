@@ -1,3 +1,7 @@
+/*
+ * 国际化
+ * */
+
 import { createI18n } from 'vue-i18n'
 import { getBrowserLanguage } from '@/utils'
 

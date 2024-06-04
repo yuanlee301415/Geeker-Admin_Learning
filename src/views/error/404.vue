@@ -1,6 +1,7 @@
 <!--
 404 错误页面
 -->
+
 <template>
   <div class="error-page">
     <img src="@/assets/images/404.png" alt="404" />

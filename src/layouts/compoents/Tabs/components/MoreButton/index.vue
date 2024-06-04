@@ -1,6 +1,7 @@
 <!--
 标签栏更多功能
 -->
+
 <template>
   <el-dropdown :teleported="false" trigger="click">
     <div class="more-button flx-center">
@@ -68,7 +69,7 @@ function handleRefresh() {
   })
 }
 
-// 全屏
+// 页面最大化
 function handleToggleMaximize() {
   globalStore.toggleMaximize()
 }

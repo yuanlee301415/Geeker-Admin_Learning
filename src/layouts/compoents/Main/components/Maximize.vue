@@ -1,3 +1,7 @@
+<!--
+退出页面最大化
+-->
+
 <template>
   <div v-show="globalStore.maximize" class="maximize" @click="globalStore.toggleMaximize()">
     <i class="iconfont icon-tuichu"></i>

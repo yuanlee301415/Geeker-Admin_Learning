@@ -1,4 +1,7 @@
-// 用户状态
+/*
+ * 用户状态
+ * */
+
 import type { UserStore } from '#/store'
 
 import { defineStore } from 'pinia'

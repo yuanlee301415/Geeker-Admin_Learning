@@ -21,7 +21,7 @@ import './assets/iconfont/iconfont.css'
 function bootstrap() {
   const app = createApp(App)
 
-  // register the element Icons component
+  // register the ElementPlus Icons component
   Object.keys(Icons).forEach((key) => {
     app.component(key, Icons[key as keyof typeof Icons])
   })

@@ -1,3 +1,7 @@
+<!--
+标签页
+-->
+
 <template>
   <div class="card content-box assembly-box">
     <h2>标签页操作 🍓🍇🍈🍉</h2>

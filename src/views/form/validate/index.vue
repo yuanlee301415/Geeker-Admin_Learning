@@ -1,6 +1,7 @@
 <!--
-校验表单
+表单校验
 -->
+
 <template>
   <div class="card content-box">
     <el-form :model="validateFormData" :rules="formRules" ref="validateFormRef" label-width="100px">
@@ -52,6 +53,7 @@
 
 <script setup lang="ts">
 import type { FormInstance, FormRules } from 'element-plus'
+
 import { reactive, ref } from 'vue'
 import { validatePhoneNumber } from '@/utils/eleValidate'
 

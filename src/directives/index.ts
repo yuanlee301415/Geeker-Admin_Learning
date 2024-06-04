@@ -1,3 +1,7 @@
+/*
+ * 指令
+ * */
+
 import type { App, Directive } from 'vue'
 
 import copy from './modules/copy'

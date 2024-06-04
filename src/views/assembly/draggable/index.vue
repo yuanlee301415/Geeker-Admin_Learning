@@ -1,6 +1,7 @@
 <!--
-拖拽组件
+拖拽
 -->
+
 <template>
   <div class="card content-box">
     <draggable v-model="list" item-key="id" class="grid-box" chosen-class="chosen">

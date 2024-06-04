@@ -1,6 +1,7 @@
 <!--
 折叠按钮
 -->
+
 <template>
   <el-icon class="header-collapse-icon" @click="handleToggleCollapse">
     <component :is="globalStore.isCollapse ? Expand : Fold" />

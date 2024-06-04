@@ -1,3 +1,7 @@
+/*
+ * 静态路由
+ * */
+
 import type { RouteRecordRaw } from 'vue-router'
 
 import { HOME_URL, ERROR_403_URL, ERROR_404_URL, ERROR_500_URL } from '@/constants'

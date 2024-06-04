@@ -1,3 +1,7 @@
+<!--
+水印指令
+-->
+
 <template>
   <div class="card content-box directives-box" v-water-mark="{ text, textColor: '#5a6d8f' }">
     <h2>水印指令 🍇🍓</h2>

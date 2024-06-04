@@ -1,4 +1,7 @@
-/*颜色*/
+/*
+ * 颜色
+ * */
+
 import { ElMessage } from 'element-plus'
 
 /**

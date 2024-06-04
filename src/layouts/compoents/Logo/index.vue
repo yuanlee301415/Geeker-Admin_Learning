@@ -1,6 +1,7 @@
 <!--
 Logo
 -->
+
 <template>
   <div class="logo flx-center">
     <img v-if="!hiddenImg" src="~@/assets/logo.svg" alt="Geeker Admin Logo" />

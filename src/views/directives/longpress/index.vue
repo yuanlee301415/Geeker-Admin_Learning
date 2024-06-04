@@ -1,3 +1,7 @@
+<!--
+长按指令
+-->
+
 <template>
   <div class="card content-box directives-box">
     <h2>长按指令 🍇🍇🍇🍓🍓🍓</h2>

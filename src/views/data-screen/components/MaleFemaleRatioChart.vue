@@ -1,5 +1,8 @@
+<!--
+男女比例
+-->
+
 <template>
-  <!-- 男女比例 -->
   <div class="ratio-main">
     <div class="ratio-header">
       <div class="man">

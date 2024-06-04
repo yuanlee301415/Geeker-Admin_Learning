@@ -1,6 +1,7 @@
 <!--
 用户头像
 -->
+
 <template>
   <el-dropdown trigger="click">
     <el-avatar :src="AvatarImg" :szie="40" class="cursor-pointer" />
@@ -34,9 +35,9 @@
 
 <script setup lang="ts">
 import { User, Edit, SwitchButton } from '@element-plus/icons-vue'
-import AvatarImg from '@/assets/images/avatar.jpg'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { useRouter } from 'vue-router'
+import AvatarImg from '@/assets/images/avatar.jpg'
 import { LOGIN_URL } from '@/constants'
 import { logoutApi } from '@/api/modules/rights'
 import { useUserStore } from '@/store/modules/user'

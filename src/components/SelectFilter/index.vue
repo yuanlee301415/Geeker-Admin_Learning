@@ -1,6 +1,7 @@
 <!--
-分类选择器
+分类选择器-组件
 -->
+
 <template>
   <div class="select-filter w-full">
     <dl v-for="item of data" :key="item.key" class="flex items-center py-4">
@@ -50,6 +51,7 @@ const emit = defineEmits<{
 }>()
 
 const selected = ref<ModelValue>({})
+
 watch(
   () => props.modelValue,
   () => {

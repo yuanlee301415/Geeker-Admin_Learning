@@ -1,5 +1,5 @@
 /*
- * 全局配置
+ * 配置
  * */
 
 import { ERROR_500_URL } from '@/constants'

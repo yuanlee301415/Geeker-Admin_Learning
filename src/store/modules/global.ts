@@ -1,5 +1,9 @@
-// 全局状态
+/*
+ * 全局状态
+ * */
+
 import type { GlobalStore } from '#/store'
+
 import { defineStore } from 'pinia'
 import { pinaPersistConfig } from '@/store/helper/persist'
 import { AssemblySize, Language, Layout } from '@/constants'

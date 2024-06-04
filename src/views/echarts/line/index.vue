@@ -1,6 +1,7 @@
 <!--
-折线图
+ECharts 折线图
 -->
+
 <template>
   <div class="card content-box">
     <ECharts :option="option" />
@@ -9,6 +10,7 @@
 
 <script setup lang="ts">
 import type { ECOption } from '@/components/ECharts/config'
+
 import ECharts from '@/components/ECharts/index.vue'
 
 const option: ECOption = {

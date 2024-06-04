@@ -1,6 +1,7 @@
 <!--
 基础表单
 -->
+
 <template>
   <div class="card content-box">
     <el-form :model="basicFormData" label-width="100px">

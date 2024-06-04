@@ -1,6 +1,7 @@
 <!--
-搜索菜单
+菜单搜索
 -->
+
 <template>
   <div class="header-toolbar_search">
     <i class="iconfont icon-sousuo" @click="handleOpen" />

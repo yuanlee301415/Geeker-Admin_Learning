@@ -1,6 +1,7 @@
 <!--
 数据大屏
 -->
+
 <template>
   <div class="data-screen w-full h-full">
     <div class="data-screen-box flex flex-col fixed overflow-hidden" ref="dataScreenRef">

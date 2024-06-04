@@ -1,3 +1,7 @@
+<!--
+Layout
+-->
+
 <template>
   <component :is="layouts[globalStore.layout]" />
   <ThemeDrawer />
@@ -5,9 +9,9 @@
 
 <script setup lang="ts">
 import type { Component } from 'vue'
+
 import { Layout } from '@/constants'
 import { useGlobalStore } from '@/store/modules'
-
 import LayoutVertical from './LayoutVertical/index.vue'
 import LayoutClassic from './LayoutClassic/index.vue'
 import LayoutTransverse from './LayoutTransverse/index.vue'

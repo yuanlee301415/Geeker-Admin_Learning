@@ -1,6 +1,7 @@
 <!--
 面包屑
 -->
+
 <template>
   <div :class="{ 'no-icon': !globalStore.breadcrumbIcon }" class="breadcrumb-box">
     <el-breadcrumb :separator-icon="ArrowRight">

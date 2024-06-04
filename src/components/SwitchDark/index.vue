@@ -1,3 +1,7 @@
+<!--
+暗黑模式切换-组件
+-->
+
 <template>
   <el-switch v-model="globalStore.isDark" :active-icon="Sunny" :inactive-icon="Moon" inline-prompt @change="switchDark" />
 </template>

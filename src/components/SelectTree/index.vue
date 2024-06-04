@@ -1,6 +1,7 @@
 <!--
-树形选择器
+树形选择器-组件
 -->
+
 <template>
   <div class="card select-tree">
     <h3>{{ title }}</h3>

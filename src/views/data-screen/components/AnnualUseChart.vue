@@ -1,6 +1,7 @@
 <!--
- 年度使用
+ 年度游客量对比
  -->
+
 <template>
   <div class="echarts">
     <ECharts :option="option" :resize="false" />

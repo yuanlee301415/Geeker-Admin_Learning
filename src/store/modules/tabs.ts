@@ -1,11 +1,16 @@
+/*
+ * 标签页状态
+ * */
+
 import type { TabItem, TabsStore } from '#/store'
+
 import { defineStore } from 'pinia'
 import { useKeepAliveStore } from '@/store/modules/keepAlive'
 import { pinaPersistConfig } from '@/store/helper/persist'
 import router from '@/router'
 
-const keepAliveStore = useKeepAliveStore()
 const ID = 'tabs'
+const keepAliveStore = useKeepAliveStore()
 
 export const useTabsStore = defineStore({
   id: ID,

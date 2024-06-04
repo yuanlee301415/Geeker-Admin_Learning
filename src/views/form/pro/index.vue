@@ -1,6 +1,7 @@
 <!--
 超级表单
 -->
+
 <template>
   <div class="card content-box">
     <el-alert :closable="false" type="warning" class="mb-5"> 通过 `component :is` 属性动态渲染组件；通过 `v-bind` 传入组件属性； </el-alert>

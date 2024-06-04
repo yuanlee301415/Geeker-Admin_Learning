@@ -1,4 +1,7 @@
-/* 自定义 长按 指令 */
+/*
+ * 长按 指令
+ * */
+
 import type { Directive, DirectiveBinding } from 'vue'
 
 const longpress: Directive = {

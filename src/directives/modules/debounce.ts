@@ -1,4 +1,7 @@
-/* 自定义 防抖 指令 */
+/*
+ * 防抖 指令
+ * */
+
 import type { Directive, DirectiveBinding } from 'vue'
 
 type ElType = HTMLElement & {

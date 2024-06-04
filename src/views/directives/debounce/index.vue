@@ -1,3 +1,7 @@
+<!--
+防抖指令
+-->
+
 <template>
   <div class="card content-box directives-box">
     <h2>防抖指令 🍇🍇🍇🍓🍓🍓</h2>

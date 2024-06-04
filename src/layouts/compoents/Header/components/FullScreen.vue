@@ -1,6 +1,7 @@
 <!--
-全屏
+浏览器全屏
 -->
+
 <template>
   <i :class="[isFullscreen ? 'icon-suoxiao' : 'icon-fangda']" class="iconfont" @click="handleFullscreen"></i>
 </template>

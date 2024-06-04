@@ -1,3 +1,7 @@
+<!--
+引导页
+-->
+
 <template>
   <div class="card content-box assembly-box">
     <h2>引导页 🍓🍇🍈🍉</h2>

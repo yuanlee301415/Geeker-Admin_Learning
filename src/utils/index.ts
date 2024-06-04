@@ -1,3 +1,7 @@
+/*
+ * 工具方法
+ * */
+
 import { Language } from '@/constants'
 
 /*获取浏览器语言*/

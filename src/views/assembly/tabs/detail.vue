@@ -1,3 +1,7 @@
+<!--
+详情页
+-->
+
 <template>
   <div class="card content-box assembly-box">
     <h2>我是 Tab 详情页 🍓🍇🍈🍉</h2>

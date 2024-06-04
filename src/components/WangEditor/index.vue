@@ -1,6 +1,7 @@
 <!--
-富文本编辑器组件
+富文本编辑器-组件
 -->
+
 <template>
   <div class="editor-box" :class="{ 'editor-disabled': isDisabled }">
     <Toolbar v-if="!hideToolbar" class="editor-toolbar" :editor="editorRef" :default-config="toolbarConfig" :mode="mode" />
@@ -18,6 +19,7 @@
 
 <script setup lang="ts">
 import type { IToolbarConfig, IEditorConfig } from '@wangeditor/editor'
+
 import { Editor, Toolbar } from '@wangeditor/editor-for-vue'
 import { formContextKey, formItemContextKey } from 'element-plus'
 import { computed, inject, onBeforeUnmount, shallowRef, watchEffect } from 'vue'

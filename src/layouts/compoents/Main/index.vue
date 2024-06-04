@@ -1,6 +1,7 @@
 <!--
-页面主体容器
+页面主体
 -->
+
 <template>
   <el-main>
     <Tabs v-show="globalStore.tabs" />
@@ -72,7 +73,7 @@ watch(
 
 // 缓存页面
 const wrapperMap = new Map()
-function createComponentWrapper(component: VNode, route: RouteLocationNormalizedLoaded) {
+function createComponentWrapper(component: VNode, route: RouteLocationNormalizedLoaded): VNode | any {
   if (!component) return
   const name = route.fullPath
   let wrapper = wrapperMap.get(name)

@@ -1,4 +1,7 @@
-// 请求去重
+/*
+ * 请求去重
+ * */
+
 import type { RequestConfig } from '@/api'
 
 const pendingMap = new Map<string | void, AbortController>()

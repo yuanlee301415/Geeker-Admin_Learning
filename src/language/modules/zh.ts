@@ -1,3 +1,7 @@
+/*
+ * 国际化-中文
+ * */
+
 export default {
   home: {
     welcome: '欢迎使用'

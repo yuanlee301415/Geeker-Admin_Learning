@@ -1,3 +1,7 @@
+/*
+ * 枚举常量
+ * */
+
 // ElementPlus 组件大小
 export enum AssemblySize {
   Default = 'default',

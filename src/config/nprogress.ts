@@ -1,3 +1,7 @@
+/*
+ * 进度条-配置
+ * */
+
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 

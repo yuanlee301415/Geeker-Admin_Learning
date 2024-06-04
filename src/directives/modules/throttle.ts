@@ -1,4 +1,7 @@
-/* 自定义 节流 指令 */
+/*
+ * 节流 指令
+ * */
+
 import type { Directive, DirectiveBinding } from 'vue'
 
 type ElType = HTMLElement & {

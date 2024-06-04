@@ -1,3 +1,7 @@
+/*
+* 接口请求
+* */
+
 // 用户
 declare namespace User {
   interface Info {

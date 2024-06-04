@@ -1,6 +1,7 @@
 <!--
 柱状图
 -->
+
 <template>
   <div class="w-full h-full">
     <ECharts :option="option" />
@@ -9,6 +10,7 @@
 
 <script setup lang="ts">
 import type { ECOption } from '@/components/ECharts/config'
+
 import ECharts from '@/components/ECharts/index.vue'
 
 const curveData = [

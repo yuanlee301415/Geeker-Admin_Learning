@@ -1,4 +1,7 @@
-/*侧边栏主题配置*/
+/*
+ * 侧边栏主题配置
+ * */
+
 import type { Theme } from '@/hooks/typing'
 import { ThemeTypeEnum } from '@/constants'
 

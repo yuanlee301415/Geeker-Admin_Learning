@@ -1,3 +1,7 @@
+/*
+ * Pina 持久化
+ * */
+
 import type { PersistedStateOptions } from 'pinia-plugin-persistedstate'
 
 /**

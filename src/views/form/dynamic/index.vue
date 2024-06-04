@@ -1,6 +1,7 @@
 <!--
 动态表单
 -->
+
 <template>
   <div class="card content-box">
     <el-form :model="dynamicFormData" ref="dynamicRef" label-width="100px">
@@ -46,8 +47,9 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
 import type { FormInstance } from 'element-plus'
+
+import { reactive, ref } from 'vue'
 
 type Domain = {
   key: string

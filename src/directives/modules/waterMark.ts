@@ -1,4 +1,6 @@
-/* 自定义 背景水印 指令 */
+/*
+ * 水印 指令
+ * */
 
 import type { Directive, DirectiveBinding } from 'vue'
 
