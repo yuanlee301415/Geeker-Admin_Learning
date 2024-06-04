@@ -45,6 +45,11 @@ export function useTheme() {
     setThemeProperty({
       '--el-color-primary': val
     })
+    setThemeProperty({
+      '--el-color-primary-dark-2': isDark.value
+        ? `${getLightColor(val, 0.2)}`
+        : `${getDarkColor(val, 0.3)}`
+    })
     for (let i = 1; i <= 9; i++) {
       const primaryColor = isDark.value
         ? `${getDarkColor(val, i / 10)}`
