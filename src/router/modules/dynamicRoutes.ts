@@ -35,7 +35,7 @@ export async function initDynamicRouter() {
     }
 
     // 3.添加动态路由
-    console.log('dynamicRoutes>authStore.flatMenuListGet:', authStore.flatMenuListGet)
+    // console.log('dynamicRoutes>authStore.flatMenuListGet:', authStore.flatMenuListGet)
     authStore.flatMenuListGet.forEach((item) => {
       delete item.children
       if (typeof item.component === 'string') {

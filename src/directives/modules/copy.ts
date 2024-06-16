@@ -24,7 +24,6 @@ const copy: Directive = {
 }
 
 async function handleClick(this: any) {
-  console.dir(this)
   try {
     await navigator.clipboard.writeText(this.copyText)
     console.log('复制成功:\n', this.copyText)

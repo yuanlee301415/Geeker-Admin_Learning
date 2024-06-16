@@ -149,7 +149,6 @@ function handleNodeClick(node: T) {
 
 // 勾选节点，更新 `modelValue`
 function handleCheck(node: T, { checkedKeys }: { checkedKeys: string[] }) {
-  console.log(arguments)
   if (!props.multiple) return
   emit('update:modelValue', checkedKeys)
   emit('change', checkedKeys)

@@ -39,7 +39,7 @@ export const useAuthStore = defineStore({
     async getAuthMenuList() {
       const userStore = useUserStore()
       this.authMenuList = await getAuthMenuListApi(userStore.info.username)
-      console.log('this.authMenuList:', this.authMenuList)
+      // console.log('this.authMenuList:', this.authMenuList)
     }
   }
 })

@@ -17,6 +17,8 @@ export function createVitePlugins(mode: string, {__APP_VERSION__, __APP_BUILD_TI
     return [
         vue(),
         vueJsx(),
+
+        // 创建 HTML 插件
         createHtmlPlugin({
             entry: "src/main.ts",
             minify: true,
@@ -28,6 +30,8 @@ export function createVitePlugins(mode: string, {__APP_VERSION__, __APP_BUILD_TI
                 },
             },
         }),
+
+        // 创建 SVG 图标插件
         createSvgIconsPlugin({
             iconDirs: [resolve(process.cwd(), "src/assets/icons")],
             symbolId: "icon-[dir]-[name]",

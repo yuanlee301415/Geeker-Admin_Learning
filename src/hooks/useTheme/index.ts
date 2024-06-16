@@ -3,11 +3,11 @@
  * */
 
 import type { Theme } from '@/hooks/typing'
+
 import { GreyOrWeakEnum, Layout, ThemeTypeEnum } from '@/constants'
 import { useGlobalStore } from '@/store/modules'
 import { storeToRefs } from 'pinia'
 import { ElMessage } from 'element-plus'
-
 import { DEFAULT_PRIMARY } from '@/config'
 import { getDarkColor, getLightColor } from '@/utils/color'
 import { asideTheme } from './theme/aside'

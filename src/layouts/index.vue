@@ -28,47 +28,5 @@ const layouts: Record<Layout, Component> = {
 </script>
 
 <style lang="less">
-.layout {
-  min-width: 800px;
-  .el-header {
-    background-color: var(--el-header-bg-color);
-    border-bottom: 1px solid var(--el-header-border-color);
-  }
-  .el-aside {
-    width: auto;
-    border-right: 1px solid var(--el-aside-border-color);
-    background-color: var(--el-menu-bg-color);
-  }
-  .el-main {
-    box-sizing: border-box;
-    padding: 0;
-    background-color: var(--el-bg-color-page);
-    overflow: hidden;
-    display: flex;
-    .layout-main {
-      flex: 1;
-      padding: 10px;
-      overflow: auto;
-    }
-  }
-  .el-menu {
-    border-right: none;
-  }
-  .sideBar {
-    transition: width 0.3s ease;
-    .el-menu {
-      width: 100%;
-      border-right: none;
-    }
-  }
-  .el-footer {
-    padding: 0;
-    line-height: 2;
-    background-color: var(--el-bg-color);
-    border-top: 1px solid var(--el-border-color-light);
-    a {
-      color: var(--el-text-color-secondary);
-    }
-  }
-}
+@import 'style';
 </style>

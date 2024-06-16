@@ -3,6 +3,7 @@
  * */
 
 import type { AxiosInstance, AxiosError, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
+
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
 import { openFullScreenLoading, closeFullScreenLoading } from '@/utils/fullScreenLoading'
@@ -35,8 +36,10 @@ class RequestHttp {
     // 请求拦截器
     this.service.interceptors.request.use((config: RequestConfig) => {
       config.loading ??= true
+      // 全屏 Loading 效果
       config.loading && openFullScreenLoading()
 
+      // 在 api 服务中通过指定的第三个参数: { cancel: false } 来控制是否需要取消重复请求
       config.cancel ??= true
       config.cancel && axiosCanceler.addPending(config)
       return config

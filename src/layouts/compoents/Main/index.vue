@@ -72,6 +72,8 @@ watch(
 
 // 缓存页面
 const wrapperMap = new Map()
+
+// 创建组件包装器
 function createComponentWrapper(component: VNode, route: RouteLocationNormalizedLoaded): VNode | any {
   if (!component) return
   const name = route.fullPath
