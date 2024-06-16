@@ -10,23 +10,23 @@
       <el-dropdown-menu>
         <el-dropdown-item>
           <el-icon>
-            <User />
-          </el-icon>
-          个人信息
+            <User /> </el-icon
+          >{{ $t('header.personalData')
+          }}<!--个人信息-->
         </el-dropdown-item>
 
         <el-dropdown-item>
           <el-icon>
-            <Edit />
-          </el-icon>
-          修改密码
+            <Edit /> </el-icon
+          >{{ $t('header.changePassword')
+          }}<!--修改密码-->
         </el-dropdown-item>
 
         <el-dropdown-item divided @click="handleLogout">
           <el-icon>
-            <SwitchButton />
-          </el-icon>
-          退出登录
+            <SwitchButton /> </el-icon
+          >{{ $t('header.logout')
+          }}<!--退出登录-->
         </el-dropdown-item>
       </el-dropdown-menu>
     </template>
