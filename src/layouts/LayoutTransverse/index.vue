@@ -8,7 +8,7 @@
       <Logo />
       <el-menu :router="false" :default-active="activeMenu" mode="horizontal" ellipsis>
         <template v-for="item of authStore.showMenuListGet" :key="item.path">
-          <el-sub-menu v-if="item.children?.length" :index="item.path">
+          <el-sub-menu v-if="item.children?.length" :key="item.path + '_sub_menu'" :index="item.path">
             <template #title>
               <el-icon v-if="item.meta.icon">
                 <component :is="item.meta.icon" />
@@ -19,7 +19,7 @@
             <SubMenu :menu-list="item.children" />
           </el-sub-menu>
 
-          <el-menu-item v-else :index="item.path" @click="handleClickMenu(item)">
+          <el-menu-item v-else :key="item.path + '_menu'" :index="item.path" @click="handleClickMenu(item)">
             <el-icon v-if="item.meta.icon">
               <component :is="item.meta.icon" />
             </el-icon>
