@@ -53,6 +53,9 @@ router.beforeEach(async (to, from, next) => {
     return next({ ...to, replace: true })
   }
 
+  // 设置当前访问路由名称（做按钮权限筛选）
+  await authStore.setRouteName(to.name as string)
+
   // 正常访问
   next()
 })

@@ -10,6 +10,7 @@ import draggable from './modules/draggable'
 import debounce from './modules/debounce'
 import throttle from './modules/throttle'
 import longpress from './modules/longpress'
+import auth from './modules/auth'
 
 const directiveList: {
   [key: string]: Directive
@@ -19,7 +20,8 @@ const directiveList: {
   draggable,
   debounce,
   throttle,
-  longpress
+  longpress,
+  auth
 }
 
 const directives = {

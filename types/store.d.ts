@@ -32,6 +32,9 @@ export interface GlobalStore {
 export interface AuthStore {
     routeName: string
     authMenuList: Menu.MenuOptions[]
+    authButtonList: {
+        [key: string]: string[]
+    }
 }
 
 /*页面缓存 Store*/

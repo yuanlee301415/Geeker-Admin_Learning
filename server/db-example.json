@@ -59,6 +59,50 @@
       ]
     },
     {
+      "path": "/auth",
+      "name": "auth",
+      "redirect": "/auth/menu",
+      "meta": {
+        "icon": "Lock",
+        "title": "权限管理",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      },
+      "children": [
+        {
+          "path": "/auth/menu",
+          "name": "authMenu",
+          "component": "/auth/menu/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "菜单权限",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/auth/button",
+          "name": "authButton",
+          "component": "/auth/button/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "按钮权限",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        }
+      ]
+    },
+    {
       "path": "/assembly",
       "name": "assembly",
       "redirect": "/assembly/guide",
@@ -738,6 +782,36 @@
       }
     },
     {
+      "path": "/dashboard",
+      "name": "dashboard",
+      "redirect": "/dashboard/dataVisualize",
+      "meta": {
+        "icon": "Odometer",
+        "title": "Dashboard",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      },
+      "children": [
+        {
+          "path": "/dashboard/dataVisualize",
+          "name": "dataVisualize",
+          "component": "/dashboard/dataVisualize/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "数据可视化",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        }
+      ]
+    },
+    {
       "path": "/assembly",
       "name": "assembly",
       "redirect": "/assembly/guide",
@@ -883,12 +957,12 @@
       ]
     },
     {
-      "path": "/form",
-      "name": "form",
-      "redirect": "/form/basic",
+      "path": "/auth",
+      "name": "auth",
+      "redirect": "/auth/menu",
       "meta": {
-        "icon": "Tickets",
-        "title": "表单 Form",
+        "icon": "Lock",
+        "title": "权限管理",
         "isLink": "",
         "isHide": false,
         "isFull": false,
@@ -897,12 +971,12 @@
       },
       "children": [
         {
-          "path": "/form/basic",
-          "name": "basicForm",
-          "component": "/form/basic/index",
+          "path": "/auth/menu",
+          "name": "authMenu",
+          "component": "/auth/menu/index",
           "meta": {
             "icon": "Menu",
-            "title": "基础 Form",
+            "title": "菜单权限",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -911,40 +985,12 @@
           }
         },
         {
-          "path": "/form/validate",
-          "name": "validateForm",
-          "component": "/form/validate/index",
+          "path": "/auth/button",
+          "name": "authButton",
+          "component": "/auth/button/index",
           "meta": {
             "icon": "Menu",
-            "title": "校验 Form",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/form/pro",
-          "name": "proForm",
-          "component": "/form/pro/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "超级 Form",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/form/dynamic",
-          "name": "dynamicForm",
-          "component": "/form/dynamic/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "动态 Form",
+            "title": "按钮权限",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -1387,6 +1433,30 @@
       }
     }
   ],
+  "adminAuthButtonList": {
+    "useProTable": [
+      "add",
+      "batchDelete"
+    ],
+    "authButton": [
+      "add",
+      "edit",
+      "delete",
+      "import",
+      "export"
+    ]
+  },
+  "userAuthButtonList": {
+    "useProTable": [
+      "add",
+      "batchDelete"
+    ],
+    "authButton": [
+      "add",
+      "edit",
+      "export"
+    ]
+  },
   "department": [
     {
       "id": "1",

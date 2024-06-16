@@ -25,6 +25,14 @@ export function getAuthMenuListApi(username: string) {
   return http.get<Menu.MenuOptions[]>(`${username}MenuList`, void 0, { loading: false })
 }
 
+/**
+ * 按钮权限
+ * @param username 用户名
+ */
+export function getAuthButtonListApi(username: string) {
+  return http.get<Login.AuthButtonsRes>(`${username}AuthButtonList`, void 0, { loading: false })
+}
+
 // 部门
 export function getDepartmentApi() {
   return http.get<User.DepartmentRes[]>('department', void 0, { cancel: false })

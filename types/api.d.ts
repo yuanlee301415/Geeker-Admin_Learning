@@ -23,4 +23,8 @@ declare namespace Login {
     username: string;
     password: string;
   }
+
+  export interface AuthButtonsRes {
+    [key: string]: string[]
+  }
 }

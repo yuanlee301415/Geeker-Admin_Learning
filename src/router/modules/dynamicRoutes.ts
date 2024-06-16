@@ -18,8 +18,9 @@ export async function initDynamicRouter() {
   const userStore = useUserStore()
 
   try {
-    // 1.获取菜单列表
+    // 1.获取菜单权限列表 && 按钮权限列表
     await authStore.getAuthMenuList()
+    await authStore.getAuthButtonList()
 
     // 2.判断当前用户有没有菜单权限
     if (!authStore.authMenuListGet.length) {
