@@ -52,10 +52,8 @@
 import { Refresh, FullScreen, Remove, DArrowLeft, DArrowRight, CircleClose, FolderDelete } from '@element-plus/icons-vue'
 import { inject, nextTick } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useKeepAliveStore } from '@/store/modules/keepAlive'
 import { refreshCurrentPageKey } from '@/tokens'
-import { useGlobalStore } from '@/store/modules'
-import { useTabsStore } from '@/store/modules/tabs'
+import { useKeepAliveStore, useGlobalStore, useTabsStore } from '@/store/modules'
 
 const refreshCurrentPage = inject(refreshCurrentPageKey)!
 const route = useRoute()

@@ -26,9 +26,7 @@ import type { TabPaneName, TabsPaneContext } from 'element-plus'
 import { onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import Sortable from 'sortablejs'
-import { useGlobalStore } from '@/store/modules'
-import { useTabsStore } from '@/store/modules/tabs'
-import { useAuthStore } from '@/store/modules/auth'
+import { useGlobalStore, useTabsStore, useAuthStore } from '@/store/modules'
 import MoreButton from './components/MoreButton/index.vue'
 
 const globalStore = useGlobalStore()

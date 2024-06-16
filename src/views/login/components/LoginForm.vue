@@ -28,9 +28,7 @@ import { HOME_URL } from '@/constants'
 import { getTimeState } from '@/utils'
 import { loginApi } from '@/api/modules/rights'
 import { initDynamicRouter } from '@/router'
-import { useTabsStore } from '@/store/modules/tabs'
-import { useKeepAliveStore } from '@/store/modules/keepAlive'
-import { useUserStore } from '@/store/modules/user'
+import { useTabsStore, useKeepAliveStore, useUserStore } from '@/store/modules'
 
 type LoginForm = {
   username: string

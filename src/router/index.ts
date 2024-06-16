@@ -4,11 +4,10 @@
 
 import { createRouter, createWebHashHistory } from 'vue-router'
 import NProgress from '@/config/nprogress'
-import { useAuthStore } from '@/store/modules/auth'
+import { useAuthStore, useUserStore } from '@/store/modules'
 import { staticRoutes, errorRoutes } from './modules/staticRoutes'
 import { initDynamicRouter } from './modules/dynamicRoutes'
 import { LOGIN_URL } from '@/constants'
-import { useUserStore } from '@/store/modules/user'
 import { ROUTER_WHITE_LIST } from '@/config'
 
 const router = createRouter({

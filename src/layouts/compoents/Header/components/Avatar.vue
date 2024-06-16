@@ -9,23 +9,17 @@
     <template #dropdown>
       <el-dropdown-menu>
         <el-dropdown-item>
-          <el-icon>
-            <User /> </el-icon
-          >{{ $t('header.personalData')
+          <el-icon> <User /> </el-icon>{{ $t('header.personalData')
           }}<!--个人信息-->
         </el-dropdown-item>
 
         <el-dropdown-item>
-          <el-icon>
-            <Edit /> </el-icon
-          >{{ $t('header.changePassword')
+          <el-icon> <Edit /> </el-icon>{{ $t('header.changePassword')
           }}<!--修改密码-->
         </el-dropdown-item>
 
         <el-dropdown-item divided @click="handleLogout">
-          <el-icon>
-            <SwitchButton /> </el-icon
-          >{{ $t('header.logout')
+          <el-icon> <SwitchButton /> </el-icon>{{ $t('header.logout')
           }}<!--退出登录-->
         </el-dropdown-item>
       </el-dropdown-menu>
@@ -40,7 +34,7 @@ import { useRouter } from 'vue-router'
 import AvatarImg from '@/assets/images/avatar.jpg'
 import { LOGIN_URL } from '@/constants'
 import { logoutApi } from '@/api/modules/rights'
-import { useUserStore } from '@/store/modules/user'
+import { useUserStore } from '@/store/modules'
 
 const router = useRouter()
 const userStore = useUserStore()

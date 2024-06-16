@@ -56,8 +56,7 @@ import SubMenu from '../compoents/Menu/SubMenu.vue'
 import Main from '../compoents/Main/index.vue'
 import ToolBarLeft from '../compoents/Header/ToolBarLeft.vue'
 import ToolBarRight from '../compoents/Header/ToolBarRight.vue'
-import { useGlobalStore } from '@/store/modules'
-import { useAuthStore } from '@/store/modules/auth'
+import { useGlobalStore, useAuthStore } from '@/store/modules'
 
 const globalStore = useGlobalStore()
 const authStore = useAuthStore()

@@ -5,12 +5,11 @@
 import type { TabItem, TabsStore } from '#/store'
 
 import { defineStore } from 'pinia'
-import { useKeepAliveStore } from '@/store/modules/keepAlive'
+import { useRouter } from 'vue-router'
+import { useKeepAliveStore } from '@/store/modules'
 import { pinaPersistConfig } from '@/store/helper/persist'
-import router from '@/router'
 
 const ID = 'tabs'
-const keepAliveStore = useKeepAliveStore()
 
 export const useTabsStore = defineStore({
   id: ID,
@@ -69,7 +68,8 @@ export const useTabsStore = defineStore({
      * @param {TabItem} tabItem
      */
     addTab(tabItem: TabItem) {
-      // console.log('addTab>tabItem:', tabItem)
+      const keepAliveStore = useKeepAliveStore()
+
       if (this.tabs.every((_) => _.path !== tabItem.path)) {
         this.tabs.push(tabItem)
       }
@@ -84,6 +84,8 @@ export const useTabsStore = defineStore({
      * @param [isCurrent=false] 是否关闭当前标签页
      */
     removeTab(path: string, isCurrent: boolean = false) {
+      const router = useRouter()
+
       // 设置下一个激活的标签
       if (isCurrent) {
         this.tabs.forEach((_, idx) => {
@@ -93,8 +95,10 @@ export const useTabsStore = defineStore({
           router.push(nextTab.path)
         })
       }
+
       // 移除页面缓存
       const tabItem = this.tabs.find((_) => _.path === path)
+      const keepAliveStore = useKeepAliveStore()
       tabItem?.isKeepAlive && keepAliveStore.removeName(tabItem.path)
 
       // 移除标签

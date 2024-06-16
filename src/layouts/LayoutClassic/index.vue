@@ -30,13 +30,12 @@
 import { storeToRefs } from 'pinia'
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
-import { useGlobalStore } from '@/store/modules'
+import { useGlobalStore, useAuthStore } from '@/store/modules'
 import Logo from '../compoents/Logo/index.vue'
 import SubMenu from '../compoents/Menu/SubMenu.vue'
 import Main from '../compoents/Main/index.vue'
 import ToolBarLeft from '../compoents/Header/ToolBarLeft.vue'
 import ToolBarRight from '../compoents/Header/ToolBarRight.vue'
-import { useAuthStore } from '@/store/modules/auth'
 
 const globalStore = useGlobalStore()
 const authStore = useAuthStore()

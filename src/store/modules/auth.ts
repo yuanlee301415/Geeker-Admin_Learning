@@ -7,7 +7,7 @@ import type { AuthStore } from '#/store'
 import { defineStore } from 'pinia'
 import { getAuthMenuListApi } from '@/api/modules/rights'
 import { getAllBreadcrumbList, getFlatMenuList, getShowMenuList } from '@/utils'
-import { useUserStore } from '@/store/modules/user'
+import { useUserStore } from '@/store/modules'
 
 export const useAuthStore = defineStore({
   id: 'auth',

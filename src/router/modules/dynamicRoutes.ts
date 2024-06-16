@@ -5,10 +5,9 @@
 import type { RouteRecordRaw } from 'vue-router'
 
 import { ElNotification } from 'element-plus'
-import { useAuthStore } from '@/store/modules/auth'
-import router from '../index'
-import { useUserStore } from '@/store/modules/user'
 import { LOGIN_URL } from '@/constants'
+import { useAuthStore, useUserStore } from '@/store/modules'
+import router from '../index'
 
 // 导入 views 文件夹下所有 vue 文件
 const modules = import.meta.glob('@/views/**/*.vue')

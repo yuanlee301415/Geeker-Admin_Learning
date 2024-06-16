@@ -56,9 +56,7 @@
 <script setup lang="ts">
 import { inject, nextTick, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useTabsStore } from '@/store/modules/tabs'
-import { useKeepAliveStore } from '@/store/modules/keepAlive'
-import { useGlobalStore } from '@/store/modules'
+import { useTabsStore, useKeepAliveStore, useGlobalStore } from '@/store/modules'
 import { refreshCurrentPageKey } from '@/tokens'
 import { CircleClose, DArrowLeft, DArrowRight, FolderDelete, FullScreen, Refresh, Remove, Position } from '@element-plus/icons-vue'
 

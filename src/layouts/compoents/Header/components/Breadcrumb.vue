@@ -23,8 +23,7 @@
 import { useRoute, useRouter } from 'vue-router'
 import { computed } from 'vue'
 import { ArrowRight } from '@element-plus/icons-vue'
-import { useGlobalStore } from '@/store/modules'
-import { useAuthStore } from '@/store/modules/auth'
+import { useGlobalStore, useAuthStore } from '@/store/modules'
 
 const globalStore = useGlobalStore()
 const authStore = useAuthStore()

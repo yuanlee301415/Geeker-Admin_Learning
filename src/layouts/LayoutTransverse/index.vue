@@ -41,7 +41,7 @@ import Logo from '../compoents/Logo/index.vue'
 import SubMenu from '../compoents/Menu/SubMenu.vue'
 import Main from '../compoents/Main/index.vue'
 import ToolBarRight from '../compoents/Header/ToolBarRight.vue'
-import { useAuthStore } from '@/store/modules/auth'
+import { useAuthStore } from '@/store/modules'
 
 const authStore = useAuthStore()
 const route = useRoute()

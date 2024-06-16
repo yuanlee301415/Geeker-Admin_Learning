@@ -30,9 +30,8 @@ import { storeToRefs } from 'pinia'
 import Tabs from '../Tabs/index.vue'
 import Maximize from './components/Maximize.vue'
 import Footer from '@/layouts/compoents/Footer/index.vue'
-import { useGlobalStore } from '@/store/modules'
+import { useGlobalStore, useKeepAliveStore } from '@/store/modules'
 import { refreshCurrentPageKey } from '@/tokens'
-import { useKeepAliveStore } from '@/store/modules/keepAlive'
 
 const globalStore = useGlobalStore()
 const keepAliveStore = useKeepAliveStore()

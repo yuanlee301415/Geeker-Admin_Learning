@@ -27,7 +27,7 @@ import ThemeSetting from './components/ThemeSetting.vue'
 import Message from './components/Message.vue'
 import FullScreen from './components/FullScreen.vue'
 import Avatar from './components/Avatar.vue'
-import { useUserStore } from '@/store/modules/user'
+import { useUserStore } from '@/store/modules'
 
 const userStore = useUserStore()
 </script>

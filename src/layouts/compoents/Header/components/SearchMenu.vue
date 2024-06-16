@@ -35,7 +35,7 @@
 import { computed, ref } from 'vue'
 import { Search } from '@element-plus/icons-vue'
 import { useRouter } from 'vue-router'
-import { useAuthStore } from '@/store/modules/auth'
+import { useAuthStore } from '@/store/modules'
 
 const authStore = useAuthStore()
 const router = useRouter()

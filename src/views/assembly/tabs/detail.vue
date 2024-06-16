@@ -13,7 +13,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import { ref } from 'vue'
-import { useTabsStore } from '@/store/modules/tabs'
+import { useTabsStore } from '@/store/modules'
 
 const route = useRoute()
 const tabsStore = useTabsStore()
