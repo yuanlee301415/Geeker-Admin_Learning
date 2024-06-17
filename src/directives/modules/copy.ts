@@ -27,11 +27,11 @@ async function handleClick(this: any) {
   try {
     await navigator.clipboard.writeText(this.copyText)
     console.log('复制成功:\n', this.copyText)
+    ElMessage.success('复制成功')
   } catch (e) {
     console.error('复制失败：', e)
     ElMessage.error('复制操作不被支持或失败')
   }
-  ElMessage.success('复制成功')
 }
 
 export default copy
